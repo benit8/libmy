@@ -15,7 +15,7 @@ void	my_putchar(char c)
   write(1, &c, 1);
 }
 
-int	my_strlen(char *s)
+size_t	my_strlen(char *s)
 {
   return (*s ? 1 + my_strlen(s + 1) : 0);
 }
