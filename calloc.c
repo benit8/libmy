@@ -23,16 +23,15 @@
 
 #include <stdlib.h>
 
-void		*my_calloc(size_t size)
+void	*my_calloc(size_t n, size_t s)
 {
-  void		*p;
-  register char	*t;
+	size_t size = n * s;
+	void *p = my_malloc(size);
+	register char *t = p;
 
-  p = my_malloc(size);
-  if (p == NULL)
-    return (NULL);
-  t = p;
-  while (size--)
-    *t++ = 0;
-  return (p);
+	if (p == NULL)
+		return (NULL);
+	while (size--)
+		*t++ = 0;
+	return (p);
 }

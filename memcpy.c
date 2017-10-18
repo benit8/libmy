@@ -10,14 +10,14 @@
 
 #include <stdlib.h>
 
-void		*memcpy(void *dest, const void *src, size_t len)
+void	*my_memcpy(void *dest, const void *src, size_t len)
 {
-  char		*d;
-  const char	*s;
+	char *d;
+	const char *s;
 
-  d = dest;
-  s = src;
-  while (n--)
-    *d++ = *s++;
-  return dest;
+	d = dest;
+	s = src;
+	while (len--)
+		*d++ = *s++;
+	return dest;
 }

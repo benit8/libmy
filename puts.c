@@ -12,44 +12,39 @@
 
 void	my_putchar(char c)
 {
-  write(1, &c, 1);
+	write(1, &c, 1);
 }
 
-size_t	my_strlen(char *s)
+int	my_strlen(char *s)
 {
-  return (*s ? 1 + my_strlen(s + 1) : 0);
+	return (*s ? 1 + my_strlen(s + 1) : 0);
 }
 
 void	my_putstr(char *str)
 {
-  write(1, str, my_strlen(str));
+	write(1, str, my_strlen(str));
 }
 
 void	my_putnbr(int nb)
 {
-  if (nb < 0)
-    {
-      my_putchar('-');
-      nb = -nb;
-    }
-  if (nb > 9)
-    my_putnbr(nb / 10);
-  my_putchar((nb % 10) + '0');
+	if (nb < 0){
+		my_putchar('-');
+		nb = -nb;
+	}
+	if (nb > 9)
+		my_putnbr(nb / 10);
+	my_putchar((nb % 10) + '0');
 }
 
 int	my_getnbr(char *str)
 {
-  int	res;
+	int	res = 0;
 
-  if (*str == '+')
-    return (my_getnbr(str + 1));
-  if (*str == '-')
-    return (-my_getnbr(str + 1));
-  res = 0;
-  while (*str >= '0' && *str <= '9')
-    {
-      res = (res * 10) + (*str - '0');
-      str++;
-    }
-  return (res);
+	if (*str == '+')
+		return (my_getnbr(str + 1));
+	if (*str == '-')
+		return (-my_getnbr(str + 1));
+	for (; *str >= '0' && *str <= '9'; str++)
+		res = (res * 10) + (*str - '0');
+	return (res);
 }

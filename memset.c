@@ -10,14 +10,14 @@
 
 #include <stdlib.h>
 
-void		memset(void *dest, int c, size_t n)
+void	memset(void *dest, char c, size_t n)
 {
-  register char	*d;
+	register char *d;
 
-  if (n > 0 && dest != NULL){
-    d = dest;
-    while (n--)
-      *d++ = c;
-  }
-  return (dest);
+	if (n > 0 && dest != NULL){
+		d = dest;
+		while (n--)
+			*d++ = c;
+	}
+	return (dest);
 }

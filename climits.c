@@ -12,32 +12,42 @@
 #include <limits.h>
 #include <float.h>
 
+#define RESET		"\x1b[0m"
+#define FAINT		"\x1b[2m"
+#define UNDERLINE	"\x1b[4m"
+#define RED		"\x1b[31m"
+#define MAGENTA		"\x1b[35m"
+#define CYAN		"\x1b[36m"
+
 int main(void)
 {
-  printf("/**\n");
-  printf(" *\n");
-  printf(" * C Limits\n");
-  printf(" *\n");
-  printf(" */\n\n");
+	printf(FAINT);
+	printf("/*\n");
+	printf("**\n");
+	printf("** " UNDERLINE "C Limits\n" RESET);
+	printf(FAINT);
+	printf("**\n");
+	printf("*/\n\n");
+	printf(RESET);
 
 
-  printf("1 Byte = %d Bits\n\n", CHAR_BIT);
+	printf(MAGENTA "1" RESET " Byte = " MAGENTA "%d" RESET " Bits\n\n", CHAR_BIT);
 
-  printf("         CHAR  [%4d,%4d]\n",        CHAR_MIN,  CHAR_MAX);
-  printf("  SIGNED CHAR  [%4d,%4d]\n",       SCHAR_MIN, SCHAR_MAX);
-  printf("UNSIGNED CHAR  [%4d,%4d]\n\n",             0, UCHAR_MAX);
+	printf(CYAN "        " RED " CHAR " RESET " [" MAGENTA "%4d" RESET "," MAGENTA "%4d" RESET "]\n",        CHAR_MIN,  CHAR_MAX);
+	printf(CYAN "  SIGNED" RED " CHAR " RESET " [" MAGENTA "%4d" RESET "," MAGENTA "%4d" RESET "]\n",       SCHAR_MIN, SCHAR_MAX);
+	printf(CYAN "UNSIGNED" RED " CHAR " RESET " [" MAGENTA "%4d" RESET "," MAGENTA "%4d" RESET "]\n\n",             0, UCHAR_MAX);
 
-  printf("         SHORT [%6d,%6d]\n",        SHRT_MIN,  SHRT_MAX);
-  printf("UNSIGNED SHORT [%6d,%6d]\n\n",             0, USHRT_MAX);
+	printf(CYAN "        " RED " SHORT" RESET " [" MAGENTA "%6d" RESET "," MAGENTA "%6d" RESET "]\n",        SHRT_MIN,  SHRT_MAX);
+	printf(CYAN "UNSIGNED" RED " SHORT" RESET " [" MAGENTA "%6d" RESET "," MAGENTA "%6d" RESET "]\n\n",             0, USHRT_MAX);
 
-  printf("         INT   [%11d,%11d]\n",       INT_MIN,   INT_MAX);
-  printf("UNSIGNED INT   [%11d,%11u]\n\n",           0,  UINT_MAX);
+	printf(CYAN "        " RED " INT  " RESET " [" MAGENTA "%11d" RESET "," MAGENTA "%11d" RESET "]\n",       INT_MIN,   INT_MAX);
+	printf(CYAN "UNSIGNED" RED " INT  " RESET " [" MAGENTA "%11d" RESET "," MAGENTA "%11u" RESET "]\n\n",           0,  UINT_MAX);
 
-  printf("         LONG  [%20ld,%21ld]\n",    LONG_MIN,  LONG_MAX);
-  printf("UNSIGNED LONG  [%20ld,%21lu]\n\n",         0, ULONG_MAX);
+	printf(CYAN "        " RED " LONG " RESET " [" MAGENTA "%20ld" RESET "," MAGENTA "%21ld" RESET "]\n",    LONG_MIN,  LONG_MAX);
+	printf(CYAN "UNSIGNED" RED " LONG " RESET " [" MAGENTA "%20ld" RESET "," MAGENTA "%21lu" RESET "]\n\n",         0, ULONG_MAX);
 
-  printf("         FLOAT [%12e,%14e]\n",       FLT_MIN,   FLT_MAX);
-  printf("        DOUBLE [%13e,%14e]\n",       DBL_MIN,   DBL_MAX);
+	printf(CYAN "        " RED " FLOAT" RESET " [" MAGENTA "%12e" RESET "," MAGENTA "%14e" RESET "]\n",       FLT_MIN,   FLT_MAX);
+	printf(CYAN "        " RED "DOUBLE" RESET " [" MAGENTA "%13e" RESET "," MAGENTA "%14e" RESET "]\n",       DBL_MIN,   DBL_MAX);
 
-  return (0);
+	return (0);
 }
