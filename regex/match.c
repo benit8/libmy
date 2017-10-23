@@ -8,11 +8,9 @@
 ** Last update Tue Oct 17 14:57:10 2017 Benoit Lormeau
 */
 
-#include <stdbool.h>
-#include <stdlib.h>
-#include <regex.h>
+#include "libmy.h"
 
-bool	Regex_match(char *pattern, char *subject)
+bool regex_match(const char *pattern, char *subject)
 {
 	regex_t regex;
 	int status = regcomp(&regex, pattern, REG_EXTENDED | REG_NOSUB);

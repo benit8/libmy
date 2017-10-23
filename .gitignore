@@ -2,3 +2,5 @@
 #*#
 *.o
 a.out
+libmy.a
+main.c

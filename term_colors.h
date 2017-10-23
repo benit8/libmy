@@ -1,5 +1,5 @@
 /*
-** term_colors.h for CSFML-Socket-Server in /mnt/data/Delivery/Perso/CSFML-Socket-Server/include
+** term_colors.h
 **
 ** Made by Benoit Lormeau
 ** Login   <benoit.lormeau@epitech.eu>

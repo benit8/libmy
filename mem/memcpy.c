@@ -8,12 +8,12 @@
 ** Last update Thu Sep 28 11:38:20 2017 Benoit Lormeau
 */
 
-#include <stdlib.h>
+#include "libmy.h"
 
-void	*my_memcpy(void *dest, const void *src, size_t len)
+void *my_memcpy(void *dest, const void *src, size_t len)
 {
-	char *d;
-	const char *s;
+	register uint8_t *d;
+	register const uint8_t *s;
 
 	d = dest;
 	s = src;

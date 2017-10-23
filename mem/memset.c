@@ -8,11 +8,11 @@
 ** Last update Thu Sep 28 11:44:06 2017 Benoit Lormeau
 */
 
-#include <stdlib.h>
+#include "libmy.h"
 
-void	memset(void *dest, char c, size_t n)
+void *my_memset(void *dest, uint8_t c, size_t n)
 {
-	register char *d;
+	register uint8_t *d;
 
 	if (n > 0 && dest != NULL){
 		d = dest;
