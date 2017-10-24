@@ -10,12 +10,12 @@
 
 #include "libmy.h"
 
-static void my_scandir_sort(const dirent_t **names,
+static void my_scandir_sort(dirent_t **names,
                             int n,
                             direntCompar_t *comp)
 {
-	const dirent_t *p = NULL;
-	const dirent_t *t = NULL;
+	dirent_t *p = NULL;
+	dirent_t *t = NULL;
 	size_t i = 0;
 	size_t j = n - 1;
 
@@ -60,4 +60,9 @@ int my_scandir(const char *dirpath,
 		my_scandir_sort(names, n, compar);
 	*namelist = names;
 	return (n);
+}
+
+int my_alphasort(dirent_t **a, dirent_t **b)
+{
+	return (my_strcmp((*a)->d_name, (*b)->d_name));
 }

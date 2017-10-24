@@ -10,10 +10,10 @@
 
 #include "libmy.h"
 
-char *my_strstr(char *string, char *search)
+char *my_strstr(char *string, const char *search)
 {
 	register char *a;
-	register char *b = search;
+	register const char *b = search;
 
 	if (*b == '\0')
 		return (string);
@@ -22,7 +22,7 @@ char *my_strstr(char *string, char *search)
 			continue;
 		a = string;
 		while (1){
-			if (*b == 0)
+			if (*b == '\0')
 				return string;
 			if (*a++ != *b++)
 				break;

@@ -5,7 +5,7 @@
 ** Login   <benoit.lormeau@epitech.eu>
 **
 ** Started on  Mon Oct 23 09:27:22 2017 Benoit Lormeau
-** Last update Mon Oct 23 09:27:22 2017 Benoit Lormeau
+** Last update Tue Oct 24 11:29:18 2017 Benoit Lormeau
 */
 
 #pragma once
@@ -27,8 +27,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 typedef struct dirent dirent_t;
-typedef int (direntFilter_t)(const dirent_t *);
-typedef int (direntCompar_t)(const dirent_t **, const dirent_t **);
+typedef int (direntFilter_t)(dirent_t *);
+typedef int (direntCompar_t)(dirent_t **, dirent_t **);
 
 int my_scandir(const char *, dirent_t ***, direntFilter_t *, direntCompar_t *);
 
@@ -90,4 +90,7 @@ char *my_strcpy(char *dest, const char *src);
 char *my_strncpy(char *dest, const char *src, size_t n);
 
 char *my_strdup(const char *src);
-char *my_strstr(char *str, char *search);
+char *my_strstr(char *str, const char *search);
+char *my_strsep(char **stringp, const char *delim);
+
+char **explode(const char *delim, char *string);

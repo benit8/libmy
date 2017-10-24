@@ -12,10 +12,9 @@
 
 void *my_memset(void *dest, uint8_t c, size_t n)
 {
-	register uint8_t *d;
+	register uint8_t *d = dest;
 
 	if (n > 0 && dest != NULL){
-		d = dest;
 		while (n--)
 			*d++ = c;
 	}

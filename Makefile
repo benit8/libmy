@@ -10,37 +10,42 @@
 
 RM	=	rm -rf
 
-CFLAGS	+=	-I./
-CFLAGS	+=	-W -Wall -Wextra
+SRC	=	Sources
+INCLUDE	=	-IIncludes/
 
-SRCS	=	fs/scandir.c			\
-		fs/file_get_contents.c		\
-		mem/calloc.c			\
-		mem/malloc.c			\
-		mem/memcpy.c			\
-		mem/memdup.c			\
-		mem/memset.c			\
-		mem/realloc.c			\
-		puts/getnbr.c			\
-		puts/putchar.c			\
-		puts/putnbr.c			\
-		puts/putstr.c			\
-		puts/puts.c			\
-		regex/capture.c			\
-		regex/count.c			\
-		regex/match.c			\
-		regex/replace.c			\
-		regex/split.c			\
-		string/strcat.c			\
-		string/strcmp.c			\
-		string/strcpy.c			\
-		string/strdup.c			\
-		string/strlen.c			\
-		string/strncat.c		\
-		string/strncmp.c		\
-		string/strncpy.c		\
-		string/strnlen.c		\
-		string/strstr.c
+CFLAGS	+=	-W -Wall -Wextra
+CFLAGS	+=	$(INCLUDE)
+
+SRCS	=	$(SRC)/Display/getnbr.c			\
+		$(SRC)/Display/putchar.c		\
+		$(SRC)/Display/putnbr.c			\
+		$(SRC)/Display/putstr.c			\
+		$(SRC)/Display/puts.c			\
+		$(SRC)/FS/file_get_contents.c		\
+		$(SRC)/FS/scandir.c			\
+		$(SRC)/Memory/calloc.c			\
+		$(SRC)/Memory/malloc.c			\
+		$(SRC)/Memory/memcpy.c			\
+		$(SRC)/Memory/memdup.c			\
+		$(SRC)/Memory/memset.c			\
+		$(SRC)/Memory/realloc.c			\
+		$(SRC)/Regex/capture.c			\
+		$(SRC)/Regex/count.c			\
+		$(SRC)/Regex/match.c			\
+		$(SRC)/Regex/replace.c			\
+		$(SRC)/Regex/split.c			\
+		$(SRC)/String/explode.c			\
+		$(SRC)/String/strcat.c			\
+		$(SRC)/String/strcmp.c			\
+		$(SRC)/String/strcpy.c			\
+		$(SRC)/String/strdup.c			\
+		$(SRC)/String/strlen.c			\
+		$(SRC)/String/strncat.c			\
+		$(SRC)/String/strncmp.c			\
+		$(SRC)/String/strncpy.c			\
+		$(SRC)/String/strnlen.c			\
+		$(SRC)/String/strsep.c			\
+		$(SRC)/String/strstr.c
 
 OBJS	=	$(SRCS:.c=.o)
 
@@ -61,6 +66,6 @@ fclean: clean
 re: fclean all
 
 test:
-	gcc main.c -g3 $(CFLAGS) -L./ -lmy
+	gcc main.c -g3 $(CFLAGS) $(INCLUDE) -L./ -lmy
 
 .PHONY: all clean fclean re test
