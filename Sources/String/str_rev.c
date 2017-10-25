@@ -10,9 +10,9 @@
 
 #include "libmy.h"
 
-char *my_strrev(char *str)
+char *str_rev(char *str)
 {
-	size_t l = my_strlen(str);
+	size_t l = str_len(str);
 	char t;
 
 	for (size_t i = 0; i < l / 2; ++i){

@@ -64,10 +64,10 @@ int my_scandir(const char *dirpath,
 
 int my_alphasort(dirent_t **a, dirent_t **b)
 {
-	return (my_strcmp((*a)->d_name, (*b)->d_name));
+	return (str_cmp((*a)->d_name, (*b)->d_name));
 }
 
 int my_alphacasesort(dirent_t **a, dirent_t **b)
 {
-	return (my_strcasecmp((*a)->d_name, (*b)->d_name));
+	return (str_casecmp((*a)->d_name, (*b)->d_name));
 }

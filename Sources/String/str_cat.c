@@ -10,13 +10,27 @@
 
 #include "libmy.h"
 
-char *my_strcat(char *dest, const char *src)
+char *str_cat(char *dest, const char *src)
 {
 	register char *d = dest;
 	register const char *s = src;
 
 	for (; *d != '\0'; d++);
 	while (*s != '\0')
+		*d++ = *s++;
+	*d = '\0';
+	return (dest);
+}
+
+char *str_ncat(char *dest, const char *src, size_t n)
+{
+	register char *d = dest;
+	register const char *s = src;
+
+	if (!n)
+		return (dest);
+	for (; *d != '\0'; d++);
+	while (*s != '\0' && n-- > 0)
 		*d++ = *s++;
 	*d = '\0';
 	return (dest);

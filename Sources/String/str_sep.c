@@ -10,9 +10,9 @@
 
 #include "libmy.h"
 
-char *my_strsep(char **stringp, const char *delim)
+char *str_sep(char **stringp, const char *delim)
 {
-	size_t dLen = my_strlen(delim);
+	size_t dLen = str_len(delim);
 	char *s = *stringp;
 	char *p = NULL;
 
@@ -21,10 +21,10 @@ char *my_strsep(char **stringp, const char *delim)
 	do {
 		if (p != NULL)
 			s++;
-		p = my_strstr(s, delim);
+		p = str_str(s, delim);
 	} while (p == s);
 	if (p == NULL){
-		*stringp += my_strlen(s);
+		*stringp += str_len(s);
 		return (s);
 	}
 	my_memset(p, 0, dLen);

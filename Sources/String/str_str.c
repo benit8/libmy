@@ -10,7 +10,7 @@
 
 #include "libmy.h"
 
-char *my_strstr(char *string, const char *search)
+char *str_str(char *string, const char *search)
 {
 	register char *a;
 	register const char *b = search;

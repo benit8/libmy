@@ -16,10 +16,10 @@ char *implode(const char *glue, char **array)
 
 	if (array == NULL || array[0] == NULL)
 		return (NULL);
-	output = my_strdup(array[0]);
+	output = str_dup(array[0]);
 	for (size_t i = 1; array[i] != NULL; ++i){
-		output = my_strapd(output, glue);
-		output = my_strapd(output, array[i]);
+		output = str_apd(output, glue);
+		output = str_apd(output, array[i]);
 	}
 	return (output);
 }

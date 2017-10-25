@@ -18,6 +18,7 @@ CFLAGS	+=	$(INCLUDE)
 
 SRCS	=	$(SRC)/Char/is_alnum.c			\
 		$(SRC)/Char/is_alpha.c			\
+		$(SRC)/Char/is_blank.c			\
 		$(SRC)/Char/is_cntrl.c			\
 		$(SRC)/Char/is_digit.c			\
 		$(SRC)/Char/is_graph.c			\
@@ -29,6 +30,7 @@ SRCS	=	$(SRC)/Char/is_alnum.c			\
 		$(SRC)/Char/is_xdigit.c			\
 		$(SRC)/Char/to_lower.c			\
 		$(SRC)/Char/to_upper.c			\
+		$(SRC)/FS/file.c			\
 		$(SRC)/FS/file_executable.c		\
 		$(SRC)/FS/file_exists.c			\
 		$(SRC)/FS/file_get_contents.c		\
@@ -36,10 +38,13 @@ SRCS	=	$(SRC)/Char/is_alnum.c			\
 		$(SRC)/FS/file_readable.c		\
 		$(SRC)/FS/file_writable.c		\
 		$(SRC)/FS/scandir.c			\
+		$(SRC)/IO/gnl.c				\
 		$(SRC)/IO/putchar.c			\
 		$(SRC)/IO/putnbr.c			\
-		$(SRC)/IO/putstr.c			\
 		$(SRC)/IO/puts.c			\
+		$(SRC)/IO/putstr.c			\
+		$(SRC)/Math/max.c			\
+		$(SRC)/Math/min.c			\
 		$(SRC)/Memory/calloc.c			\
 		$(SRC)/Memory/malloc.c			\
 		$(SRC)/Memory/memcpy.c			\
@@ -59,20 +64,21 @@ SRCS	=	$(SRC)/Char/is_alnum.c			\
 		$(SRC)/Regex/split.c			\
 		$(SRC)/String/explode.c			\
 		$(SRC)/String/implode.c			\
-		$(SRC)/String/strcasecmp.c		\
-		$(SRC)/String/strcat.c			\
-		$(SRC)/String/strcmp.c			\
-		$(SRC)/String/strcpy.c			\
-		$(SRC)/String/strdup.c			\
-		$(SRC)/String/strlen.c			\
-		$(SRC)/String/strncasecmp.c		\
-		$(SRC)/String/strncat.c			\
-		$(SRC)/String/strncmp.c			\
-		$(SRC)/String/strncpy.c			\
-		$(SRC)/String/strnlen.c			\
-		$(SRC)/String/strrev.c			\
-		$(SRC)/String/strsep.c			\
-		$(SRC)/String/strstr.c
+		$(SRC)/String/str_apd.c			\
+		$(SRC)/String/str_casecmp.c		\
+		$(SRC)/String/str_cat.c			\
+		$(SRC)/String/str_cmp.c			\
+		$(SRC)/String/str_cpy.c			\
+		$(SRC)/String/str_dup.c			\
+		$(SRC)/String/str_empty.c		\
+		$(SRC)/String/str_len.c			\
+		$(SRC)/String/str_pad.c			\
+		$(SRC)/String/str_pos.c			\
+		$(SRC)/String/str_repeat.c		\
+		$(SRC)/String/str_replace.c		\
+		$(SRC)/String/str_rev.c			\
+		$(SRC)/String/str_sep.c			\
+		$(SRC)/String/str_str.c
 
 OBJS	=	$(SRCS:.c=.o)
 

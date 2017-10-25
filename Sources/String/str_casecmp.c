@@ -10,8 +10,16 @@
 
 #include "libmy.h"
 
-int my_strcasecmp(const char *s1, const char *s2)
+int str_casecmp(const char *s1, const char *s2)
 {
 	for ( ; to_lower(*s1) == to_lower(*s2); s1++, s2++);
+	return (*s1 - *s2);
+}
+
+int str_ncasecmp(const char *s1, const char *s2, size_t n)
+{
+	if (!n)
+		return (0);
+	for (; to_lower(*s1) == to_lower(*s2) && --n > 0; s1++, s2++);
 	return (*s1 - *s2);
 }

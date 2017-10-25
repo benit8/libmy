@@ -24,7 +24,7 @@ static char **_regex_append(char **array,
 	array[n] = my_calloc(subStrLength + 1, sizeof(char));
 	if (array[n] == NULL)
 		return (NULL);
-	my_strncpy(array[n], subject + match.rm_so, subStrLength);
+	str_ncpy(array[n], subject + match.rm_so, subStrLength);
 	return (array);
 }
 

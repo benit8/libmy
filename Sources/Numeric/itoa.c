@@ -28,5 +28,5 @@ char *my_itoa(ssize_t n)
 	}
 	if (neg)
 		res[i] = '-';
-	return (my_strrev(res));
+	return (str_rev(res));
 }

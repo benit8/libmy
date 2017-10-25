@@ -22,5 +22,5 @@ char *my_utoa(size_t n)
 		res[i] = (n % 10) + '0';
 		n /= 10;
 	}
-	return (my_strrev(res));
+	return (str_rev(res));
 }

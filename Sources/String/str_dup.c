@@ -10,12 +10,22 @@
 
 #include "libmy.h"
 
-char *my_strdup(const char *src)
+char *str_dup(const char *src)
 {
-	size_t len = my_strlen(src);
+	size_t len = str_len(src);
 	char *dest = my_calloc(len + 1, sizeof(char));
 
 	if (dest != NULL)
-		dest = my_strncpy(dest, src, len);
+		dest = str_ncpy(dest, src, len);
+	return (dest);
+}
+
+char *str_ndup(const char *src, size_t n)
+{
+	size_t len = my_umin(n, str_len(src));
+	char *dest = my_calloc(len + 1, sizeof(char));
+
+	if (dest != NULL)
+		dest = str_ncpy(dest, src, len);
 	return (dest);
 }
