@@ -66,3 +66,8 @@ int my_alphasort(dirent_t **a, dirent_t **b)
 {
 	return (my_strcmp((*a)->d_name, (*b)->d_name));
 }
+
+int my_alphacasesort(dirent_t **a, dirent_t **b)
+{
+	return (my_strcasecmp((*a)->d_name, (*b)->d_name));
+}

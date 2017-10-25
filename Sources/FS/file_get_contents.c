@@ -10,7 +10,7 @@
 
 #include "libmy.h"
 
-char *file_get_contents(char *file)
+char *file_get_contents(const char *file)
 {
 	char *buffer = NULL;
 	int fd = open(file, O_RDONLY);

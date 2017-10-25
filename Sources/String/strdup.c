@@ -16,6 +16,6 @@ char *my_strdup(const char *src)
 	char *dest = my_calloc(len + 1, sizeof(char));
 
 	if (dest != NULL)
-		my_strncpy(dest, src, len);
+		dest = my_strncpy(dest, src, len);
 	return (dest);
 }
