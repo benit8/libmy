@@ -29,10 +29,6 @@ SRCS	=	$(SRC)/Char/is_alnum.c			\
 		$(SRC)/Char/is_xdigit.c			\
 		$(SRC)/Char/to_lower.c			\
 		$(SRC)/Char/to_upper.c			\
-		$(SRC)/Display/putchar.c		\
-		$(SRC)/Display/putnbr.c			\
-		$(SRC)/Display/putstr.c			\
-		$(SRC)/Display/puts.c			\
 		$(SRC)/FS/file_executable.c		\
 		$(SRC)/FS/file_exists.c			\
 		$(SRC)/FS/file_get_contents.c		\
@@ -40,6 +36,10 @@ SRCS	=	$(SRC)/Char/is_alnum.c			\
 		$(SRC)/FS/file_readable.c		\
 		$(SRC)/FS/file_writable.c		\
 		$(SRC)/FS/scandir.c			\
+		$(SRC)/IO/putchar.c			\
+		$(SRC)/IO/putnbr.c			\
+		$(SRC)/IO/putstr.c			\
+		$(SRC)/IO/puts.c			\
 		$(SRC)/Memory/calloc.c			\
 		$(SRC)/Memory/malloc.c			\
 		$(SRC)/Memory/memcpy.c			\
