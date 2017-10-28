@@ -13,7 +13,7 @@ RM	=	rm -rf
 SRC	=	Sources
 INCLUDE	=	-IIncludes/
 
-CFLAGS	+=	-W -Wall -Wextra
+CFLAGS	+=	-W -Wall -Wextra -g3
 CFLAGS	+=	$(INCLUDE)
 
 SRCS	=	$(SRC)/Char/is_alnum.c			\
@@ -78,7 +78,9 @@ SRCS	=	$(SRC)/Char/is_alnum.c			\
 		$(SRC)/String/str_replace.c		\
 		$(SRC)/String/str_rev.c			\
 		$(SRC)/String/str_sep.c			\
-		$(SRC)/String/str_str.c
+		$(SRC)/String/str_str.c			\
+		$(SRC)/String/str_tolower.c		\
+		$(SRC)/String/str_toupper.c
 
 OBJS	=	$(SRCS:.c=.o)
 

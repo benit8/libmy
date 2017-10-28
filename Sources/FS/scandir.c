@@ -71,3 +71,8 @@ int my_alphacasesort(dirent_t **a, dirent_t **b)
 {
 	return (str_casecmp((*a)->d_name, (*b)->d_name));
 }
+
+int my_hiddenfilter(dirent_t *entry)
+{
+	return (entry->d_name[0] != '.');
+}

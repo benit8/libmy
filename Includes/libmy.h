@@ -23,6 +23,14 @@
 #include <unistd.h>
 
 ////////////////////////////////////////////////////////////////////////////////
+///
+////////////////////////////////////////////////////////////////////////////////
+
+#ifndef __ssize_t_defined
+typedef long long int ssize_t;
+#endif
+
+////////////////////////////////////////////////////////////////////////////////
 /// CHAR
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -52,6 +60,7 @@ typedef int (direntCompar_t)(dirent_t **, dirent_t **);
 
 int my_alphasort(dirent_t **a, dirent_t **b);
 int my_alphacasesort(dirent_t **a, dirent_t **b);
+int my_hiddenfilter(dirent_t *entry);
 
 int my_scandir(const char *, dirent_t ***, direntFilter_t *, direntCompar_t *);
 
@@ -83,6 +92,11 @@ ssize_t my_min(ssize_t a, ssize_t b);
 
 size_t my_umax(size_t a, size_t b);
 size_t my_umin(size_t a, size_t b);
+
+ssize_t constrain(ssize_t val, ssize_t min, ssize_t max);
+size_t uconstrain(size_t val, size_t max);
+float fconstrain(float val, float min, float max);
+double dconstrain(double val, double min, double max);
 
 ////////////////////////////////////////////////////////////////////////////////
 /// MEMORY
@@ -145,6 +159,8 @@ char *str_replace(const char *search, const char *replace, char *subject);
 char *str_rev(char *string);
 char *str_sep(char **stringp, const char *delim);
 char *str_str(char *string, const char *search);
+char *str_tolower(char *string);
+char *str_toupper(char *string);
 int str_casecmp(const char *s1, const char *s2);
 int str_cmp(const char *s1, const char *s2);
 int str_ncasecmp(const char *s1, const char *s2, size_t n);
