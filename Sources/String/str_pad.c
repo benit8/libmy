@@ -21,7 +21,7 @@ char *str_padr(char *input, size_t padSize, char *pad)
 	output = my_calloc(padSize + 1, sizeof(char));
 	str_cpy(output, input);
 	for (size_t i = inputLen; i < padSize; i += padLen)
-		str_ncat(output, pad, my_umin(padSize - i, padLen));
+		str_ncat(output, pad, MIN(padSize - i, padLen));
 	return (output);
 }
 
@@ -37,7 +37,7 @@ char *str_padl(char *input, size_t padSize, char *pad)
 	output = my_calloc(padSize + 1, sizeof(char));
 	padSpace = padSize - inputLen;
 	for (size_t i = 0; i < padSpace; i += padLen)
-		str_ncat(output, pad, my_umin(padSpace - i, padLen));
+		str_ncat(output, pad, MIN(padSpace - i, padLen));
 	str_cat(output, input);
 	return (output);
 }

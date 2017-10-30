@@ -87,16 +87,31 @@ void my_puts(const char *str);
 /// MATH
 ////////////////////////////////////////////////////////////////////////////////
 
-ssize_t my_max(ssize_t a, ssize_t b);
-ssize_t my_min(ssize_t a, ssize_t b);
+#define PI	3.14159265358979323846
 
-size_t my_umax(size_t a, size_t b);
-size_t my_umin(size_t a, size_t b);
+#ifndef MIN
+# define MIN(a,b)	(((a) < (b)) ? (a) : (b))
+#endif
 
-ssize_t constrain(ssize_t val, ssize_t min, ssize_t max);
-size_t uconstrain(size_t val, size_t max);
-float fconstrain(float val, float min, float max);
-double dconstrain(double val, double min, double max);
+#ifndef MAX
+# define MAX(a,b)	(((a) > (b)) ? (a) : (b))
+#endif
+
+#ifndef CONSTRAIN
+# define CONSTRAIN(v,a,b)	\
+	if ((v) < (a))		\
+		return ((a));	\
+	else if ((v) > (b))	\
+		return ((b));	\
+	return ((v));
+#endif
+
+#ifndef MAP
+# define MAP(v,a,b,c,d)	((((v) - (a)) / ((b) - (a))) * ((d) - (c)) + (c))
+#endif
+
+double radians(double degrees);
+double degrees(double radians);
 
 ////////////////////////////////////////////////////////////////////////////////
 /// MEMORY

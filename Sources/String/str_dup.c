@@ -22,7 +22,7 @@ char *str_dup(const char *src)
 
 char *str_ndup(const char *src, size_t n)
 {
-	size_t len = my_umin(n, str_len(src));
+	size_t len = MIN(n, str_len(src));
 	char *dest = my_calloc(len + 1, sizeof(char));
 
 	if (dest != NULL)
