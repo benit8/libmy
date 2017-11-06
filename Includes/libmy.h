@@ -20,6 +20,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdlib.h>
+#include <time.h>
 #include <unistd.h>
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -112,6 +113,10 @@ void my_puts(const char *str);
 
 double radians(double degrees);
 double degrees(double radians);
+
+int irand(int a, int b);
+float frand(float a, float b);
+double drand(double a, double b);
 
 ////////////////////////////////////////////////////////////////////////////////
 /// MEMORY

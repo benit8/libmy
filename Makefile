@@ -44,6 +44,7 @@ SRCS	=	$(SRC)/Char/is_alnum.c			\
 		$(SRC)/IO/puts.c			\
 		$(SRC)/IO/putstr.c			\
 		$(SRC)/Math/angle.c			\
+		$(SRC)/Math/rand.c			\
 		$(SRC)/Memory/calloc.c			\
 		$(SRC)/Memory/malloc.c			\
 		$(SRC)/Memory/memcpy.c			\
