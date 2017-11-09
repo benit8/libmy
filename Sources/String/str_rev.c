@@ -8,7 +8,7 @@
 ** Last update Wed Oct 25 10:11:53 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "String.h"
 
 char *str_rev(char *str)
 {

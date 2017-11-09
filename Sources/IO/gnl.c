@@ -8,7 +8,7 @@
 ** Last update Wed Oct 25 13:54:32 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "IO.h"
 
 char *gnl(const int fd)
 {

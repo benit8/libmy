@@ -8,7 +8,7 @@
 ** Last update Tue Oct 17 11:49:37 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "Regex.h"
 
 static char **_regex_append(char **array,
                             size_t n,

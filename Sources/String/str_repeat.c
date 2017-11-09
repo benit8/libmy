@@ -8,7 +8,7 @@
 ** Last update Wed Oct 25 14:44:59 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "String.h"
 
 char *str_repeat(char *str, size_t times)
 {

@@ -8,7 +8,7 @@
 ** Last update Mon Oct 30 10:18:02 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "Math.h"
 
 static void rand_init(void)
 {

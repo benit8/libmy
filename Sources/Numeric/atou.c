@@ -8,7 +8,7 @@
 ** Last update Wed Oct 25 10:30:49 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "Numeric.h"
 
 size_t my_atou(const char *str)
 {

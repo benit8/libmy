@@ -8,7 +8,7 @@
 ** Last update Mon Oct 30 09:31:11 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "Math.h"
 
 double radians(double degrees)
 {

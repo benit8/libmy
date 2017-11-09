@@ -8,7 +8,7 @@
 ** Last update Mon Oct 23 14:17:38 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "String.h"
 
 char *str_str(char *string, const char *search)
 {
@@ -18,13 +18,13 @@ char *str_str(char *string, const char *search)
 	if (*b == '\0')
 		return (string);
 	for (; *string != '\0'; string++){
-		if (*string != *b)
+		if (*string != *search)
 			continue;
 		a = string;
-		while (1){
+		for (;; ++a, ++b){
 			if (*b == '\0')
-				return string;
-			if (*a++ != *b++)
+				return (string);
+			if (*a != *b)
 				break;
 		}
 		b = search;

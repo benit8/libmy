@@ -8,7 +8,7 @@
 ** Last update Tue Oct 24 11:29:05 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "String.h"
 
 char *str_sep(char **stringp, const char *delim)
 {

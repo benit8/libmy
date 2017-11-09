@@ -8,7 +8,7 @@
 ** Last update Tue Oct 24 14:46:18 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "Char.h"
 
 int to_upper(int c)
 {

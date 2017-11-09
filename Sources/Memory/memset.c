@@ -1,5 +1,5 @@
 /*
-** memset.c for memset in /home/benito/Dropbox/Code
+** memset.c for memset in /mnt/data/Delivery/Perso/libmy/Sources/Memory
 **
 ** Made by Benoit Lormeau
 ** Login   <benoit.lormeau@epitech.eu>
@@ -8,7 +8,7 @@
 ** Last update Thu Sep 28 11:44:06 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "Memory.h"
 
 void *my_memset(void *dest, uint8_t c, size_t n)
 {

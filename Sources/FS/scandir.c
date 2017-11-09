@@ -8,14 +8,14 @@
 ** Last update Tue Oct 17 16:44:13 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "FS.h"
 
-static void my_scandir_sort(dirent_t **names,
+static void my_scandir_sort(const dirent_t **names,
                             int n,
-                            direntCompar_t *comp)
+                            dirCompar_t *comp)
 {
-	dirent_t *p = NULL;
-	dirent_t *t = NULL;
+	const dirent_t *p = NULL;
+	const dirent_t *t = NULL;
 	size_t i = 0;
 	size_t j = n - 1;
 
@@ -37,8 +37,8 @@ static void my_scandir_sort(dirent_t **names,
 
 int my_scandir(const char *dirpath,
                dirent_t ***namelist,
-               direntFilter_t *filter,
-               direntCompar_t *compar)
+               dirFilter_t *filter,
+               dirCompar_t *compar)
 {
 	dirent_t **names = NULL;
 	dirent_t *entry = NULL;
@@ -57,22 +57,22 @@ int my_scandir(const char *dirpath,
 	}
 	closedir(dir);
 	if (n > 1 && compar != NULL)
-		my_scandir_sort(names, n, compar);
+		my_scandir_sort((const dirent_t **)names, n, compar);
 	*namelist = names;
 	return (n);
 }
 
-int my_alphasort(dirent_t **a, dirent_t **b)
+int my_alphasort(const dirent_t **a, const dirent_t **b)
 {
 	return (str_cmp((*a)->d_name, (*b)->d_name));
 }
 
-int my_alphacasesort(dirent_t **a, dirent_t **b)
+int my_alphacasesort(const dirent_t **a, const dirent_t **b)
 {
 	return (str_casecmp((*a)->d_name, (*b)->d_name));
 }
 
-int my_hiddenfilter(dirent_t *entry)
+int my_hiddenfilter(const dirent_t *entry)
 {
 	return (entry->d_name[0] != '.');
 }

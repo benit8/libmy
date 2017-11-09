@@ -8,7 +8,7 @@
 ** Last update Tue Oct 17 11:50:35 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "Regex.h"
 
 int regex_match(const char *pattern, char *subject)
 {

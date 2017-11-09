@@ -1,5 +1,5 @@
 /*
-** memcpy.c for memcpy in /home/benito/Dropbox/Code
+** memcpy.c for memcpy in /mnt/data/Delivery/Perso/libmy/Sources/Memory
 **
 ** Made by Benoit Lormeau
 ** Login   <benoit.lormeau@epitech.eu>
@@ -8,7 +8,7 @@
 ** Last update Thu Sep 28 11:38:20 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "Memory.h"
 
 void *my_memcpy(void *dest, const void *src, size_t len)
 {

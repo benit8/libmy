@@ -8,7 +8,7 @@
 ** Last update Tue Oct 24 14:27:11 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "String.h"
 
 int str_casecmp(const char *s1, const char *s2)
 {

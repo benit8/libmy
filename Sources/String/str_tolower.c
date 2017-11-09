@@ -8,7 +8,7 @@
 ** Last update Sat Oct 28 15:02:21 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "String.h"
 
 char *str_tolower(char *str)
 {

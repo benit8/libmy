@@ -1,5 +1,5 @@
 /*
-** file.c for libmy in /mnt/data/Delivery/Perso/libmy/Sources/FS
+** file_get_lines.c for libmy in /mnt/data/Delivery/Perso/libmy/Sources/FS
 **
 ** Made by Benoit Lormeau
 ** Login   <benoit.lormeau@epitech.eu>
@@ -8,9 +8,9 @@
 ** Last update Wed Oct 25 14:27:21 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "FS.h"
 
-char **file(const char *filepath)
+char **file_get_lines(const char *filepath)
 {
 	char *content = file_get_contents(filepath);
 	char **array = explode("\n", content);

@@ -8,45 +8,45 @@
 ** Last update Wed Oct 25 16:34:31 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "String.h"
 
-char *str_padr(char *input, size_t padSize, char *pad)
+char *str_padr(const char *string, size_t padSize, const char *pad)
 {
-	size_t inputLen = str_len(input);
+	size_t stringLen = str_len(string);
 	size_t padLen = str_len(pad);
 	char *output;
 
-	if (padSize <= inputLen)
-		return (str_dup(input));
+	if (padSize <= stringLen)
+		return (str_dup(string));
 	output = my_calloc(padSize + 1, sizeof(char));
-	str_cpy(output, input);
-	for (size_t i = inputLen; i < padSize; i += padLen)
+	str_cpy(output, string);
+	for (size_t i = stringLen; i < padSize; i += padLen)
 		str_ncat(output, pad, MIN(padSize - i, padLen));
 	return (output);
 }
 
-char *str_padl(char *input, size_t padSize, char *pad)
+char *str_padl(const char *string, size_t padSize, const char *pad)
 {
-	size_t inputLen = str_len(input);
+	size_t stringLen = str_len(string);
 	size_t padLen = str_len(pad);
 	size_t padSpace;
 	char *output;
 
-	if (padSize <= inputLen)
-		return (str_dup(input));
+	if (padSize <= stringLen)
+		return (str_dup(string));
 	output = my_calloc(padSize + 1, sizeof(char));
-	padSpace = padSize - inputLen;
+	padSpace = padSize - stringLen;
 	for (size_t i = 0; i < padSpace; i += padLen)
 		str_ncat(output, pad, MIN(padSpace - i, padLen));
-	str_cat(output, input);
+	str_cat(output, string);
 	return (output);
 }
 
-char *str_pad(char *input, size_t padSize, char *pad)
+char *str_pad(const char *string, size_t padSize, const char *pad)
 {
-	size_t inputLen = str_len(input);
-	size_t pad_left = (padSize - inputLen) / 2;
-	char *output1 = str_padl(input, pad_left + inputLen, pad);
+	size_t stringLen = str_len(string);
+	size_t pad_left = (padSize - stringLen) / 2;
+	char *output1 = str_padl(string, pad_left + stringLen, pad);
 	char *output2 = str_padr(output1, padSize, pad);
 
 	my_free(output1);

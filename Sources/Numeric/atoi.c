@@ -8,7 +8,7 @@
 ** Last update Wed Oct 25 09:14:53 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "Numeric.h"
 
 ssize_t my_atoi(const char *str)
 {

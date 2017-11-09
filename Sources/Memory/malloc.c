@@ -1,5 +1,5 @@
 /*
-** malloc.c for Code in /home/benito/Dropbox/Code
+** malloc.c for Code in /mnt/data/Delivery/Perso/libmy/Sources/Memory
 **
 ** Made by Benoit Lormeau
 ** Login   <benoit.lormeau@epitech.eu>
@@ -8,7 +8,7 @@
 ** Last update Tue Jun 20 17:57:20 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "Memory.h"
 
 void *my_malloc(size_t size)
 {

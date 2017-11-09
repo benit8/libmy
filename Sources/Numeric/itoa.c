@@ -8,7 +8,7 @@
 ** Last update Wed Oct 25 09:42:44 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "Numeric.h"
 
 char *my_itoa(ssize_t n)
 {
@@ -21,7 +21,7 @@ char *my_itoa(ssize_t n)
 		return (NULL);
 	if (neg)
 		len--;
-	n = my_abs(n);
+	n = ABS(n);
 	for (i = 0; i < len; ++i){
 		res[i] = (n % 10) + '0';
 		n /= 10;

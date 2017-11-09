@@ -8,7 +8,7 @@
 ** Last update Mon Oct 23 10:34:27 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "String.h"
 
 char *str_dup(const char *src)
 {

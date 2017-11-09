@@ -8,13 +8,21 @@
 ** Last update Wed Oct 25 09:33:04 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "Numeric.h"
 
 size_t intlen(ssize_t n)
 {
 	size_t l = (n < 0) ? 2 : 1;
 
-	n = (n < 0) ? -n : n;
-	for (; n > 10; n /= 10, l++);
+	n = ABS(n);
+	for (; n >= 10; n /= 10, l++);
+	return (l);
+}
+
+size_t uintlen(size_t n)
+{
+	size_t l = 1;
+
+	for (; n >= 10; n /= 10, l++);
 	return (l);
 }

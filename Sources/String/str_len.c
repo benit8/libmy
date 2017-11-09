@@ -8,7 +8,7 @@
 ** Last update Mon Oct 23 09:57:50 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "String.h"
 
 size_t str_len(const char *str)
 {

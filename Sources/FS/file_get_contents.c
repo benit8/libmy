@@ -8,7 +8,7 @@
 ** Last update Mon Oct 23 14:48:25 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "FS.h"
 
 char *file_get_contents(const char *file)
 {
@@ -22,11 +22,14 @@ char *file_get_contents(const char *file)
 	size = lseek(fd, 0, SEEK_CUR);
 	lseek(fd, 0, SEEK_SET);
 	buffer = my_calloc(size + 1, sizeof(char));
-	if (buffer != NULL){
-		if (read(fd, buffer, sizeof(char) * size) != -1)
-			return (buffer);
+	if (buffer == NULL){
+		close(fd);
+		return (NULL);
+	}
+	if (read(fd, buffer, sizeof(char) * size) == -1){
 		my_free(buffer);
+		buffer = NULL;
 	}
 	close(fd);
-	return (NULL);
+	return (buffer);
 }

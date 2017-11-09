@@ -8,7 +8,7 @@
 ** Last update Tue Oct 24 14:51:47 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "Char.h"
 
 bool is_digit(int c)
 {

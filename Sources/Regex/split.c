@@ -8,7 +8,7 @@
 ** Last update Tue Oct 17 15:05:27 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "Regex.h"
 
 char **regex_split(char *pattern, char *subject)
 {

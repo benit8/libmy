@@ -8,7 +8,7 @@
 ** Last update Sat Oct 28 15:04:59 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "String.h"
 
 char *str_toupper(char *str)
 {

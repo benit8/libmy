@@ -8,7 +8,7 @@
 ** Last update Tue Oct 24 15:07:33 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "Char.h"
 
 bool is_space(int c)
 {

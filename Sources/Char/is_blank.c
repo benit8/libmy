@@ -8,7 +8,7 @@
 ** Last update Wed Oct 25 22:57:38 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "Char.h"
 
 bool is_blank(int c)
 {

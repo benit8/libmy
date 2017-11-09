@@ -8,7 +8,7 @@
 ** Last update Mon Oct 23 10:50:38 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "String.h"
 
 char *str_cpy(char *dest, const char *src)
 {
@@ -17,14 +17,14 @@ char *str_cpy(char *dest, const char *src)
 
 char *str_ncpy(char *dest, const char *src, size_t n)
 {
-	char *s = dest;
+	char *d = dest;
 
 	while (n > 0 && *src != '\0'){
-		*s++ = *src++;
+		*d++ = *src++;
 		--n;
 	}
 	while (n > 0){
-		*s++ = '\0';
+		*d++ = '\0';
 		--n;
 	}
 	return (dest);

@@ -11,12 +11,17 @@
 RM	=	rm -rf
 
 SRC	=	Sources
-INCLUDE	=	-IIncludes/
+INCLUDE	=	-IIncludes
 
-CFLAGS	+=	-W -Wall -Wextra -g3
+CFLAGS	+=	-W -Wall -Wextra
 CFLAGS	+=	$(INCLUDE)
 
-SRCS	=	$(SRC)/Char/is_alnum.c			\
+
+# ----------------------------------------------------- #
+#  Modules                                              #
+# ----------------------------------------------------- #
+
+Char	=	$(SRC)/Char/is_alnum.c			\
 		$(SRC)/Char/is_alpha.c			\
 		$(SRC)/Char/is_blank.c			\
 		$(SRC)/Char/is_cntrl.c			\
@@ -29,44 +34,48 @@ SRCS	=	$(SRC)/Char/is_alnum.c			\
 		$(SRC)/Char/is_upper.c			\
 		$(SRC)/Char/is_xdigit.c			\
 		$(SRC)/Char/to_lower.c			\
-		$(SRC)/Char/to_upper.c			\
-		$(SRC)/FS/file.c			\
-		$(SRC)/FS/file_executable.c		\
-		$(SRC)/FS/file_exists.c			\
-		$(SRC)/FS/file_get_contents.c		\
+		$(SRC)/Char/to_upper.c
+
+FS	=	$(SRC)/FS/file_get_contents.c		\
+		$(SRC)/FS/file_get_lines.c		\
+		$(SRC)/FS/file_is.c			\
 		$(SRC)/FS/file_put_contents.c		\
-		$(SRC)/FS/file_readable.c		\
-		$(SRC)/FS/file_writable.c		\
-		$(SRC)/FS/scandir.c			\
+		$(SRC)/FS/scandir.c
+
+IO	=	$(SRC)/IO/dprintf.c			\
 		$(SRC)/IO/gnl.c				\
 		$(SRC)/IO/putchar.c			\
 		$(SRC)/IO/putnbr.c			\
 		$(SRC)/IO/puts.c			\
-		$(SRC)/IO/putstr.c			\
-		$(SRC)/Math/angle.c			\
-		$(SRC)/Math/rand.c			\
-		$(SRC)/Memory/calloc.c			\
+		$(SRC)/IO/putstr.c
+
+Math	=	$(SRC)/Math/angle.c			\
+		$(SRC)/Math/rand.c
+
+Memory	=	$(SRC)/Memory/calloc.c			\
 		$(SRC)/Memory/malloc.c			\
 		$(SRC)/Memory/memcpy.c			\
 		$(SRC)/Memory/memdup.c			\
 		$(SRC)/Memory/memset.c			\
-		$(SRC)/Memory/realloc.c			\
-		$(SRC)/Numeric/abs.c			\
-		$(SRC)/Numeric/atoi.c			\
+		$(SRC)/Memory/realloc.c
+
+Numeric	=	$(SRC)/Numeric/atoi.c			\
 		$(SRC)/Numeric/atou.c			\
 		$(SRC)/Numeric/intlen.c			\
 		$(SRC)/Numeric/itoa.c			\
-		$(SRC)/Numeric/uintlen.c		\
-		$(SRC)/Numeric/utoa.c			\
-		$(SRC)/Regex/capture.c			\
+		$(SRC)/Numeric/utoa.c
+
+Regex	=	$(SRC)/Regex/capture.c			\
 		$(SRC)/Regex/match.c			\
 		$(SRC)/Regex/replace.c			\
-		$(SRC)/Regex/split.c			\
-		$(SRC)/String/explode.c			\
+		$(SRC)/Regex/split.c
+
+String	=	$(SRC)/String/explode.c			\
 		$(SRC)/String/implode.c			\
 		$(SRC)/String/str_apd.c			\
 		$(SRC)/String/str_casecmp.c		\
 		$(SRC)/String/str_cat.c			\
+		$(SRC)/String/str_chr.c			\
 		$(SRC)/String/str_cmp.c			\
 		$(SRC)/String/str_cpy.c			\
 		$(SRC)/String/str_dup.c			\
@@ -81,6 +90,16 @@ SRCS	=	$(SRC)/Char/is_alnum.c			\
 		$(SRC)/String/str_str.c			\
 		$(SRC)/String/str_tolower.c		\
 		$(SRC)/String/str_toupper.c
+
+
+SRCS	=	$(Char)		\
+		$(FS)		\
+		$(IO)		\
+		$(Math)		\
+		$(Memory)	\
+		$(Numeric)	\
+		$(Regex)	\
+		$(String)
 
 OBJS	=	$(SRCS:.c=.o)
 
@@ -100,7 +119,4 @@ fclean: clean
 
 re: fclean all
 
-test:
-	gcc main.c -g3 $(CFLAGS) -L./ -lmy
-
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re

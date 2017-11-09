@@ -8,7 +8,7 @@
 ** Last update Tue Oct 17 14:41:55 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "Regex.h"
 
 char *regex_replace(const char *pattern, const char *replacement, char *subject)
 {

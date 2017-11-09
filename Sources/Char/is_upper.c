@@ -8,7 +8,7 @@
 ** Last update Tue Oct 24 14:50:36 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "Char.h"
 
 bool is_upper(int c)
 {

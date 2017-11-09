@@ -8,7 +8,7 @@
 ** Last update Wed Oct 25 11:29:13 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "String.h"
 
 char *str_apd(char *dest, const char *src)
 {

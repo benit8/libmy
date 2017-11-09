@@ -8,7 +8,7 @@
 ** Last update Mon Oct 23 10:54:49 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "String.h"
 
 char *str_cat(char *dest, const char *src)
 {

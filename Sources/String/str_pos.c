@@ -8,27 +8,11 @@
 ** Last update Wed Oct 25 22:53:41 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "String.h"
 
-size_t str_pos(char *string, const char *search)
+ssize_t str_pos(char *string, const char *search)
 {
-	char *s = string;
-	register char *a;
-	register const char *b = search;
+	char *p = str_str(string, search);
 
-	if (str_empty(string) || str_empty(search))
-		return ((size_t)(-1));
-	for (; *s != '\0'; s++){
-		if (*s != *b)
-			continue;
-		a = s;
-		while (1){
-			if (*b == '\0')
-				return (s - string);
-			if (*a++ != *b++)
-				break;
-		}
-		b = search;
-	}
-	return ((size_t)(-1));
+	return (p ? p - string : -1);
 }

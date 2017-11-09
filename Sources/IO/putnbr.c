@@ -1,5 +1,5 @@
 /*
-** my_putnbr.c for libmy in /mnt/data/Delivery/Perso/libmy/puts
+** my_putnbr.c for libmy in /mnt/data/Delivery/Perso/libmy/Sources/IO
 **
 ** Made by Benoit Lormeau
 ** Login   <benoit.lormeau@epitech.eu>
@@ -8,7 +8,7 @@
 ** Last update Mon Oct 23 09:56:54 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "IO.h"
 
 void my_putnbr(int nb)
 {

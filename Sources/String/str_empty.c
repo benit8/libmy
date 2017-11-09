@@ -8,7 +8,7 @@
 ** Last update Wed Oct 25 22:55:49 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "String.h"
 
 bool	str_empty(const char *string)
 {

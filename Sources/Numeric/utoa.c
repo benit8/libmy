@@ -8,7 +8,7 @@
 ** Last update Wed Oct 25 10:30:02 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "Numeric.h"
 
 char *my_utoa(size_t n)
 {

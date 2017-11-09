@@ -8,8 +8,7 @@
 ** Last update Tue Oct 24 09:34:45 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
-#include <string.h>
+#include "String.h"
 
 char **explode(const char *delim, char *original)
 {

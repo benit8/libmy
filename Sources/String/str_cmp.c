@@ -8,7 +8,7 @@
 ** Last update Mon Oct 23 10:55:33 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "String.h"
 
 int str_cmp(const char *s1, const char *s2)
 {
@@ -20,8 +20,6 @@ int str_cmp(const char *s1, const char *s2)
 
 int str_ncmp(const char *s1, const char *s2, size_t n)
 {
-	if (!n)
-		return (0);
 	while (n--){
 		if (*s1++ != *s2++)
 			return (*s1 - *s2);

@@ -8,7 +8,7 @@
 ** Last update Wed Oct 25 10:50:54 2017 Benoit Lormeau
 */
 
-#include "libmy.h"
+#include "String.h"
 
 char *implode(const char *glue, char **array)
 {
