@@ -12,20 +12,9 @@
 
 char *str_apd(char *dest, const char *src)
 {
-	register char *d = dest;
-	register const char *s = src;
-	size_t dstSiz = my_malloc_size(dest) - 1;
-	size_t dstLen = str_len(dest);
-	size_t srcLen = str_len(src);
+	size_t n = str_len(src);
 
-	if (dstSiz - dstLen < srcLen)
-		dest = my_realloc(dest, dstLen + srcLen + 1);
-	d = dest;
-	for (; *d != '\0'; d++);
-	while (*s != '\0')
-		*d++ = *s++;
-	*d = '\0';
-	return (dest);
+	return (str_napd(dest, src, n));
 }
 
 char *str_napd(char *dest, const char *src, size_t n)
@@ -38,12 +27,12 @@ char *str_napd(char *dest, const char *src, size_t n)
 
 	if (!n)
 		return (dest);
-	n = (n > srcLen) ? srcLen : n;
+	n = MIN(n, srcLen);
 	if (dstSiz - dstLen < n)
 		dest = my_realloc(dest, dstLen + n + 1);
 	d = dest;
-	for (; *d != '\0'; d++);
-	while (*s != '\0' && n-- > 0)
+	for (; *d; d++);
+	while (*s && n-- > 0)
 		*d++ = *s++;
 	*d = '\0';
 	return (dest);

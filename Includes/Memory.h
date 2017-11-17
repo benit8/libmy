@@ -22,4 +22,5 @@ size_t	 my_malloc_size(const void *ptr);
 
 void	*my_memcpy(void *dest, const void *src, size_t len);
 void	*my_memdup(const void *src, size_t size);
+void	*my_memmove(void *dest, const void *src, size_t n);
 void	*my_memset(void *dest, uint8_t c, size_t n);

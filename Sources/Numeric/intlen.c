@@ -14,8 +14,7 @@ size_t intlen(ssize_t n)
 {
 	size_t l = (n < 0) ? 2 : 1;
 
-	n = ABS(n);
-	for (; n >= 10; n /= 10, l++);
+	for (; n <= -10 || n >= 10; n /= 10, l++);
 	return (l);
 }
 

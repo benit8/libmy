@@ -5,7 +5,7 @@
 ** Login   <benoit.lormeau@epitech.eu>
 **
 ** Started on  Thu Nov 9 13:52:54 2017 Benoit Lormeau
-** Last update Thu Nov 9 13:52:54 2017 Benoit Lormeau
+** Last update Tue Nov 14 11:54:54 2017 Benoit Lormeau
 */
 
 #pragma once
@@ -17,6 +17,9 @@
 
 #include "Numeric.h"
 #include "String.h"
+
+#define PRTF_CHARS	"-+~.*0123456789bcdefghilopsuxX%"
+#define PRTF_OPT_DEF	(printfOpt_t){PRTF_RIGHT, 0, 0, 0, 10, 0, 0, 0}
 
 typedef enum
 {
@@ -50,3 +53,11 @@ int	my_printf(const char *format, ...);
 int	my_vprintf(const char *format, va_list ap);
 int	my_dprintf(int fd, const char *format, ...);
 int	my_vdprintf(int fd, const char *format, va_list ap);
+int	my_sprintf(char *buff, const char *format, ...);
+int	my_snprintf(char *buff, size_t max, const char *format, ...);
+int	my_vsnprintf(char *buff, size_t max, const char *format, va_list ap);
+int	my_vsprintf(char *buff, const char *format, va_list ap);
+int	my_asprintf(char **strp, const char *format, ...);
+int	my_vasprintf(char **strp, const char *format, va_list ap);
+
+bool	printf_process(const char **fmtp, char **buffp, va_list ap);

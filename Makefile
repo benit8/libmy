@@ -5,7 +5,7 @@
 ## Login   <benoit.lormeau@epitech.eu>
 ##
 ## Started on  Mon Oct 23 10:11:27 2017 Benoit Lormeau
-## Last update Mon Oct 23 10:11:27 2017 Benoit Lormeau
+## Last update Tue Nov 14 11:49:06 2017 Benoit Lormeau
 ##
 
 RM	=	rm -rf
@@ -13,7 +13,7 @@ RM	=	rm -rf
 SRC	=	Sources
 INCLUDE	=	-IIncludes
 
-CFLAGS	+=	-W -Wall -Wextra
+CFLAGS	+=	-W -Wall -Wextra -g3
 CFLAGS	+=	$(INCLUDE)
 
 
@@ -42,7 +42,11 @@ FS	=	$(SRC)/FS/file_get_contents.c		\
 		$(SRC)/FS/file_put_contents.c		\
 		$(SRC)/FS/scandir.c
 
-IO	=	$(SRC)/IO/dprintf.c			\
+IO	=	$(SRC)/IO/printf/asprintf.c		\
+		$(SRC)/IO/printf/dprintf.c		\
+		$(SRC)/IO/printf/printf.c		\
+		$(SRC)/IO/printf/sprintf.c		\
+		$(SRC)/IO/printf/printf_internal.c	\
 		$(SRC)/IO/gnl.c				\
 		$(SRC)/IO/putchar.c			\
 		$(SRC)/IO/putnbr.c			\
@@ -50,17 +54,23 @@ IO	=	$(SRC)/IO/dprintf.c			\
 		$(SRC)/IO/putstr.c
 
 Math	=	$(SRC)/Math/angle.c			\
-		$(SRC)/Math/rand.c
+		$(SRC)/Math/ceil.c			\
+		$(SRC)/Math/floor.c			\
+		$(SRC)/Math/pow.c			\
+		$(SRC)/Math/rand.c			\
+		$(SRC)/Math/round.c
 
 Memory	=	$(SRC)/Memory/calloc.c			\
 		$(SRC)/Memory/malloc.c			\
 		$(SRC)/Memory/memcpy.c			\
 		$(SRC)/Memory/memdup.c			\
+		$(SRC)/Memory/memmove.c			\
 		$(SRC)/Memory/memset.c			\
 		$(SRC)/Memory/realloc.c
 
 Numeric	=	$(SRC)/Numeric/atoi.c			\
 		$(SRC)/Numeric/atou.c			\
+		$(SRC)/Numeric/dtoa.c			\
 		$(SRC)/Numeric/intlen.c			\
 		$(SRC)/Numeric/itoa.c			\
 		$(SRC)/Numeric/utoa.c
@@ -83,6 +93,7 @@ String	=	$(SRC)/String/explode.c			\
 		$(SRC)/String/str_len.c			\
 		$(SRC)/String/str_pad.c			\
 		$(SRC)/String/str_pos.c			\
+		$(SRC)/String/str_ppd.c			\
 		$(SRC)/String/str_repeat.c		\
 		$(SRC)/String/str_replace.c		\
 		$(SRC)/String/str_rev.c			\
