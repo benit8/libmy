@@ -18,30 +18,6 @@
 #include "Numeric.h"
 #include "String.h"
 
-#define PRTF_CHARS	"-+~.*0123456789bcdefghilopsuxX%"
-#define PRTF_OPT_DEF	(printfOpt_t){PRTF_RIGHT, 0, 0, 0, 10, 0, 0, 0}
-
-typedef enum
-{
-  PRTF_RIGHT,
-  PRTF_LEFT,
-  PRTF_CENTER,
-  PRTF_RIGHT0
-}	printfAlign;
-
-typedef struct	printfOpt
-{
-  printfAlign	align;
-  bool		prec;
-  int		precLen;
-  int		padSize;
-  int		base;
-  bool		sign;
-  bool		unsign;
-  bool		longlong;
-}		printfOpt_t;
-
-
 char	*gnl(const int fd);
 
 void	my_putchar(char c);
@@ -59,5 +35,3 @@ int	my_vsnprintf(char *buff, size_t max, const char *format, va_list ap);
 int	my_vsprintf(char *buff, const char *format, va_list ap);
 int	my_asprintf(char **strp, const char *format, ...);
 int	my_vasprintf(char **strp, const char *format, va_list ap);
-
-bool	printf_process(const char **fmtp, char **buffp, va_list ap);

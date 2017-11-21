@@ -46,7 +46,9 @@ IO	=	$(SRC)/IO/printf/asprintf.c		\
 		$(SRC)/IO/printf/dprintf.c		\
 		$(SRC)/IO/printf/printf.c		\
 		$(SRC)/IO/printf/sprintf.c		\
-		$(SRC)/IO/printf/printf_internal.c	\
+		$(SRC)/IO/printf/printf_opt.c		\
+		$(SRC)/IO/printf/printf_print.c		\
+		$(SRC)/IO/printf/printf_process.c	\
 		$(SRC)/IO/gnl.c				\
 		$(SRC)/IO/putchar.c			\
 		$(SRC)/IO/putnbr.c			\

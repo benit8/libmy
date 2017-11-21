@@ -9,6 +9,7 @@
 */
 
 #include "IO.h"
+#include "printf.h"
 
 int my_asprintf(char **strp, const char *format, ...)
 {

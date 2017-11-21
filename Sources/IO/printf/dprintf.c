@@ -9,6 +9,7 @@
 */
 
 #include "IO.h"
+#include "printf.h"
 
 int my_dprintf(int fd, const char *format, ...)
 {
