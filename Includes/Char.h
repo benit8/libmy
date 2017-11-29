@@ -8,7 +8,8 @@
 ** Last update Thu Nov 9 13:51:12 2017 Benoit Lormeau
 */
 
-#pragma once
+#ifndef LIBMY_CHAR_H
+# define LIBMY_CHAR_H
 
 #include <stdbool.h>
 
@@ -27,3 +28,5 @@ bool	is_xdigit(int c);
 
 int	to_lower(int c);
 int	to_upper(int c);
+
+#endif // LIBMY_CHAR_H

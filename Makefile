@@ -105,14 +105,18 @@ String	=	$(SRC)/String/explode.c			\
 		$(SRC)/String/str_toupper.c
 
 
-SRCS	=	$(Char)		\
-		$(FS)		\
-		$(IO)		\
-		$(Math)		\
-		$(Memory)	\
-		$(Numeric)	\
-		$(Regex)	\
-		$(String)
+## Comment a line if you don't want a module.
+## Careful about dependencies though
+
+SRCS	+=	$(Char)
+SRCS	+=	$(FS)
+SRCS	+=	$(IO)
+SRCS	+=	$(Math)
+SRCS	+=	$(Memory)
+SRCS	+=	$(Numeric)
+SRCS	+=	$(Regex)
+SRCS	+=	$(String)
+
 
 OBJS	=	$(SRCS:.c=.o)
 

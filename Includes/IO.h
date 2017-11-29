@@ -8,7 +8,8 @@
 ** Last update Tue Nov 14 11:54:54 2017 Benoit Lormeau
 */
 
-#pragma once
+#ifndef LIBMY_IO_H
+# define LIBMY_IO_H
 
 #include <stdarg.h>
 #include <stdbool.h>
@@ -35,3 +36,5 @@ int	my_vsnprintf(char *buff, size_t max, const char *format, va_list ap);
 int	my_vsprintf(char *buff, const char *format, va_list ap);
 int	my_asprintf(char **strp, const char *format, ...);
 int	my_vasprintf(char **strp, const char *format, va_list ap);
+
+#endif // LIBMY_IO_H

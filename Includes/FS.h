@@ -8,7 +8,8 @@
 ** Last update Thu Nov 9 13:52:14 2017 Benoit Lormeau
 */
 
-#pragma once
+#ifndef LIBMY_FS_H
+# define LIBMY_FS_H
 
 #include <dirent.h>
 #include <fcntl.h>
@@ -32,3 +33,5 @@ bool	  file_is(const char *filepath, const char *mask);
 char	 *file_get_contents(const char *filepath);
 char	**file_get_lines(const char *filepath);
 bool	  file_put_contents(const char *filepath, char *contents);
+
+#endif // LIBMY_FS_H

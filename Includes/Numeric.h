@@ -8,7 +8,8 @@
 ** Last update Mon Nov 13 10:44:46 2017 Benoit Lormeau
 */
 
-#pragma once
+#ifndef LIBMY_NUMERIC_H
+# define LIBMY_NUMERIC_H
 
 #include <stdlib.h>
 
@@ -24,3 +25,5 @@ size_t	 my_atou(const char *str);
 char	*my_itoa(ssize_t n, uint8_t base);
 char	*my_utoa(size_t n, uint8_t base);
 char	*my_dtoa(double d, int prec);
+
+#endif // LIBMY_NUMERIC_H

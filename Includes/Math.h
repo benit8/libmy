@@ -8,7 +8,8 @@
 ** Last update Mon Nov 13 14:38:28 2017 Benoit Lormeau
 */
 
-#pragma once
+#ifndef LIBMY_MATH_H
+# define LIBMY_MATH_H
 
 #include <stdbool.h>
 #include <stdlib.h>
@@ -49,7 +50,7 @@ int	irand(int a, int b);
 float	frand(float a, float b);
 double	drand(double a, double b);
 
-double	my_pow(double n, int power);
+double	my_pow(double n, int exp);
 
 double	my_floor(double n);
 double	my_floorp(double n, int prec);
@@ -59,3 +60,5 @@ double	my_roundp(double n, int prec);
 
 double	my_ceil(double n);
 double	my_ceilp(double n, int prec);
+
+#endif // LIBMY_MATH_H

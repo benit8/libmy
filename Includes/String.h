@@ -8,7 +8,8 @@
 ** Last update Thu Nov 9 14:08:22 2017 Benoit Lormeau
 */
 
-#pragma once
+#ifndef LIBMY_STRING_H
+# define LIBMY_STRING_H
 
 #include <stdbool.h>
 #include <stdlib.h>
@@ -49,3 +50,5 @@ char	 *str_sep(char **stringp, const char *delim);
 char	 *str_str(char *string, const char *search);
 char	 *str_tolower(char *string);
 char	 *str_toupper(char *string);
+
+#endif // LIBMY_STRING_H
