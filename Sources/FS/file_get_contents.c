@@ -12,14 +12,13 @@
 
 char *file_get_contents(const char *file)
 {
+	size_t size = 0;
 	char *buffer = NULL;
 	int fd = open(file, O_RDONLY);
-	size_t size = 0;
 
 	if (fd == -1)
 		return (NULL);
-	lseek(fd, 0, SEEK_END);
-	size = lseek(fd, 0, SEEK_CUR);
+	size = lseek(fd, 0, SEEK_END);
 	lseek(fd, 0, SEEK_SET);
 	buffer = my_calloc(size + 1, sizeof(char));
 	if (buffer == NULL){

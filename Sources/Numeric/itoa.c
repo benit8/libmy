@@ -17,7 +17,7 @@ char *my_itoa(ssize_t n, uint8_t base)
 	char *res;
 	size_t i = 0;
 
-	if (!INRANGE(base, 2, 16))
+	if (!IN_RANGE(base, 2, 16))
 		return (NULL);
 	res = my_calloc(65, sizeof(char));
 	for (i = 0; n != 0 || i < 1; ++i, n /= base)

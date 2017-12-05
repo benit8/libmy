@@ -12,7 +12,7 @@
 
 void *my_memdup(const void *src, size_t size)
 {
-	void *mem = my_calloc(1, size);
+	void *mem = my_calloc(size, 1);
 
 	if (mem != NULL)
 		my_memcpy(mem, src, size);

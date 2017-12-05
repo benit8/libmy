@@ -16,7 +16,7 @@ char *my_utoa(size_t n, uint8_t base)
 	size_t i = 0;
 	char *res;
 
-	if (!INRANGE(base, 2, 16))
+	if (!IN_RANGE(base, 2, 16))
 		return (NULL);
 	res = my_calloc(65, sizeof(char));
 	for (i = 0; n > 0 || i < 1; ++i, n /= base)

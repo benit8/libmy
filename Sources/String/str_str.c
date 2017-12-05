@@ -12,14 +12,38 @@
 
 char *str_str(char *string, const char *search)
 {
-	register char *a;
-	register const char *b = search;
+	char *a;
+	const char *b = search;
 
 	if (*b == '\0')
 		return (string);
 	for (; *string != '\0'; string++){
 		if (*string != *search)
 			continue;
+		a = string;
+		for (;; ++a, ++b){
+			if (*b == '\0')
+				return (string);
+			if (*a != *b)
+				break;
+		}
+		b = search;
+	}
+	return (NULL);
+}
+
+char *str_nstr(char *string, const char *search, size_t n)
+{
+	char *a;
+	const char *b = search;
+
+	if (*b == '\0')
+		return (string);
+	for (; *string != '\0' && n--; string++){
+		if (*string != *search)
+			continue;
+		if (n < str_len(search))
+			break;
 		a = string;
 		for (;; ++a, ++b){
 			if (*b == '\0')

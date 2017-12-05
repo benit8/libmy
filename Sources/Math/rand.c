@@ -10,30 +10,36 @@
 
 #include "Math.h"
 
+static size_t next = 1;
+
 static void rand_init(void)
 {
-	static bool init;
+	static bool init = false;
 
 	if (init == true)
 		return;
-	srand(time(NULL));
+	my_srand(time(NULL));
 	init = true;
+}
+
+void my_srand(unsigned int seed)
+{
+	next = seed;
+}
+
+int my_rand(void)
+{
+	rand_init();
+	next = next * 1103515245 + 12345;
+	return (next / UINT_MAX) % INT_MAX;
 }
 
 int irand(int a, int b)
 {
-	rand_init();
-	return (rand() % (b - a) + a);
+	return (my_rand() % (b - a) + a);
 }
 
-float frand(float a, float b)
+double frand(double a, double b)
 {
-	rand_init();
-	return ((rand() / (float)RAND_MAX) * (b - a) + a);
-}
-
-double drand(double a, double b)
-{
-	rand_init();
-	return ((rand() / (double)RAND_MAX) * (b - a) + a);
+	return ((my_rand() / (double)RAND_MAX) * (b - a) + a);
 }

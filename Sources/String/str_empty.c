@@ -10,9 +10,9 @@
 
 #include "String.h"
 
-bool	str_empty(const char *string)
+bool str_empty(const char *string)
 {
-	register const char *s = string;
+	const char *s = string;
 
 	if (s == NULL)
 		return (true);

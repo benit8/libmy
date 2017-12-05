@@ -12,8 +12,8 @@
 
 char *str_cat(char *dest, const char *src)
 {
-	register char *d = dest;
-	register const char *s = src;
+	char *d = dest;
+	const char *s = src;
 
 	for (; *d != '\0'; d++);
 	while (*s != '\0')
@@ -24,8 +24,8 @@ char *str_cat(char *dest, const char *src)
 
 char *str_ncat(char *dest, const char *src, size_t n)
 {
-	register char *d = dest;
-	register const char *s = src;
+	char *d = dest;
+	const char *s = src;
 
 	if (!n)
 		return (dest);

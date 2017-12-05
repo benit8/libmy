@@ -8,10 +8,10 @@
 ** Last update Tue Oct 24 11:29:18 2017 Benoit Lormeau
 */
 
-#ifndef LIBMY_H
-# define LIBMY_H
+#pragma once
 
 #include "Char.h"
+#include "DSA.h"
 #include "FS.h"
 #include "IO.h"
 #include "Math.h"
@@ -19,5 +19,3 @@
 #include "Numeric.h"
 #include "Regex.h"
 #include "String.h"
-
-#endif // LIBMY_H

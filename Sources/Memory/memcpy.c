@@ -12,8 +12,8 @@
 
 void *my_memcpy(void *dest, const void *src, size_t len)
 {
-	register uint8_t *d;
-	register const uint8_t *s;
+	uint8_t *d;
+	const uint8_t *s;
 
 	d = dest;
 	s = src;

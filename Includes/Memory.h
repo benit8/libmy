@@ -8,8 +8,7 @@
 ** Last update Thu Nov 9 14:05:48 2017 Benoit Lormeau
 */
 
-#ifndef LIBMY_MEMORY_H
-# define LIBMY_MEMORY_H
+#pragma once
 
 #include <stdint.h>
 #include <stdlib.h>
@@ -25,5 +24,3 @@ void	*my_memcpy(void *dest, const void *src, size_t len);
 void	*my_memdup(const void *src, size_t size);
 void	*my_memmove(void *dest, const void *src, size_t n);
 void	*my_memset(void *dest, uint8_t c, size_t n);
-
-#endif // LIBMY_MEMORY_H

@@ -19,6 +19,15 @@ char *str_chr(const char *string, char search)
 	return (NULL);
 }
 
+char *str_nchr(const char *string, char search, size_t n)
+{
+	for (; *string && n--; ++string){
+		if (*string == search)
+			return ((char *)string);
+	}
+	return (NULL);
+}
+
 char *str_rchr(const char *string, char search)
 {
 	const char *s = string;

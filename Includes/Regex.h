@@ -8,8 +8,7 @@
 ** Last update Thu Nov 9 14:07:36 2017 Benoit Lormeau
 */
 
-#ifndef LIBMY_REGEX_H
-# define LIBMY_REGEX_H
+#pragma once
 
 #include <regex.h>
 #include <stdlib.h>
@@ -21,5 +20,3 @@ int	  regex_match(const char *pattern, char *subject);
 char	 *regex_replace(const char *pattern, const char *replace, char *subject);
 char	**regex_capture(const char *pattern, char *subject);
 char	**regex_split(char *pattern, char *subject);
-
-#endif // LIBMY_REGEX_H

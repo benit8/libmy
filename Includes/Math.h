@@ -8,47 +8,52 @@
 ** Last update Mon Nov 13 14:38:28 2017 Benoit Lormeau
 */
 
-#ifndef LIBMY_MATH_H
-# define LIBMY_MATH_H
+#pragma once
 
+#include <limits.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <time.h>
 
-#ifndef PI
-# define PI	(3.14159265358979323846f)
-#endif
+////////////////////////////////////////////////////////////////////////////////
+
+#define PI	(3.14159265358979323846f)
+
+////////////////////////////////////////////////////////////////////////////////
 
 #ifndef ABS
-# define ABS(a)		(((a) < 0) ? -(a) : (a))
+	#define ABS(a)		(((a) < 0) ? -(a) : (a))
 #endif
 
 #ifndef MIN
-# define MIN(a,b)	(((a) < (b)) ? (a) : (b))
+	#define MIN(a,b)	(((a) < (b)) ? (a) : (b))
 #endif
 
 #ifndef MAX
-# define MAX(a,b)	(((a) > (b)) ? (a) : (b))
+	#define MAX(a,b)	(((a) > (b)) ? (a) : (b))
 #endif
 
 #ifndef CONSTRAIN
-# define CONSTRAIN(v,a,b)	((v) < (a) ? (a) : ((v) > (b) ? (b) : (v)))
+	#define CONSTRAIN(v,a,b)	(MAX(a, MIN(v, b)))
 #endif
 
-#ifndef INRANGE
-# define INRANGE(n,a,b)	((n) >= (a) && (n) <= (b))
+#ifndef IN_RANGE
+	#define IN_RANGE(n,a,b)	((n) >= (a) && (n) <= (b))
 #endif
 
 #ifndef MAP
-# define MAP(v,a,b,c,d)	((((v) - (a)) / ((b) - (a))) * ((d) - (c)) + (c))
+	#define MAP(v,a,b,c,d)	((((v) - (a)) / ((b) - (a))) * ((d) - (c)) + (c))
 #endif
+
+////////////////////////////////////////////////////////////////////////////////
 
 double	radians(double degrees);
 double	degrees(double radians);
 
+void	my_srand(unsigned int seed);
+int	rand(void);
 int	irand(int a, int b);
-float	frand(float a, float b);
-double	drand(double a, double b);
+double	frand(double a, double b);
 
 double	my_pow(double n, int exp);
 
@@ -60,5 +65,3 @@ double	my_roundp(double n, int prec);
 
 double	my_ceil(double n);
 double	my_ceilp(double n, int prec);
-
-#endif // LIBMY_MATH_H

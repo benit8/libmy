@@ -12,14 +12,12 @@
 
 void *my_memmove(void *dest, const void *src, size_t n)
 {
-	char *cpy = my_memdup(src, n);
-	register char *d = dest;
-	register char *c = cpy;
+	uint8_t cpy[n];
+	uint8_t *d = dest;
+	uint8_t *c = cpy;
 
-	if (!cpy)
-		return (NULL);
+	my_memcpy(cpy, src, n);
 	while (n--)
 		*d++ = *c++;
-	my_free(cpy);
 	return (dest);
 }

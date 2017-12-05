@@ -12,7 +12,7 @@
 
 size_t str_len(const char *str)
 {
-	register const char *s = str;
+	const char *s = str;
 
 	for (; *s != 0; s++);
 	return (s - str);
@@ -20,7 +20,7 @@ size_t str_len(const char *str)
 
 size_t str_nlen(const char *str, size_t max)
 {
-	register const char *s = str;
+	const char *s = str;
 
 	for (; *s != 0 && (size_t)(s - str) <= max; s++);
 	return (s - str);

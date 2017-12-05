@@ -19,8 +19,8 @@ char *str_apd(char *dest, const char *src)
 
 char *str_napd(char *dest, const char *src, size_t n)
 {
-	register char *d = dest;
-	register const char *s = src;
+	char *d = dest;
+	const char *s = src;
 	size_t dstSiz = my_malloc_size(dest) - 1;
 	size_t dstLen = str_len(dest);
 	size_t srcLen = str_len(src);
