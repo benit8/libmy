@@ -1,0 +1,19 @@
+WIDTH = 800
+HEIGHT = 700
+scale = 3.125
+
+[dog]
+	texture		=	Assets/textures/all.png
+	rect		=	0,0,53,42
+
+	[animations]
+		walk[]	=	69,20,53,42
+		walk[]	=	126,20,53,42
+		walk[]	=	180,19,53,42
+		walk[]	=	236,19,53,42
+	[/animations]
+
+	position	=	0,calc(var(HEIGHT) - 160)
+	scale		=	var(scale),var(scale)
+	anchor		=	0,1
+[/dog]
