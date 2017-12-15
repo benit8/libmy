@@ -1,5 +1,5 @@
 /*
-** hasKey.c for Libmy in /mnt/data/Delivery/Perso/Libmy/Sources/dsa/Table
+** tests.c for Libmy in /mnt/data/Delivery/Perso/Libmy/Sources/dsa/Table
 **
 ** Made by Benoit Lormeau
 ** Login   <benoit.lormeau@epitech.eu>
@@ -9,6 +9,11 @@
 */
 
 #include "dsa/table.h"
+
+bool table_is_empty(table_t *table)
+{
+	return (table != NULL && table->head == NULL);
+}
 
 bool table_has_key(table_t *table, const char *key)
 {

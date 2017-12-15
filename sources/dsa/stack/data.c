@@ -1,5 +1,5 @@
 /*
-** push.c for Libmy in /mnt/data/Delivery/Perso/Libmy/Sources/dsa/Stack
+** data.c for Libmy in /mnt/data/Delivery/Perso/Libmy/Sources/dsa/Stack
 **
 ** Made by Benoit Lormeau
 ** Login   <benoit.lormeau@epitech.eu>
@@ -23,4 +23,25 @@ bool stack_push(stack_t *stack, void *data)
 	new->next = stack->head;
 	stack->head = new;
 	return (true);
+}
+
+void *stack_pop(stack_t *stack)
+{
+	stack_node_t *first;
+	void *data;
+
+	if (!stack || !stack->head)
+		return (NULL);
+	first = stack->head;
+	stack->head = stack->head->next;
+	data = first->data;
+	my_free(first);
+	return (data);
+}
+
+void *stack_peek(stack_t *stack)
+{
+	if (!stack || !stack->head)
+		return (NULL);
+	return (stack->head->data);
 }

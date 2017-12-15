@@ -1,5 +1,5 @@
 /*
-** getSize.c for Libmy in /mnt/data/Delivery/Perso/Libmy/Sources/dsa/Stack
+** get.c for Libmy in /mnt/data/Delivery/Perso/Libmy/Sources/dsa/Stack
 **
 ** Made by Benoit Lormeau
 ** Login   <benoit.lormeau@epitech.eu>

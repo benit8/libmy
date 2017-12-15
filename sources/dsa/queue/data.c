@@ -1,5 +1,5 @@
 /*
-** push.c for Libmy in /mnt/data/Delivery/Perso/Libmy/Sources/dsa/Queue
+** data.c for Libmy in /mnt/data/Delivery/Perso/Libmy/Sources/dsa/Queue
 **
 ** Made by Benoit Lormeau
 ** Login   <benoit.lormeau@epitech.eu>
@@ -29,4 +29,25 @@ bool queue_push(queue_t *queue, void *data)
 		last->next = new;
 	}
 	return (true);
+}
+
+void *queue_pop(queue_t *queue)
+{
+	queue_node_t *first;
+	void *data;
+
+	if (!queue || !queue->head)
+		return (NULL);
+	first = queue->head;
+	queue->head = queue->head->next;
+	data = first->data;
+	my_free(first);
+	return (data);
+}
+
+void *queue_peek(queue_t *queue)
+{
+	if (!queue || !queue->head)
+		return (NULL);
+	return (queue->head->data);
 }

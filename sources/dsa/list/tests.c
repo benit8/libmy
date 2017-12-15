@@ -1,5 +1,5 @@
 /*
-** isEmpty.c for Libmy in /mnt/data/Delivery/Perso/Libmy/Sources/dsa/list
+** tests.c for Libmy in /mnt/data/Delivery/Perso/Libmy/Sources/dsa/list
 **
 ** Made by Benoit Lormeau
 ** Login   <benoit.lormeau@epitech.eu>

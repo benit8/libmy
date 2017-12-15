@@ -70,27 +70,27 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #ifndef ABS
-	#define ABS(a)		(((a) < 0) ? -(a) : (a))
+	#define ABS(a)			(((a) < 0) ? -(a) : (a))
 #endif
 
 #ifndef MIN
-	#define MIN(a,b)	(((a) < (b)) ? (a) : (b))
+	#define MIN(a, b)		(((a) < (b)) ? (a) : (b))
 #endif
 
 #ifndef MAX
-	#define MAX(a,b)	(((a) > (b)) ? (a) : (b))
+	#define MAX(a, b)		(((a) > (b)) ? (a) : (b))
 #endif
 
 #ifndef CONSTRAIN
-	#define CONSTRAIN(v,a,b)	(MAX(a, MIN(v, b)))
+	#define CONSTRAIN(v, a, b)	(MAX(a, MIN(v, b)))
 #endif
 
 #ifndef IN_RANGE
-	#define IN_RANGE(n,a,b)	((n) >= (a) && (n) <= (b))
+	#define IN_RANGE(n, a, b)	((n) >= (a) && (n) <= (b))
 #endif
 
 #ifndef MAP
-	#define MAP(v,a,b,c,d)	((((v) - (a)) / ((b) - (a))) * ((d) - (c)) + (c))
+	#define MAP(v,a,b,c,d)		(((v - a) / (b - a)) * (d - c) + c)
 #endif
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -102,7 +102,7 @@ typedef union
 	int32_t		i;
 }		ufi_t;
 
-struct i2_s
+struct	i2_s
 {
 	int32_t	i0;
 	int32_t	i1;
@@ -115,12 +115,18 @@ typedef union
 	struct i2_s	s;
 }		udi_t;
 
-struct ieee_double
+struct	ieee_double
 {
 	uint32_t	dbl_mantissa2;
 	uint32_t	dbl_mantissa1:20;
 	uint32_t	dbl_exp:11;
 	uint32_t	dbl_sign:1;
+};
+
+union	frexp_u
+{
+	double v;
+	struct ieee_double s;
 };
 
 ////////////////////////////////////////////////////////////////////////////////

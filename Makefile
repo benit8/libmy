@@ -13,9 +13,9 @@ RM	=	rm -rf
 SRC	=	sources
 INCLUDE	=	-Iincludes
 
+CFLAGS	+=	$(INCLUDE)
 CFLAGS	+=	-W -Wall -Wextra
 CFLAGS	+=	-g3
-CFLAGS	+=	$(INCLUDE)
 
 
 # ----------------------------------------------------- #
@@ -37,42 +37,23 @@ Char	=	$(SRC)/char/is_alnum.c			\
 		$(SRC)/char/to_lower.c			\
 		$(SRC)/char/to_upper.c
 
-DSA	=	$(SRC)/dsa/list/clear.c			\
-		$(SRC)/dsa/list/create.c		\
-		$(SRC)/dsa/list/destroy.c		\
-		$(SRC)/dsa/list/get_size.c		\
-		$(SRC)/dsa/list/is_empty.c		\
-		$(SRC)/dsa/list/pop.c			\
-		$(SRC)/dsa/list/push.c			\
-		$(SRC)/dsa/list/shift.c			\
-		$(SRC)/dsa/list/unshift.c		\
-		$(SRC)/dsa/stack/clear.c		\
-		$(SRC)/dsa/stack/create.c		\
-		$(SRC)/dsa/stack/destroy.c		\
-		$(SRC)/dsa/stack/get_size.c		\
-		$(SRC)/dsa/stack/is_empty.c		\
-		$(SRC)/dsa/stack/peek.c			\
-		$(SRC)/dsa/stack/pop.c			\
-		$(SRC)/dsa/stack/push.c			\
-		$(SRC)/dsa/queue/clear.c		\
-		$(SRC)/dsa/queue/create.c		\
-		$(SRC)/dsa/queue/destroy.c		\
-		$(SRC)/dsa/queue/get_size.c		\
-		$(SRC)/dsa/queue/is_empty.c		\
-		$(SRC)/dsa/queue/peek.c			\
-		$(SRC)/dsa/queue/pop.c			\
-		$(SRC)/dsa/queue/push.c			\
-		$(SRC)/dsa/table/clear.c		\
-		$(SRC)/dsa/table/create.c		\
-		$(SRC)/dsa/table/destroy.c		\
+DSA	=	$(SRC)/dsa/list/data.c			\
+		$(SRC)/dsa/list/get.c			\
+		$(SRC)/dsa/list/list.c			\
+		$(SRC)/dsa/list/tests.c			\
+		$(SRC)/dsa/queue/data.c			\
+		$(SRC)/dsa/queue/get.c			\
+		$(SRC)/dsa/queue/queue.c		\
+		$(SRC)/dsa/queue/tests.c		\
+		$(SRC)/dsa/stack/data.c			\
+		$(SRC)/dsa/stack/get.c			\
+		$(SRC)/dsa/stack/stack.c		\
+		$(SRC)/dsa/stack/tests.c		\
 		$(SRC)/dsa/table/foreach.c		\
 		$(SRC)/dsa/table/get.c			\
-		$(SRC)/dsa/table/get_keys.c		\
-		$(SRC)/dsa/table/get_size.c		\
-		$(SRC)/dsa/table/has_key.c		\
-		$(SRC)/dsa/table/is_empty.c		\
-		$(SRC)/dsa/table/put.c			\
-		$(SRC)/dsa/table/remove.c		\
+		$(SRC)/dsa/table/set.c			\
+		$(SRC)/dsa/table/table.c		\
+		$(SRC)/dsa/table/tests.c		\
 		$(SRC)/dsa/sort.c
 
 FS	=	$(SRC)/fs/file_get_contents.c		\

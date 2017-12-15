@@ -42,8 +42,11 @@ typedef struct	Queue
 queue_t	*queue_create(void (*clean_up)(void *data));
 void	queue_destroy(queue_t *queue);
 void	queue_clear(queue_t *queue);
-bool	queue_is_empty(queue_t *queue);
+
 size_t	queue_get_size(queue_t *queue);
+
+bool	queue_is_empty(queue_t *queue);
+
 bool	queue_push(queue_t *queue, void *data);
 void	*queue_pop(queue_t *queue);
 void	*queue_peek(queue_t *queue);

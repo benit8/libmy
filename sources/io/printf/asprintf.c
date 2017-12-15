@@ -32,12 +32,12 @@ int my_vasprintf(char **strp, const char *format, va_list ap)
 	size = my_vsnprintf(NULL, 0, format, ap2);
 	if (size >= 0){
 		*strp = my_calloc(size + 1, sizeof(char));
-		if (*strp){
-			r = my_vsnprintf(*strp, size, format, ap);
-			if (r < 0){
-				my_free(*strp);
-				*strp = NULL;
-			}
+		if (*strp == NULL)
+			return (-1);
+		r = my_vsnprintf(*strp, size, format, ap);
+		if (r < 0){
+			my_free(*strp);
+			*strp = NULL;
 		}
 	}
 	else

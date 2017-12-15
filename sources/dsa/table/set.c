@@ -1,5 +1,5 @@
 /*
-** put.c for Libmy in /mnt/data/Delivery/Perso/Libmy/Sources/dsa/Table
+** set.c for Libmy in /mnt/data/Delivery/Perso/Libmy/Sources/dsa/Table
 **
 ** Made by Benoit Lormeau
 ** Login   <benoit.lormeau@epitech.eu>
@@ -27,7 +27,7 @@ static bool table_insert_new_node(table_t *table, table_node_t *prev,
 	return (true);
 }
 
-bool table_put(table_t *table, const char *key, void *data)
+bool table_set(table_t *table, const char *key, void *data)
 {
 	table_node_t *prev;
 
@@ -43,4 +43,33 @@ bool table_put(table_t *table, const char *key, void *data)
 		prev = cur;
 	}
 	return (table_insert_new_node(table, prev, key, data));
+}
+
+static void table_unset_node(table_t *table,
+			     table_node_t *cur,
+			     table_node_t *prev)
+{
+	if (table->clean_up)
+		(*table->clean_up)(cur->data);
+	if (prev == NULL)
+		table->head = cur->next;
+	else
+		prev->next = cur->next;
+	my_free(cur->key);
+	my_free(cur);
+}
+
+void table_unset(table_t *table, const char *key)
+{
+	table_node_t *prev = NULL;
+
+	if (!table)
+		return;
+	for (table_node_t *cur = table->head; cur != NULL; cur = cur->next) {
+		if (str_cmp(cur->key, key) == 0){
+			table_unset_node(table, cur, prev);
+			return;
+		}
+		prev = cur;
+	}
 }

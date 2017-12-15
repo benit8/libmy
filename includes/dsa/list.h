@@ -47,8 +47,11 @@ typedef struct	list
 list_t	*list_create(void (*clean_up)(void *data));
 void	 list_destroy(list_t *list);
 void	 list_clear(list_t *list);
-bool	 list_is_empty(list_t *list);
+
 size_t	 list_get_size(list_t *list);
+
+bool	 list_is_empty(list_t *list);
+
 bool	 list_push(list_t *list, void *data);
 void	*list_pop(list_t *list);
 bool	 list_unshift(list_t *list, void *data);

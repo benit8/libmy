@@ -21,6 +21,8 @@ void *my_realloc(void *ptr, size_t newSize)
 	if (newSize <= curSize)
 		return (ptr);
 	newPtr = my_calloc(1, newSize);
+	if (newPtr == NULL)
+		return (NULL);
 	mem_cpy(newPtr, ptr, curSize);
 	my_free(ptr);
 	return (newPtr);

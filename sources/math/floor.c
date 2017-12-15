@@ -12,9 +12,7 @@
 
 double my_floor(double dbl)
 {
-	double n = (int)dbl;
-
-	return (n);
+	return ((int)dbl);
 }
 
 double my_floorp(double dbl, int p)

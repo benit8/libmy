@@ -12,10 +12,7 @@
 
 double my_frexp(double value, int *eptr)
 {
-	union {
-		double v;
-		struct ieee_double s;
-	} u;
+	union frexp_u u;
 
 	if (value) {
 		u.v = value;

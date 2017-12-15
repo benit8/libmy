@@ -19,5 +19,5 @@ void *mem_cpy(void *dest, const void *src, size_t len)
 	s = src;
 	while (len--)
 		*d++ = *s++;
-	return dest;
+	return (dest);
 }

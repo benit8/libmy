@@ -43,7 +43,7 @@ bool ini_insert_var(ini_data_t *ini, char *var_name, char *val)
 	if (!varpath)
 		return (false);
 	var = var_create(STRING, val);
-	table_put(ini->vars, varpath, var);
+	table_set(ini->vars, varpath, var);
 	my_free(varpath);
 	return (true);
 }

@@ -50,7 +50,7 @@ bool ini_insert_array(ini_data_t *ini, char *var_name, char *val)
 		r = ini_var_array_append(var, val);
 	else {
 		var = ini_var_array_create(val);
-		r = table_put(ini->vars, varpath, var);
+		r = table_set(ini->vars, varpath, var);
 	}
 	my_free(varpath);
 	return (r);

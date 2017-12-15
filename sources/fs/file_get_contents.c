@@ -25,10 +25,8 @@ char *file_get_contents(const char *file)
 		close(fd);
 		return (NULL);
 	}
-	if (read(fd, buffer, sizeof(char) * size) == -1){
+	if (read(fd, buffer, sizeof(char) * size) == -1)
 		my_free(buffer);
-		buffer = NULL;
-	}
 	close(fd);
 	return (buffer);
 }

@@ -11,19 +11,14 @@
 #include "io.h"
 #include "printf.h"
 
-void printf_print_char(
-	char **tmpbuf,
-	va_list ap)
+void printf_print_char(char **tmpbuf, va_list ap)
 {
 	char c = va_arg(ap, int);
 
 	(*tmpbuf) = str_napd(*tmpbuf, &c, 1);
 }
 
-void printf_print_str(
-	char **tmpbuf,
-	va_list ap,
-	printfOpt_t opt)
+void printf_print_str(char **tmpbuf, va_list ap, printfOpt_t opt)
 {
 	char *str = va_arg(ap, char *);
 
@@ -35,11 +30,10 @@ void printf_print_str(
 		(*tmpbuf) = str_apd(*tmpbuf, str);
 }
 
-void printf_print_numeric(
-	const char **fmtp,
-	char **tmpbuf,
-	va_list ap,
-	printfOpt_t *opt)
+void printf_print_numeric(const char **fmtp,
+			  char **tmpbuf,
+			  va_list ap,
+			  printfOpt_t *opt)
 {
 	size_t u;
 	ssize_t n;
@@ -61,11 +55,10 @@ void printf_print_numeric(
 	my_free(str);
 }
 
-void printf_print_float(
-	const char **fmtp,
-	char **tmpbuf,
-	va_list ap,
-	printfOpt_t *opt)
+void printf_print_float(const char **fmtp,
+			char **tmpbuf,
+			va_list ap,
+			printfOpt_t *opt)
 {
 	double d;
 	char *str;
