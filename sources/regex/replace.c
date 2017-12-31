@@ -19,7 +19,7 @@ char *regex_replace(const char *pattern, const char *replacement, char *subject)
 
 	if (rStatus != 0 || matches == NULL || result == NULL)
 		return (NULL);
-	while (regexec(&regex, subject, 1, matches, 0) != REG_NOMATCH){
+	while (regexec(&regex, subject, 1, matches, 0) != REG_NOMATCH) {
 		result = str_napd(result, subject, matches[0].rm_so);
 		result = str_apd(result, replacement);
 		subject += matches[0].rm_eo;

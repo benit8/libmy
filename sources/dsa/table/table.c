@@ -14,7 +14,7 @@ table_t *table_create(void (*clean_up)(void *data))
 {
 	table_t *table = my_calloc(1, sizeof(table_t));
 
-	if (table){
+	if (table) {
 		table->head = NULL;
 		table->clean_up = clean_up;
 	}
@@ -35,7 +35,7 @@ void table_clear(table_t *table)
 
 	if (!table)
 		return;
-	for (table_node_t *curr = table->head; curr != NULL; curr = next){
+	for (table_node_t *curr = table->head; curr != NULL; curr = next) {
 		next = curr->next;
 		if (table->clean_up)
 			(*table->clean_up)(curr->data);

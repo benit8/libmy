@@ -21,7 +21,7 @@ char *file_get_contents(const char *file)
 	size = lseek(fd, 0, SEEK_END);
 	lseek(fd, 0, SEEK_SET);
 	buffer = my_calloc(size + 1, sizeof(char));
-	if (buffer == NULL){
+	if (buffer == NULL) {
 		close(fd);
 		return (NULL);
 	}

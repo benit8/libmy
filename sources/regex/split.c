@@ -20,7 +20,7 @@ char **regex_split(char *pattern, char *subject)
 
 	if (rStatus != 0 || (matches == NULL || array == NULL))
 		return (NULL);
-	for (; regexec(&regex, subject, 1, matches, 0) != REG_NOMATCH; ++n){
+	for (; regexec(&regex, subject, 1, matches, 0) != REG_NOMATCH; ++n) {
 		array = my_realloc(array, sizeof(char *) * (n + 3));
 		if (array == NULL)
 			return (NULL);

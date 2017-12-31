@@ -14,7 +14,7 @@ stack_t *stack_create(void (*clean_up)(void *data))
 {
 	stack_t *stack = my_calloc(1, sizeof(stack_t));
 
-	if (stack){
+	if (stack) {
 		stack->head = NULL;
 		stack->clean_up = clean_up;
 	}
@@ -35,7 +35,7 @@ void stack_clear(stack_t *stack)
 
 	if (!stack)
 		return;
-	for (stack_node_t *curr = stack->head; curr != NULL; curr = next){
+	for (stack_node_t *curr = stack->head; curr != NULL; curr = next) {
 		next = curr->next;
 		if (stack->clean_up)
 			(stack->clean_up)(curr->data);

@@ -14,7 +14,7 @@ queue_t *queue_create(void (*clean_up)(void *data))
 {
 	queue_t *queue = my_calloc(1, sizeof(queue_t));
 
-	if (queue){
+	if (queue) {
 		queue->head = NULL;
 		queue->clean_up = clean_up;
 	}
@@ -35,7 +35,7 @@ void queue_clear(queue_t *queue)
 
 	if (!queue)
 		return;
-	for (queue_node_t *curr = queue->head; curr != NULL; curr = next){
+	for (queue_node_t *curr = queue->head; curr != NULL; curr = next) {
 		next = curr->next;
 		if (queue->clean_up)
 			(queue->clean_up)(curr->data);

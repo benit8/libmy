@@ -20,9 +20,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-int	calc(const char *expr);
-double	fcalc(const char *expr);
+int calc(const char *expr);
+double fcalc(const char *expr);
 
-bool	calc_parse_expr(const char *expr, queue_t *infix);
-bool	calc_parse_infix(queue_t *infix, queue_t *postfix);
-double	calc_eval_postfix(queue_t *postfix);
+bool calc_parse_expr(const char *expr, queue_t *infix);
+bool calc_parse_infix(queue_t *infix, queue_t *postfix);
+double calc_eval_postfix(queue_t *postfix);

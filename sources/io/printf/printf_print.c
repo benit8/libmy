@@ -39,7 +39,7 @@ void printf_print_numeric(const char **fmtp,
 	ssize_t n;
 	char *str;
 
-	if (opt->unsign || opt->base != 10){
+	if (opt->unsign || opt->base != 10) {
 		u = va_arg(ap, size_t);
 		str = my_utoa(u, opt->base);
 	}
@@ -63,7 +63,7 @@ void printf_print_float(const char **fmtp,
 	double d;
 	char *str;
 
-	if (!opt->prec){
+	if (!opt->prec) {
 		if (*(*fmtp) == 'g' || *(*fmtp) == 'G')
 			opt->precLen = 5;
 		else

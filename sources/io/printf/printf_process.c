@@ -44,14 +44,14 @@ bool printf_process_numeric(
 	va_list ap,
 	printfOpt_t *opt)
 {
-	if (*(*fmtp) == 'l'){
+	if (*(*fmtp) == 'l') {
 		opt->longlong = true;
 		if (*++(*fmtp) == 'l')
 			++(*fmtp);
 	}
 	else if (*(*fmtp) == 'h')
 		++(*fmtp);
-	if (str_chr("bdiopxXu", *(*fmtp))){
+	if (str_chr("bdiopxXu", *(*fmtp))) {
 		printf_get_opt_num(fmtp, tmpbuf, opt);
 		printf_print_numeric(fmtp, tmpbuf, ap, opt);
 	}
@@ -64,7 +64,7 @@ bool printf_process_numeric(
 
 void printf_process_padding(char **tmpbuf, printfOpt_t opt)
 {
-	switch (opt.align){
+	switch (opt.align) {
 		case PRTF_RIGHT:
 			(*tmpbuf) = str_padl(*tmpbuf, opt.padSize, " ");
 		break;

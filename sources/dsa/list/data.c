@@ -12,24 +12,24 @@
 
 bool list_push(list_t *list, void *data)
 {
-	list_node_t *new;
+	list_node_t *node;
 
 	if (!list)
 		return (false);
-	new = my_calloc(1, sizeof(list_node_t));
-	if (!new)
+	node = my_calloc(1, sizeof(list_node_t));
+	if (!node)
 		return (false);
-	new->data = data;
-	new->next = NULL;
-	new->prev = NULL;
-	if (!list->head && !list->rear){
-		list->head = new;
-		list->rear = new;
+	node->data = data;
+	node->next = NULL;
+	node->prev = NULL;
+	if (!list->head && !list->rear) {
+		list->head = node;
+		list->rear = node;
 		return (true);
 	}
-	new->prev = list->rear;
-	list->rear->next = new;
-	list->rear = new;
+	node->prev = list->rear;
+	list->rear->next = node;
+	list->rear = node;
 	return (true);
 }
 
@@ -71,23 +71,23 @@ void *list_shift(list_t *list)
 
 bool list_unshift(list_t *list, void *data)
 {
-	list_node_t *new;
+	list_node_t *node;
 
 	if (!list)
 		return (false);
-	new = my_calloc(1, sizeof(list_node_t));
-	if (!new)
+	node = my_calloc(1, sizeof(list_node_t));
+	if (!node)
 		return (false);
-	new->data = data;
-	new->next = NULL;
-	new->prev = NULL;
-	if (!list->head && !list->rear){
-		list->head = new;
-		list->rear = new;
+	node->data = data;
+	node->next = NULL;
+	node->prev = NULL;
+	if (!list->head && !list->rear) {
+		list->head = node;
+		list->rear = node;
 		return (true);
 	}
-	list->head->prev = new;
-	new->next = list->head;
-	list->head = new;
+	list->head->prev = node;
+	node->next = list->head;
+	list->head = node;
 	return (true);
 }

@@ -15,7 +15,7 @@ bool ini_parse_var(ini_data_t *ini, char *line)
 	char **parts = explode("=", line);
 	bool r = false;
 
-	if (!parts || tab_size(parts) < 2){
+	if (!parts || tab_size(parts) < 2) {
 		my_dprintf(2, "INI: Syntax error '%s'", line);
 		tab_free(parts);
 		return (false);

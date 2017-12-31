@@ -12,16 +12,16 @@
 
 bool stack_push(stack_t *stack, void *data)
 {
-	stack_node_t *new;
+	stack_node_t *node;
 
 	if (!stack)
 		return (false);
-	new = my_calloc(1, sizeof(stack_node_t));
-	if (!new)
+	node = my_calloc(1, sizeof(stack_node_t));
+	if (!node)
 		return (false);
-	new->data = data;
-	new->next = stack->head;
-	stack->head = new;
+	node->data = data;
+	node->next = stack->head;
+	stack->head = node;
 	return (true);
 }
 

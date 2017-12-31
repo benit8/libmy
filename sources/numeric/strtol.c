@@ -16,7 +16,7 @@ static char *strto_get_base(const char *nptr, int *base)
 
 	if (IN_RANGE(*base, 2, 36))
 		return (n);
-	else if (*base == 0){
+	else if (*base == 0) {
 		if (*n++ != '0'){
 			*base = 10;
 			return (n);
@@ -46,7 +46,7 @@ long int my_strtol(const char *nptr, char **endptr, int base)
 		return (my_strtol(n + 1, endptr, base));
 	if (*n == '-')
 		return (-my_strtol(n + 1, endptr, base));
-	for (; str_nchr(digits, *n, base); n++){
+	for (; str_nchr(digits, *n, base); n++) {
 		index = (int)(str_nchr(digits, *n, base) - digits);
 		res = (res * base) + index;
 	}
@@ -65,7 +65,7 @@ unsigned long int my_strtoul(const char *nptr, char **endptr, int base)
 		return (0);
 	if (*n == '+')
 		return (my_strtoul(n + 1, endptr, base));
-	for (; str_nchr(digits, *n, base); n++){
+	for (; str_nchr(digits, *n, base); n++) {
 		index = (int)(str_nchr(digits, *n, base) - digits);
 		res = (res * base) + index;
 	}
@@ -86,7 +86,7 @@ long long int my_strtoll(const char *nptr, char **endptr, int base)
 		return (my_strtoll(n + 1, endptr, base));
 	if (*n == '-')
 		return (-my_strtoll(n + 1, endptr, base));
-	for (; str_nchr(digits, *n, base); n++){
+	for (; str_nchr(digits, *n, base); n++) {
 		index = (int)(str_nchr(digits, *n, base) - digits);
 		res = (res * base) + index;
 	}
@@ -105,7 +105,7 @@ unsigned long long int my_strtoull(const char *nptr, char **endptr, int base)
 		return (0);
 	if (*n == '+')
 		return (my_strtoull(n + 1, endptr, base));
-	for (; str_nchr(digits, *n, base); n++){
+	for (; str_nchr(digits, *n, base); n++) {
 		index = (int)(str_nchr(digits, *n, base) - digits);
 		res = (res * base) + index;
 	}
