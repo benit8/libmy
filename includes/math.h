@@ -97,33 +97,33 @@
 
 typedef union
 {
-	float		f;
-	uint32_t	u;
-	int32_t		i;
-}		ufi_t;
+	float f;
+	uint32_t u;
+	int32_t i;
+} ufi_t;
 
-struct	i2_s
+struct i2_s
 {
-	int32_t	i0;
-	int32_t	i1;
+	int32_t i0;
+	int32_t i1;
 };
 
 typedef union
 {
-	double		f;
-	uint64_t	u;
-	struct i2_s	s;
-}		udi_t;
+	double f;
+	uint64_t u;
+	struct i2_s s;
+} udi_t;
 
-struct	ieee_double
+struct ieee_double
 {
-	uint32_t	dbl_mantissa2;
-	uint32_t	dbl_mantissa1:20;
-	uint32_t	dbl_exp:11;
-	uint32_t	dbl_sign:1;
+	uint32_t dbl_mantissa2;
+	uint32_t dbl_mantissa1:20;
+	uint32_t dbl_exp:11;
+	uint32_t dbl_sign:1;
 };
 
-union	frexp_u
+union frexp_u
 {
 	double v;
 	struct ieee_double s;
@@ -131,28 +131,28 @@ union	frexp_u
 
 ////////////////////////////////////////////////////////////////////////////////
 
-double	radians(double degrees);
-double	degrees(double radians);
+double radians(double degrees);
+double degrees(double radians);
 
-void	my_srand(unsigned int seed);
-int	rand(void);
-int	irand(int a, int b);
-double	frand(double a, double b);
+void my_srand(unsigned int seed);
+int rand(void);
+int irand(int a, int b);
+double frand(double a, double b);
 
-double	my_floor(double n);
-double	my_floorp(double n, int prec);
+double my_floor(double n);
+double my_floorp(double n, int prec);
 
-double	my_round(double n);
-double	my_roundp(double n, int prec);
+double my_round(double n);
+double my_roundp(double n, int prec);
 
-double	my_ceil(double n);
-double	my_ceilp(double n, int prec);
+double my_ceil(double n);
+double my_ceilp(double n, int prec);
 
-double	my_pow(double n, double exp);
-double	my_log(double x);
-double	my_exp(double x);
-double	my_exp2(double x);
-double	my_exp10(double x);
+double my_pow(double n, double exp);
+double my_log(double x);
+double my_exp(double x);
+double my_exp2(double x);
+double my_exp10(double x);
 
-double	my_fmod(double a, double b);
-double	my_frexp(double value, int *eptr);
+double my_fmod(double a, double b);
+double my_frexp(double value, int *eptr);

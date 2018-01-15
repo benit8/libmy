@@ -14,8 +14,8 @@ bool file_is(const char *filepath, const char *mask)
 {
 	int mode = 0;
 
-	for (; *mask != '\0'; ++mask){
-		switch (*mask){
+	for (; *mask != '\0'; ++mask) {
+		switch (*mask) {
 			case 'f':
 				mode |= F_OK;
 			break;

@@ -34,7 +34,7 @@ bool ini_enter_section(ini_data_t *ini, char *line)
 {
 	char *sec_name = ini_get_section_name(line);
 
-	if (!sec_name){
+	if (!sec_name) {
 		my_dprintf(2, "INI: invalid section name '%s'\n", sec_name);
 		return (false);
 	}
@@ -51,13 +51,13 @@ bool ini_leave_section(ini_data_t *ini, char *line)
 	char *pos;
 	size_t len;
 
-	if (!sec_name){
+	if (!sec_name) {
 		my_dprintf(2, "INI: invalid section name '%s'\n", sec_name);
 		return (false);
 	}
 	len = str_len(sec_name);
 	pos = str_str(ini->var_path, sec_name);
-	if (!pos || *(pos + len) != '\0'){
+	if (!pos || *(pos + len) != '\0') {
 		my_dprintf(2, "INI: invalid section closing '%s'\n", sec_name);
 		return (false);
 	}

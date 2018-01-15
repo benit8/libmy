@@ -14,7 +14,7 @@ int ini_get_integer(ini_data_t *ini, const char *var_name)
 {
 	var_t	*var;
 
-	if (!table_has_key(ini->vars, var_name)){
+	if (!table_has_key(ini->vars, var_name)) {
 		my_dprintf(2, "INI: Key '%s' not found\n", var_name);
 		return (0);
 	}
@@ -37,7 +37,7 @@ double ini_get_decimal(ini_data_t *ini, const char *var_name)
 {
 	var_t	*var;
 
-	if (!table_has_key(ini->vars, var_name)){
+	if (!table_has_key(ini->vars, var_name)) {
 		my_dprintf(2, "INI: Key '%s' not found\n", var_name);
 		return (0);
 	}
@@ -60,7 +60,7 @@ char *ini_get_string(ini_data_t *ini, const char *var_name)
 {
 	var_t	*var;
 
-	if (!table_has_key(ini->vars, var_name)){
+	if (!table_has_key(ini->vars, var_name)) {
 		my_dprintf(2, "INI: Key '%s' not found\n", var_name);
 		return (NULL);
 	}
@@ -83,7 +83,7 @@ char **ini_get_array(ini_data_t *ini, const char *var_name)
 {
 	var_t	*var;
 
-	if (!table_has_key(ini->vars, var_name)){
+	if (!table_has_key(ini->vars, var_name)) {
 		my_dprintf(2, "INI: Key '%s' not found\n", var_name);
 		return (NULL);
 	}

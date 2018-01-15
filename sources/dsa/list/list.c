@@ -14,7 +14,7 @@ list_t *list_create(clean_func_t *clean_up)
 {
 	list_t *list = my_calloc(1, sizeof(list_t));
 
-	if (list){
+	if (list) {
 		list->head = NULL;
 		list->rear = NULL;
 		list->clean_up = clean_up;
@@ -36,7 +36,7 @@ void list_clear(list_t *list)
 
 	if (!list)
 		return;
-	for (list_node_t *curr = list->head; curr != NULL; curr = next){
+	for (list_node_t *curr = list->head; curr != NULL; curr = next) {
 		next = curr->next;
 		if (list->clean_up)
 			(list->clean_up)(curr->data);

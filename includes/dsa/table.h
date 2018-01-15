@@ -26,34 +26,33 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct	table_node
+typedef struct table_node
 {
-	char			*key;
-	void			*data;
-	struct table_node	*next;
-}		table_node_t;
+	char *key;
+	void *data;
+	struct table_node *next;
+} table_node_t;
 
-typedef struct	table
+typedef struct table
 {
-	table_node_t	*head;
-
-	clean_func_t	*clean_up;
-}		table_t;
+	table_node_t *head;
+	void (*clean_up)(void *data);
+} table_t;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-table_t	 *table_create(clean_func_t *clean_up);
-void	  table_destroy(table_t *table);
-void	  table_clear(table_t *table);
+table_t *table_create(void (*clean_up)(void *data));
+void table_destroy(table_t *table);
+void table_clear(table_t *table);
 
-bool	  table_is_empty(table_t *table);
-bool	  table_has_key(table_t *table, const char *key);
+bool table_is_empty(table_t *table);
+bool table_has_key(table_t *table, const char *key);
 
-void	 *table_get(table_t *table, const char *key);
-size_t	  table_get_size(table_t *table);
-char	**table_get_keys(table_t *table);
+void *table_get(table_t *table, const char *key);
+size_t table_get_size(table_t *table);
+char **table_get_keys(table_t *table);
 
-bool	  table_set(table_t *table, const char *key, void *data);
-void	  table_unset(table_t *table, const char *key);
+bool table_set(table_t *table, const char *key, void *data);
+void table_unset(table_t *table, const char *key);
 
-void	  table_foreach(table_t *table, void (*callback)(char *key, void *data));
+void table_foreach(table_t *table, void (*callback)(char *key, void *data));

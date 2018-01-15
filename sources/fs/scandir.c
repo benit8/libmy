@@ -22,7 +22,7 @@ static void scan_dir_sort(const dirent_t **names,
 	if (n < 2)
 		return;
 	p = names[n / 2];
-	for (; ; ++i, --j){
+	for (; ; ++i, --j) {
 		for (; (*comp)(&names[i], &p) < 0; i++);
 		for (; (*comp)(&names[j], &p) > 0; j--);
 		if (i >= j)
@@ -47,7 +47,7 @@ int scan_dir(const char *dirpath,
 
 	if (dir == NULL)
 		return (-1);
-	for (entry = readdir(dir); entry != NULL; entry = readdir(dir)){
+	for (entry = readdir(dir); entry != NULL; entry = readdir(dir)) {
 		if (filter != NULL && !(*filter)(entry))
 			continue;
 		names = my_realloc(names, sizeof(dirent_t *) * (n + 2));

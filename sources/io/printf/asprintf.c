@@ -30,12 +30,12 @@ int my_vasprintf(char **strp, const char *format, va_list ap)
 
 	va_copy(ap2, ap);
 	size = my_vsnprintf(NULL, 0, format, ap2);
-	if (size >= 0){
+	if (size >= 0) {
 		*strp = my_calloc(size + 1, sizeof(char));
 		if (*strp == NULL)
 			return (-1);
 		r = my_vsnprintf(*strp, size, format, ap);
-		if (r < 0){
+		if (r < 0) {
 			my_free(*strp);
 			*strp = NULL;
 		}

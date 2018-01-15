@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef enum	var_type
+typedef enum var_type
 {
 	INTEGER,
 	DECIMAL,
@@ -24,25 +24,25 @@ typedef enum	var_type
 	ARRAY,
 	OBJECT,
 	UNDEFINED
-}		var_type_t;
+} var_type_t;
 
-typedef union	value
+typedef union value
 {
-	int		integer;
-	double		decimal;
-	char		*string;
-	char		**array;
-	table_t		*object;
-}		value_t;
+	int integer;
+	double decimal;
+	char *string;
+	char **array;
+	table_t *object;
+} value_t;
 
-typedef struct	var
+typedef struct var
 {
-	var_type_t	type;
-	value_t		value;
-}		var_t;
+	var_type_t type;
+	value_t value;
+} var_t;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-var_t	*var_create(var_type_t type, void *value);
-void	var_free(var_t *var);
-void	var_set_val(var_t *var, var_type_t type, void *value);
+var_t *var_create(var_type_t type, void *value);
+void var_free(var_t *var);
+void var_set_val(var_t *var, var_type_t type, void *value);

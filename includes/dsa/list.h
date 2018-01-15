@@ -27,33 +27,33 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct	list_node
+typedef struct list_node
 {
-	void			*data;
+	void *data;
 
-	struct list_node	*prev;
-	struct list_node	*next;
-}		list_node_t;
+	struct list_node *prev;
+	struct list_node *next;
+} list_node_t;
 
-typedef struct	list
+typedef struct list
 {
-	list_node_t	*head;
-	list_node_t	*rear;
+	list_node_t *head;
+	list_node_t *rear;
 
-	clean_func_t	*clean_up;
-}		list_t;
+	void (*clean_up)(void *data);
+} list_t;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-list_t	*list_create(clean_func_t *clean_up);
-void	 list_destroy(list_t *list);
-void	 list_clear(list_t *list);
+list_t *list_create(void (*clean_up)(void *data));
+void list_destroy(list_t *list);
+void list_clear(list_t *list);
 
-size_t	 list_get_size(list_t *list);
+size_t list_get_size(list_t *list);
 
-bool	 list_is_empty(list_t *list);
+bool list_is_empty(list_t *list);
 
-bool	 list_push(list_t *list, void *data);
-void	*list_pop(list_t *list);
-bool	 list_unshift(list_t *list, void *data);
-void	*list_shift(list_t *list);
+bool list_push(list_t *list, void *data);
+void *list_pop(list_t *list);
+bool list_unshift(list_t *list, void *data);
+void *list_shift(list_t *list);

@@ -2,4 +2,8 @@
 #*#
 *.o
 libmy.a
+<<<<<<< HEAD
 tests/
+=======
+tests/
+>>>>>>> d27696bfeb7414731fa4247f917dd41134ab631b

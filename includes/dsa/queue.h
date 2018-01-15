@@ -26,29 +26,28 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct	queue_node
+typedef struct queue_node
 {
-	void			*data;
-	struct queue_node	*next;
-}		queue_node_t;
+	void *data;
+	struct queue_node *next;
+} queue_node_t;
 
-typedef struct	Queue
+typedef struct Queue
 {
-	queue_node_t	*head;
-
-	clean_func_t	*clean_up;
-}		queue_t;
+	queue_node_t *head;
+	void (*clean_up)(void *data);
+} queue_t;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-queue_t	*queue_create(clean_func_t *clean_up);
-void	queue_destroy(queue_t *queue);
-void	queue_clear(queue_t *queue);
+queue_t *queue_create(void (*clean_up)(void *data));
+void queue_destroy(queue_t *queue);
+void queue_clear(queue_t *queue);
 
-size_t	queue_get_size(queue_t *queue);
+size_t queue_get_size(queue_t *queue);
 
-bool	queue_is_empty(queue_t *queue);
+bool queue_is_empty(queue_t *queue);
 
-bool	queue_push(queue_t *queue, void *data);
-void	*queue_pop(queue_t *queue);
-void	*queue_peek(queue_t *queue);
+bool queue_push(queue_t *queue, void *data);
+void *queue_pop(queue_t *queue);
+void *queue_peek(queue_t *queue);

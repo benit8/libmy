@@ -13,20 +13,20 @@
 bool queue_push(queue_t *queue, void *data)
 {
 	queue_node_t *last;
-	queue_node_t *new;
+	queue_node_t *node;
 
 	if (!queue)
 		return (false);
-	new = my_calloc(1, sizeof(queue_node_t));
-	if (!new)
+	node = my_calloc(1, sizeof(queue_node_t));
+	if (!node)
 		return (false);
-	new->data = data;
-	new->next = NULL;
+	node->data = data;
+	node->next = NULL;
 	if (!queue->head)
-		queue->head = new;
+		queue->head = node;
 	else {
 		for (last = queue->head; last->next != NULL; last = last->next);
-		last->next = new;
+		last->next = node;
 	}
 	return (true);
 }

@@ -12,7 +12,7 @@
 
 void my_putnbr(int nb)
 {
-	if (nb < 0){
+	if (nb < 0) {
 		my_putchar('-');
 		nb = -nb;
 	}

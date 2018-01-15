@@ -30,7 +30,7 @@ var_t *var_create(var_type_t type, void *value)
 
 void var_free(var_t *var)
 {
-	switch (var->type){
+	switch (var->type) {
 		case STRING:
 			my_free(var->value.string);
 		break;
@@ -51,7 +51,7 @@ void var_free(var_t *var)
 
 void var_set_val(var_t *var, var_type_t type, void *value)
 {
-	switch (type){
+	switch (type) {
 		case INTEGER:
 			var->value.integer = *(int *)value;
 		break;
