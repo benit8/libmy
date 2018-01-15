@@ -10,7 +10,7 @@
 
 #include "dsa/stack.h"
 
-stack_t *stack_create(void (*clean_up)(void *data))
+stack_t *stack_create(clean_func_t *clean_up)
 {
 	stack_t *stack = my_calloc(1, sizeof(stack_t));
 

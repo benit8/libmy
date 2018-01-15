@@ -13,7 +13,7 @@
 
 void printf_get_opt(const char **fmtp, va_list ap, printfOpt_t *opt)
 {
-	for (; *(*fmtp); ++(*fmtp)){
+	for (; *(*fmtp); ++(*fmtp)) {
 		if (!str_chr("-~.+*0123456789", *(*fmtp)))
 			break;
 		else if (*(*fmtp) == '-')
@@ -58,17 +58,24 @@ void printf_get_opt_fmt(const char **fmtp, printfOpt_t *opt)
 
 void printf_get_opt_num(const char **fmtp, char **tmpbuf, printfOpt_t *opt)
 {
-	if (*(*fmtp) == 'u')
-		opt->unsign = true;
-	else if (*(*fmtp) == 'b')
-		opt->base = 2;
-	else if (*(*fmtp) == 'o')
-		opt->base = 8;
-	else if (*(*fmtp) == 'x' || *(*fmtp) == 'X')
-		opt->base = 16;
-	else if (*(*fmtp) == 'p'){
-		opt->base = 16;
-		opt->longlong = 1;
-		(*tmpbuf) = str_apd(*tmpbuf, "0x");
+	switch (*(*fmtp)) {
+		case 'u':
+			opt->unsign = true;
+		break;
+		case 'b':
+			opt->base = 2;
+		break;
+		case 'o':
+			opt->base = 8;
+		break;
+		case 'x':
+		case 'X':
+			opt->base = 16;
+		break;
+		case 'p':
+			opt->base = 16;
+			opt->longlong = 1;
+			(*tmpbuf) = str_apd(*tmpbuf, "0x");
+		break;
 	}
 }

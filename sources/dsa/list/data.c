@@ -22,7 +22,7 @@ bool list_push(list_t *list, void *data)
 	new->data = data;
 	new->next = NULL;
 	new->prev = NULL;
-	if (!list->head && !list->rear){
+	if (!list->head && !list->rear) {
 		list->head = new;
 		list->rear = new;
 		return (true);
@@ -81,7 +81,7 @@ bool list_unshift(list_t *list, void *data)
 	new->data = data;
 	new->next = NULL;
 	new->prev = NULL;
-	if (!list->head && !list->rear){
+	if (!list->head && !list->rear) {
 		list->head = new;
 		list->rear = new;
 		return (true);

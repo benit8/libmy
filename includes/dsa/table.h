@@ -12,8 +12,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <stdbool.h>
 #include <stdlib.h>
 
+#include "dsa_types.h"
 #include "memory.h"
 #include "string.h"
 
@@ -34,12 +36,13 @@ typedef struct	table_node
 typedef struct	table
 {
 	table_node_t	*head;
-	void		(*clean_up)(void *data);
+
+	clean_func_t	*clean_up;
 }		table_t;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-table_t	 *table_create(void (*clean_up)(void *data));
+table_t	 *table_create(clean_func_t *clean_up);
 void	  table_destroy(table_t *table);
 void	  table_clear(table_t *table);
 

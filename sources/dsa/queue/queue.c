@@ -10,7 +10,7 @@
 
 #include "dsa/queue.h"
 
-queue_t *queue_create(void (*clean_up)(void *data))
+queue_t *queue_create(clean_func_t *clean_up)
 {
 	queue_t *queue = my_calloc(1, sizeof(queue_t));
 

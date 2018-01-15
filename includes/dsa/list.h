@@ -15,6 +15,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
+#include "dsa_types.h"
 #include "memory.h"
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -39,12 +40,12 @@ typedef struct	list
 	list_node_t	*head;
 	list_node_t	*rear;
 
-	void		(*clean_up)(void *data);
+	clean_func_t	*clean_up;
 }		list_t;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-list_t	*list_create(void (*clean_up)(void *data));
+list_t	*list_create(clean_func_t *clean_up);
 void	 list_destroy(list_t *list);
 void	 list_clear(list_t *list);
 

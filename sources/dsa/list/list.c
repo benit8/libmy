@@ -10,7 +10,7 @@
 
 #include "dsa/list.h"
 
-list_t *list_create(void (*clean_up)(void *data))
+list_t *list_create(clean_func_t *clean_up)
 {
 	list_t *list = my_calloc(1, sizeof(list_t));
 
