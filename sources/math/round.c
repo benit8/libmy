@@ -1,11 +1,8 @@
 /*
-** round.c for libmy in /mnt/data/Delivery/Perso/libmy/Sources/Math
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Mon Nov 13 10:44:31 2017 Benoit Lormeau
-** Last update Mon Nov 13 11:38:14 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** round.c
 */
 
 #include "math.h"

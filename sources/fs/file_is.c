@@ -1,11 +1,8 @@
 /*
-** file_is.c for libmy in /mnt/data/Delivery/Perso/libmy/Sources/FS
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Thu Nov 9 14:54:02 2017 Benoit Lormeau
-** Last update Thu Nov 9 14:54:02 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** file_is.c
 */
 
 #include "fs.h"

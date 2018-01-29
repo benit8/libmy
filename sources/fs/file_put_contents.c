@@ -1,11 +1,8 @@
 /*
-** file_put_contents.c for libmy in /mnt/data/Delivery/Perso/libmy/Sources/FS
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Tue Oct 24 16:01:35 2017 Benoit Lormeau
-** Last update Tue Oct 24 16:01:35 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** file_put_contents.c
 */
 
 #include "fs.h"

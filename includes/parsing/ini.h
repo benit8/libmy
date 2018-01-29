@@ -1,11 +1,8 @@
 /*
-** INI.h for Libmy in /mnt/data/Delivery/Perso/Libmy/Includes/parsing
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Mon Dec 11 16:58:42 2017 Benoit Lormeau
-** Last update Mon Dec 11 16:58:42 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** ini.h
 */
 
 #pragma once

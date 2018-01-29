@@ -1,11 +1,8 @@
 /*
-** replace.c for libmy in /mnt/data/Delivery/Perso/libmy/regex
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Tue Oct 17 14:41:55 2017 Benoit Lormeau
-** Last update Tue Oct 17 14:41:55 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** replace.c
 */
 
 #include "cregex.h"

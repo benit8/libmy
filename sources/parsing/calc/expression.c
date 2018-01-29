@@ -1,29 +1,26 @@
 /*
-** expression.c for Libmy in /mnt/data/Delivery/Perso/Libmy/Sources/parsing/calc
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Wed Dec 13 20:33:15 2017 Benoit Lormeau
-** Last update Wed Dec 13 20:33:15 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** expression.c
 */
 
 #include "parsing/calc.h"
 
-static bool is_var_char(char c)
+static bool
+s_var_char(char c)
 {
 	return (is_alnum(c) || c == '_');
 }
 
-static bool is_num_char(char c)
+static bool
+is_num_char(char c)
 {
 	return (is_digit(c) || c == '.');
 }
 
-static bool parse_identifier(const char *expr,
-			     size_t *i,
-			     int8_t type,
-			     queue_t *infix)
+static bool
+parse_identifier(const char *expr, size_t *i, int8_t type, queue_t *infix)
 {
 	size_t start;
 	bool r;

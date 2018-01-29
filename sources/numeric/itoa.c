@@ -1,11 +1,8 @@
 /*
-** itoa.c for libmy in /mnt/data/Delivery/Perso/libmy/Sources/Numeric
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Wed Oct 25 09:42:44 2017 Benoit Lormeau
-** Last update Tue Nov 14 09:41:56 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** itoa.c
 */
 
 #include "numeric.h"

@@ -1,11 +1,8 @@
 /*
-** io.h for libmy in /mnt/data/Delivery/Perso/libmy/Includes
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Thu Nov 9 13:52:54 2017 Benoit Lormeau
-** Last update Tue Nov 14 11:54:54 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** io.h
 */
 
 #pragma once

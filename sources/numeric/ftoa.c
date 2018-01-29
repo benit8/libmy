@@ -1,11 +1,8 @@
 /*
-** ftoa.c for libmy in /mnt/data/Delivery/Perso/libmy/Sources/Numeric
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Fri Nov 10 15:39:53 2017 Benoit Lormeau
-** Last update Tue Nov 14 09:43:08 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** ftoa.c
 */
 
 #include "numeric.h"

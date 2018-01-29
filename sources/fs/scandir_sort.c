@@ -1,11 +1,8 @@
 /*
-** scandir_sort.c for Libmy in /mnt/data/Delivery/Perso/Libmy/Sources/FS
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Tue Dec 5 16:31:24 2017 Benoit Lormeau
-** Last update Tue Dec 5 16:31:24 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** scandir_sort.c
 */
 
 #include "fs.h"

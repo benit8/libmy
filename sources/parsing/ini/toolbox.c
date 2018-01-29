@@ -1,11 +1,8 @@
 /*
-** toolbox.c for MyINI in /mnt/data/Delivery/Perso/MyINI/src
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Mon Dec 11 15:06:24 2017 Benoit Lormeau
-** Last update Mon Dec 11 15:06:24 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** toolbox.c
 */
 
 #include "parsing/ini.h"

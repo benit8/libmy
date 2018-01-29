@@ -3,3 +3,4 @@
 *.o
 libmy.a
 tests/
+header.php

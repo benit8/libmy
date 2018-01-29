@@ -1,11 +1,8 @@
 /*
-** table.h for Libmy in /mnt/data/Delivery/Perso/Libmy/Includes/dsa
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Fri Dec 1 16:29:35 2017 Benoit Lormeau
-** Last update Fri Dec 1 16:29:35 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** table.h
 */
 
 #pragma once

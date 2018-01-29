@@ -1,11 +1,8 @@
 /*
-** exp.c for Libmy in /mnt/data/Delivery/Perso/Libmy/Sources/Math
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Wed Dec 13 15:42:39 2017 Benoit Lormeau
-** Last update Wed Dec 13 15:42:39 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** exp.c
 */
 
 #include "math.h"

@@ -1,11 +1,8 @@
 /*
-** strrpt.c for libmy in /mnt/data/Delivery/Perso/libmy/Sources/String
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Wed Oct 25 14:44:59 2017 Benoit Lormeau
-** Last update Wed Oct 25 14:44:59 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** str_repeat.c
 */
 
 #include "string.h"

@@ -1,11 +1,8 @@
 /*
-** regex.h for libmy in /mnt/data/Delivery/Perso/libmy/Includes
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Thu Nov 9 14:07:36 2017 Benoit Lormeau
-** Last update Thu Nov 9 14:07:36 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** cregex.h
 */
 
 #pragma once

@@ -1,11 +1,8 @@
 /*
-** atou.c for libmy in /mnt/data/Delivery/Perso/libmy/Sources/Numeric
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Wed Oct 25 10:30:49 2017 Benoit Lormeau
-** Last update Wed Oct 25 10:30:49 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** atou.c
 */
 
 #include "numeric.h"

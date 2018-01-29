@@ -1,11 +1,8 @@
 /*
-** memory.h for libmy in /mnt/data/Delivery/Perso/libmy/Includes
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Thu Nov 9 14:05:48 2017 Benoit Lormeau
-** Last update Thu Nov 9 14:05:48 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** memory.h
 */
 
 #pragma once

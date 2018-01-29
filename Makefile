@@ -1,11 +1,8 @@
 ##
-## Makefile for libmy in /mnt/data/Delivery/Perso/libmy
-##
-## Made by Benoit Lormeau
-## Login   <benoit.lormeau@epitech.eu>
-##
-## Started on  Mon Oct 23 10:11:27 2017 Benoit Lormeau
-## Last update Tue Nov 14 11:49:06 2017 Benoit Lormeau
+## EPITECH PROJECT, 2018
+## libmy
+## File description:
+## Makefile
 ##
 
 RM	=	rm -rf
@@ -37,18 +34,20 @@ Char	=	$(SRC)/char/is_alnum.c			\
 		$(SRC)/char/to_lower.c			\
 		$(SRC)/char/to_upper.c
 
-DSA	=	$(SRC)/dsa/list/data.c			\
-		$(SRC)/dsa/list/get.c			\
+DSA	=	$(SRC)/dsa/list/access.c		\
+		$(SRC)/dsa/list/capacity.c		\
 		$(SRC)/dsa/list/list.c			\
-		$(SRC)/dsa/list/tests.c			\
-		$(SRC)/dsa/queue/data.c			\
-		$(SRC)/dsa/queue/get.c			\
+		$(SRC)/dsa/list/modifiers.c		\
+		$(SRC)/dsa/list/modifiers_pushpop.c	\
+		$(SRC)/dsa/list/operations.c		\
+		$(SRC)/dsa/queue/access.c		\
+		$(SRC)/dsa/queue/capacity.c		\
+		$(SRC)/dsa/queue/modifiers.c		\
 		$(SRC)/dsa/queue/queue.c		\
-		$(SRC)/dsa/queue/tests.c		\
-		$(SRC)/dsa/stack/data.c			\
-		$(SRC)/dsa/stack/get.c			\
+		$(SRC)/dsa/stack/access.c		\
+		$(SRC)/dsa/stack/capacity.c		\
+		$(SRC)/dsa/stack/modifiers.c		\
 		$(SRC)/dsa/stack/stack.c		\
-		$(SRC)/dsa/stack/tests.c		\
 		$(SRC)/dsa/table/foreach.c		\
 		$(SRC)/dsa/table/get.c			\
 		$(SRC)/dsa/table/set.c			\
@@ -161,7 +160,7 @@ SRCS	+=	$(IO)
 SRCS	+=	$(Math)
 SRCS	+=	$(Memory)
 SRCS	+=	$(Numeric)
-SRCS	+=	$(Parsing)
+# SRCS	+=	$(Parsing)
 SRCS	+=	$(Regex)
 SRCS	+=	$(String)
 

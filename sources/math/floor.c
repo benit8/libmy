@@ -1,11 +1,8 @@
 /*
-** floor.c for libmy in /mnt/data/Delivery/Perso/libmy/Sources/Math
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Mon Nov 13 11:01:32 2017 Benoit Lormeau
-** Last update Mon Nov 13 11:38:29 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** floor.c
 */
 
 #include "math.h"

@@ -1,11 +1,8 @@
 /*
-** file_get_lines.c for libmy in /mnt/data/Delivery/Perso/libmy/Sources/FS
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Wed Oct 25 14:27:21 2017 Benoit Lormeau
-** Last update Wed Oct 25 14:27:21 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** file_get_lines.c
 */
 
 #include "fs.h"

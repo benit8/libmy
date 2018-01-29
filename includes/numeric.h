@@ -1,11 +1,8 @@
 /*
-** numeric.h for libmy in /mnt/data/Delivery/Perso/libmy/Includes
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Thu Nov 9 14:06:55 2017 Benoit Lormeau
-** Last update Mon Nov 13 10:44:46 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** numeric.h
 */
 
 #pragma once

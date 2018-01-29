@@ -1,11 +1,8 @@
 /*
-** table.c for Libmy in /mnt/data/Delivery/Perso/Libmy/Sources/dsa/Table
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Mon Dec 4 09:37:06 2017 Benoit Lormeau
-** Last update Mon Dec 4 09:37:06 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** table.c
 */
 
 #include "dsa/table.h"

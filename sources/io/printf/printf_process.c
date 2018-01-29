@@ -1,11 +1,8 @@
 /*
-** printf_internal.c for libmy in /mnt/data/Delivery/Perso/libmy/Sources/IO/printf
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Tue Nov 14 10:28:33 2017 Benoit Lormeau
-** Last update Tue Nov 14 11:50:59 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** printf_process.c
 */
 
 #include "io.h"

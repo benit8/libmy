@@ -1,11 +1,8 @@
 /*
-** strstr.c for libmy in /mnt/data/Delivery/Perso/libmy/string
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Mon Oct 23 14:17:38 2017 Benoit Lormeau
-** Last update Mon Oct 23 14:17:38 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** str_str.c
 */
 
 #include "string.h"

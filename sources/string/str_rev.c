@@ -1,11 +1,8 @@
 /*
-** strrev.c for libmy.c in /mnt/data/Delivery/Perso/libmy/Sources/String
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Wed Oct 25 10:11:53 2017 Benoit Lormeau
-** Last update Wed Oct 25 10:11:53 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** str_rev.c
 */
 
 #include "string.h"

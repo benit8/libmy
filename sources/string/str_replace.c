@@ -1,11 +1,8 @@
 /*
-** str_replace.c for libmy in /mnt/data/Delivery/Perso/libmy/Sources/String
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Wed Oct 25 23:26:04 2017 Benoit Lormeau
-** Last update Wed Oct 25 23:26:04 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** str_replace.c
 */
 
 #include "string.h"
