@@ -7,7 +7,7 @@
 
 #include "dsa/table.h"
 
-table_t *table_create(void (*clean_up)(void *data))
+table_t *table_create(clean_func_t *clean_up)
 {
 	table_t *table = my_calloc(1, sizeof(table_t));
 

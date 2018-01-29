@@ -9,8 +9,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
+#include <stdbool.h>
 #include <stdlib.h>
 
+#include "dsa_types.h"
 #include "memory.h"
 #include "string.h"
 

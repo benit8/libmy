@@ -5,7 +5,7 @@
 ## Makefile
 ##
 
-RM	=	rm -rf
+RM	=	rm -f
 
 SRC	=	sources
 INCLUDE	=	-Iincludes
@@ -88,6 +88,7 @@ Math	=	$(SRC)/math/angle.c			\
 
 Memory	=	$(SRC)/memory/calloc.c			\
 		$(SRC)/memory/malloc.c			\
+		$(SRC)/memory/memcmp.c			\
 		$(SRC)/memory/memcpy.c			\
 		$(SRC)/memory/memdup.c			\
 		$(SRC)/memory/memmove.c			\

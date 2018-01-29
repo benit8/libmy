@@ -20,7 +20,7 @@ void swap(void *va, void *vb, size_t s)
 	}
 }
 
-void sort(void *ptr, size_t n, size_t s, cmp_func_t *cmp)
+void sort(void *ptr, size_t n, size_t s, comp_func_t *cmp)
 {
 	char pivot[s];
 	char *p = ptr;

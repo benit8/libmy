@@ -7,7 +7,7 @@
 
 #include "dsa/stack.h"
 
-stack_t *stack_create(void (*clean_up)(void *data))
+stack_t *stack_create(clean_func_t *clean_up)
 {
 	return ((stack_t *)list_create(clean_up));
 }

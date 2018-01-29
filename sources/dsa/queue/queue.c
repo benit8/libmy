@@ -7,7 +7,7 @@
 
 #include "dsa/queue.h"
 
-queue_t *queue_create(void (*clean_up)(void *data))
+queue_t *queue_create(clean_func_t *clean_up)
 {
 	return ((queue_t *)list_create(clean_up));
 }
