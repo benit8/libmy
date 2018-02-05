@@ -1,11 +1,8 @@
 /*
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
 ** term_colors.h
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Mon Oct 9 14:36:50 2017 Benoit Lormeau
-** Last update Mon Oct 9 14:36:50 2017 Benoit Lormeau
 */
 
 #pragma once

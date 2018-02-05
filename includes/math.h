@@ -1,11 +1,8 @@
 /*
-** math.h for libmy in /mnt/data/Delivery/Perso/libmy/Includes
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Thu Nov 9 13:54:10 2017 Benoit Lormeau
-** Last update Mon Nov 13 14:38:28 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** math.h
 */
 
 #pragma once

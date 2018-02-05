@@ -1,11 +1,8 @@
 /*
-** str_natcmp.c for Libmy in /mnt/data/Delivery/Perso/Libmy/Sources/String
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Tue Dec 5 15:12:25 2017 Benoit Lormeau
-** Last update Tue Dec 5 15:12:25 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** str_natcmp.c
 */
 
 #include "string.h"

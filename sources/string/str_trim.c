@@ -1,11 +1,8 @@
 /*
-** str_trim.c for Libmy in /mnt/data/Delivery/Perso/Libmy/Sources/String
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Mon Dec 11 13:55:23 2017 Benoit Lormeau
-** Last update Mon Dec 11 13:55:23 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** str_trim.c
 */
 
 #include "string.h"

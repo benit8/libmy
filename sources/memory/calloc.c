@@ -1,11 +1,8 @@
 /*
-** calloc.c for libmy in /mnt/data/Delivery/Perso/libmy/Sources/Memory
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Mon Oct 23 09:39:57 2017 Benoit Lormeau
-** Last update Mon Oct 23 09:39:57 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** calloc.c
 */
 
 #include "memory.h"

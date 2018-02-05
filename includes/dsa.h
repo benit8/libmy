@@ -1,11 +1,8 @@
 /*
-** dsa.h for Libmy in /mnt/data/Delivery/Perso/Libmy/Includes
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Mon Dec 4 15:25:38 2017 Benoit Lormeau
-** Last update Mon Dec 4 15:25:38 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** dsa.h
 */
 
 #pragma once

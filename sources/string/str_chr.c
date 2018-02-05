@@ -1,11 +1,8 @@
 /*
-** str_chr.c for libmy in /mnt/data/Delivery/Perso/libmy/Sources/String
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Wed Nov 8 15:35:04 2017 Benoit Lormeau
-** Last update Wed Nov 8 15:35:04 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** str_chr.c
 */
 
 #include "string.h"

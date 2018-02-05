@@ -1,11 +1,8 @@
 /*
-** malloc.c for Code in /mnt/data/Delivery/Perso/libmy/Sources/Memory
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Tue Jun 20 17:57:20 2017 Benoit Lormeau
-** Last update Tue Jun 20 17:57:20 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** malloc.c
 */
 
 #include "memory.h"

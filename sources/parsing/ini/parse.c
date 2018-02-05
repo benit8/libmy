@@ -1,11 +1,8 @@
 /*
-** parse.c for MyINI in /mnt/data/Delivery/Perso/MyINI/src
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Mon Dec 11 13:34:08 2017 Benoit Lormeau
-** Last update Mon Dec 11 13:34:08 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** parse.c
 */
 
 #include "parsing/ini.h"

@@ -1,11 +1,8 @@
 /*
-** capture.c for libmy in /mnt/data/Delivery/Perso/libmy/regex
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Tue Oct 17 11:49:37 2017 Benoit Lormeau
-** Last update Tue Oct 17 11:49:37 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** capture.c
 */
 
 #include "cregex.h"

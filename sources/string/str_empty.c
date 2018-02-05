@@ -1,11 +1,8 @@
 /*
-** str_empty.c for libmy in /mnt/data/Delivery/Perso/libmy/Sources/String
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Wed Oct 25 22:55:49 2017 Benoit Lormeau
-** Last update Wed Oct 25 22:55:49 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** str_empty.c
 */
 
 #include "string.h"

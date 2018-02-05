@@ -1,11 +1,8 @@
 /*
-** char.h for libmy in /mnt/data/Delivery/Perso/libmy/Includes
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Thu Nov 9 13:51:12 2017 Benoit Lormeau
-** Last update Thu Nov 9 13:51:12 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** char.h
 */
 
 #pragma once

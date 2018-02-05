@@ -1,11 +1,8 @@
 /*
-** atof.c for Libmy in /mnt/data/Delivery/Perso/Libmy/Sources/Numeric
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Tue Dec 12 16:53:50 2017 Benoit Lormeau
-** Last update Tue Dec 12 16:53:50 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** atof.c
 */
 
 #include "numeric.h"

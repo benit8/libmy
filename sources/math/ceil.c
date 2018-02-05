@@ -1,11 +1,8 @@
 /*
-** ceil.c for libmy in /mnt/data/Delivery/Perso/libmy/Sources/Math
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Mon Nov 13 11:02:30 2017 Benoit Lormeau
-** Last update Mon Nov 13 11:38:41 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** ceil.c
 */
 
 #include "math.h"

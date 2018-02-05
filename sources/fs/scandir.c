@@ -1,11 +1,8 @@
 /*
-** scandir.c for libmy in /mnt/data/Delivery/Perso/libmy
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Tue Oct 17 16:44:13 2017 Benoit Lormeau
-** Last update Tue Oct 17 16:44:13 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** scandir.c
 */
 
 #include "fs.h"

@@ -1,11 +1,8 @@
 /*
-** gnl.c for libmy in /mnt/data/Delivery/Perso/libmy/Sources/IO
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Wed Oct 25 13:54:31 2017 Benoit Lormeau
-** Last update Wed Oct 25 13:54:32 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** gnl.c
 */
 
 #include "io.h"

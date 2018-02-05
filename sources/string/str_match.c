@@ -1,11 +1,8 @@
 /*
-** str_match.c for Libmy in /mnt/data/Delivery/Perso/Libmy/sources/string
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Thu Dec 14 10:48:33 2017 Benoit Lormeau
-** Last update Thu Dec 14 10:48:33 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** str_match.c
 */
 
 #include "string.h"

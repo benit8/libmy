@@ -1,11 +1,8 @@
 /*
-** postfix.c for Libmy in /mnt/data/Delivery/Perso/Libmy/Sources/parsing/calc
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Thu Dec 14 09:40:50 2017 Benoit Lormeau
-** Last update Thu Dec 14 09:40:50 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** postfix.c
 */
 
 #include "parsing/calc.h"

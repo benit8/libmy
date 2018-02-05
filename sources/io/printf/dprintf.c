@@ -1,11 +1,8 @@
 /*
-** dprintf.c for libmy in /mnt/data/Delivery/Perso/libmy/Sources/IO
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Tue Nov 7 22:03:18 2017 Benoit Lormeau
-** Last update Tue Nov 14 10:51:58 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** dprintf.c
 */
 
 #include "io.h"

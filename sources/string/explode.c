@@ -1,11 +1,8 @@
 /*
-** explode.c for libmy in /mnt/data/Delivery/Perso/libmy/string
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Tue Oct 24 09:34:45 2017 Benoit Lormeau
-** Last update Tue Oct 24 09:34:45 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** explode.c
 */
 
 #include "string.h"

@@ -1,47 +1,28 @@
 /*
-** list.c for Libmy in /mnt/data/Delivery/Perso/Libmy/Sources/dsa/list
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Mon Dec 4 10:10:32 2017 Benoit Lormeau
-** Last update Mon Dec 4 10:10:32 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** list.c
 */
 
 #include "dsa/list.h"
 
 list_t *list_create(clean_func_t *clean_up)
 {
-	list_t *list = my_calloc(1, sizeof(list_t));
+	list_t *this = my_calloc(1, sizeof(list_t));
 
-	if (list) {
-		list->head = NULL;
-		list->rear = NULL;
-		list->clean_up = clean_up;
+	if (this) {
+		this->head = NULL;
+		this->rear = NULL;
+		this->clean_up = clean_up;
 	}
-	return (list);
+	return (this);
 }
 
-void list_destroy(list_t *list)
+void list_destroy(list_t *this)
 {
-	if (!list)
+	if (!this)
 		return;
-	list_clear(list);
-	my_free(list);
-}
-
-void list_clear(list_t *list)
-{
-	list_node_t *next;
-
-	if (!list)
-		return;
-	for (list_node_t *curr = list->head; curr != NULL; curr = next) {
-		next = curr->next;
-		if (list->clean_up)
-			(list->clean_up)(curr->data);
-		my_free(curr);
-	}
-	list->head = NULL;
-	list->rear = NULL;
+	list_clear(this);
+	my_free(this);
 }

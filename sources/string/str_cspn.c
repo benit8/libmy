@@ -1,11 +1,8 @@
 /*
-** str_cspn.c for Libmy in /mnt/data/Delivery/Perso/Libmy/Sources/String
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Tue Dec 12 20:44:31 2017 Benoit Lormeau
-** Last update Tue Dec 12 20:44:31 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** str_cspn.c
 */
 
 #include "string.h"

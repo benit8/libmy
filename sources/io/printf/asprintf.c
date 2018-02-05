@@ -1,11 +1,8 @@
 /*
-** asprintf.c for libmy in /mnt/data/Delivery/Perso/libmy/Sources/IO/printf
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Tue Nov 14 09:54:00 2017 Benoit Lormeau
-** Last update Tue Nov 14 10:12:52 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** asprintf.c
 */
 
 #include "io.h"
