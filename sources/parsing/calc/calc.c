@@ -16,8 +16,7 @@ double fcalc(const char *expr)
 	queue_t *postfix = queue_create(&my_free);
 	double res;
 
-	if (!calc_parse_expr(expr, infix))
-		return (0.0);
+	calc_parse_expr(expr, infix);
 	calc_parse_infix(infix, postfix);
 	res = calc_eval_postfix(postfix);
 	queue_destroy(infix);

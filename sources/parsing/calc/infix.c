@@ -48,7 +48,7 @@ static void calc_parse_infix_2(queue_t *postfix, stack_t *stack, char *symbol)
 	}
 }
 
-bool calc_parse_infix(queue_t *infix, queue_t *postfix)
+void calc_parse_infix(queue_t *infix, queue_t *postfix)
 {
 	stack_t *stack = stack_create(&my_free);
 	char *symbol;
@@ -66,5 +66,4 @@ bool calc_parse_infix(queue_t *infix, queue_t *postfix)
 	while (!stack_is_empty(stack) && STACK_PEEK(stack, char) != '#')
 		queue_push(postfix, stack_pop(stack));
 	stack_destroy(stack);
-	return (true);
 }
