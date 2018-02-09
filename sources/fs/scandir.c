@@ -7,9 +7,7 @@
 
 #include "fs.h"
 
-static void scan_dir_sort(const dirent_t **names,
-			  int n,
-			  dir_compar_t *comp)
+static void scan_dir_sort(const dirent_t **names, int n, dir_compar_t *comp)
 {
 	const dirent_t *p = NULL;
 	const dirent_t *t = NULL;

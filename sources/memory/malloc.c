@@ -9,7 +9,7 @@
 
 void *my_malloc(size_t size)
 {
-	void *ptr;
+	void *ptr = NULL;
 
 	ptr = malloc(sizeof(size_t) + size);
 	if (ptr == NULL)
@@ -33,7 +33,7 @@ void my_free(void *ptr)
 
 size_t my_malloc_size(const void *ptr)
 {
-	size_t *size;
+	size_t *size = NULL;
 
 	if (ptr == NULL)
 		return (0);

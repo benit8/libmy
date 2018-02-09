@@ -7,7 +7,8 @@
 
 #include "numeric.h"
 
-static char *strto_get_base(const char *nptr, int *base)
+static char *
+strto_get_base(const char *nptr, int *base)
 {
 	char *n = (char *)nptr;
 
@@ -29,6 +30,8 @@ static char *strto_get_base(const char *nptr, int *base)
 		*base = 0;
 	return (n);
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 long int my_strtol(const char *nptr, char **endptr, int base)
 {

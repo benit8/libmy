@@ -11,7 +11,7 @@ char *my_utoa(size_t n, uint8_t base)
 {
 	static char *digits = "0123456789abcdef";
 	size_t i = 0;
-	char *res;
+	char *res = NULL;
 
 	if (!IN_RANGE(base, 2, 16))
 		return (NULL);

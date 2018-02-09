@@ -29,7 +29,6 @@ char *str_napd(char *dest, const char *src, size_t n)
 		return (str_ndup(src, n));
 	if (dstSiz - dstLen < n)
 		dest = my_realloc(dest, dstLen + n + 1);
-	d = dest;
 	for (; *d; d++);
 	while (*s && n-- > 0)
 		*d++ = *s++;

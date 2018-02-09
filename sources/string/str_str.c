@@ -9,7 +9,7 @@
 
 char *str_str(char *string, const char *search)
 {
-	char *a;
+	char *a = NULL;
 	const char *b = search;
 
 	if (*b == '\0')
@@ -31,7 +31,7 @@ char *str_str(char *string, const char *search)
 
 char *str_nstr(char *string, const char *search, size_t n)
 {
-	char *a;
+	char *a = NULL;
 	const char *b = search;
 
 	if (*b == '\0')

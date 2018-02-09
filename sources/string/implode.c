@@ -9,7 +9,7 @@
 
 char *implode(const char *glue, char **array)
 {
-	char *output;
+	char *output = NULL;
 	size_t length = 0;
 
 	if (array == NULL || array[0] == NULL)

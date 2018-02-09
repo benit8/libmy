@@ -10,7 +10,7 @@
 char *str_repeat(char *str, size_t times)
 {
 	char *output = NULL;
-	size_t len;
+	size_t len = 0;
 
 	if (str == NULL)
 		return (NULL);

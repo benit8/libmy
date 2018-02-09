@@ -7,10 +7,8 @@
 
 #include "cregex.h"
 
-static bool regex_append(char ***array,
-			   size_t n,
-			   char *subject,
-			   regmatch_t match)
+static bool
+regex_append(char ***array, size_t n, char *subject, regmatch_t match)
 {
 	size_t subStrLength = 0;
 

@@ -10,9 +10,8 @@
 char *str_trim(char *str)
 {
 	char *dest = str;
-	char *end;
+	char *end = str + str_len(str);
 
-	end = str + str_len(str);
 	for (; *str && is_space(*str); str++);
 	while (end > str) {
 		if (!is_space(*(end - 1)))

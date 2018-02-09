@@ -9,8 +9,8 @@
 
 void *my_realloc(void *ptr, size_t newSize)
 {
-	size_t curSize;
-	void *newPtr;
+	size_t curSize = 0;
+	void *newPtr = NULL;
 
 	if (ptr == NULL)
 		return (my_calloc(1, newSize));

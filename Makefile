@@ -48,11 +48,11 @@ DSA	=	$(SRC)/dsa/list/access.c		\
 		$(SRC)/dsa/stack/capacity.c		\
 		$(SRC)/dsa/stack/modifiers.c		\
 		$(SRC)/dsa/stack/stack.c		\
-		$(SRC)/dsa/table/foreach.c		\
-		$(SRC)/dsa/table/get.c			\
-		$(SRC)/dsa/table/set.c			\
-		$(SRC)/dsa/table/table.c		\
-		$(SRC)/dsa/table/tests.c		\
+		$(SRC)/dsa/map/access.c			\
+		$(SRC)/dsa/map/capacity.c		\
+		$(SRC)/dsa/map/map.c			\
+		$(SRC)/dsa/map/modifiers.c		\
+		$(SRC)/dsa/map/operations.c		\
 		$(SRC)/dsa/sort.c
 
 FS	=	$(SRC)/fs/file_get_contents.c		\

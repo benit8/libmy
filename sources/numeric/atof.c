@@ -7,13 +7,13 @@
 
 #include "numeric.h"
 
-static void atof_integer_part(const char **strp, double *res)
+static void
+atof_integer_part(const char **strp, double *res)
 {
 	char tmp[18];
-	ssize_t sz;
-	int val;
+	ssize_t sz = str_cspn(*strp, ".");
+	int val = 0;
 
-	sz = str_cspn(*strp, ".");
 	if (sz > 0) {
 		str_ncpy(tmp, *strp, sz);
 		tmp[sz] = '\0';
@@ -25,12 +25,13 @@ static void atof_integer_part(const char **strp, double *res)
 	*strp += sz;
 }
 
-static void atof_decimal_part(const char **strp, double *res)
+static void
+atof_decimal_part(const char **strp, double *res)
 {
 	const char *str = *strp;
-	size_t len;
-	int val;
-	int div;
+	size_t len = 0;
+	int val = 0;
+	int div = 0;
 
 	if (*str)
 		str++;
@@ -43,6 +44,8 @@ static void atof_decimal_part(const char **strp, double *res)
 		*res += (double)val / (double)div;
 	}
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 double my_atof(const char *str)
 {

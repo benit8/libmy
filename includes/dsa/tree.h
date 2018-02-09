@@ -1,16 +1,16 @@
 /*
-** tree.h for Libmy in /mnt/data/Delivery/Perso/Libmy/includes/dsa
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Mon Dec 18 20:08:06 2017 Benoit Lormeau
-** Last update Mon Dec 18 20:08:06 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** tree.h
 */
 
 #pragma once
 
 ////////////////////////////////////////////////////////////////////////////////
+
+#include <stdbool.h>
+#include <stdlib.h>
 
 #include "dsa_types.h"
 #include "memory.h"

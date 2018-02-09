@@ -9,9 +9,9 @@
 
 char *gnl(const int fd)
 {
-	char buff[1];
 	char *line = my_calloc(1, sizeof(char));
-	int r;
+	char buff[1];
+	int r = 0;
 
 	while (1) {
 		r = read(fd, buff, 1);

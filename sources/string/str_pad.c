@@ -11,7 +11,7 @@ char *str_padr(const char *string, size_t padSize, const char *pad)
 {
 	size_t stringLen = str_len(string);
 	size_t padLen = str_len(pad);
-	char *output;
+	char *output = NULL;
 
 	if (padSize <= stringLen)
 		return (str_dup(string));
@@ -26,8 +26,8 @@ char *str_padl(const char *string, size_t padSize, const char *pad)
 {
 	size_t stringLen = str_len(string);
 	size_t padLen = str_len(pad);
-	size_t padSpace;
-	char *output;
+	size_t padSpace = 0;
+	char *output = NULL;
 
 	if (padSize <= stringLen)
 		return (str_dup(string));

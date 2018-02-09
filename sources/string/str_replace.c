@@ -9,8 +9,8 @@
 
 char *str_replace(const char *search, const char *replace, char *subject)
 {
-	char *output;
-	ssize_t pos;
+	char *output = NULL;
+	ssize_t pos = 0;
 	size_t searchLen = str_len(search);
 
 	if (str_empty(search) || replace == NULL || str_empty(subject))

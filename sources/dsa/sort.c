@@ -24,8 +24,8 @@ void sort(void *ptr, size_t n, size_t s, comp_func_t *cmp)
 {
 	char pivot[s];
 	char *p = ptr;
-	size_t i;
-	size_t j;
+	size_t i = 0;
+	size_t j = 0;
 
 	if (n < 2)
 		return;

@@ -9,8 +9,8 @@
 
 ssize_t str_cspn(const char *str1, const char *str2)
 {
-	const char *s1;
-	const char *s2;
+	const char *s1 = NULL;
+	const char *s2 = NULL;
 
 	for (s1 = str1; *s1; s1++) {
 		for (s2 = str2; *s2; s2++) {

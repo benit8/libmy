@@ -67,7 +67,7 @@ void list_erase(list_t *this, size_t pos)
 
 void list_clear(list_t *this)
 {
-	list_node_t *next;
+	list_node_t *next = NULL;
 
 	if (!this)
 		return;
