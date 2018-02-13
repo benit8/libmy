@@ -58,18 +58,15 @@ size_t str_nlen(const char *string, size_t max);
 
 bool str_match(const char *s1, const char *s2);
 
+ssize_t str_pos(char *string, const char *search);
 ssize_t str_npos(char *string, const char *search, size_t n);
 
 char *str_pad(const char *string, size_t padLen, const char *pad);
 char *str_padl(const char *string, size_t padLen, const char *pad);
 char *str_padr(const char *string, size_t padLen, const char *pad);
 
-ssize_t str_pos(char *string, const char *search);
-
 char *str_repeat(char *string, size_t times);
-
 char *str_replace(const char *search, const char *replace, char *subject);
-
 char *str_rev(char *string);
 
 char *str_sep(char **stringp, const char *delim);

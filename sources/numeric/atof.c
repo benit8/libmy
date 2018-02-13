@@ -7,8 +7,8 @@
 
 #include "numeric.h"
 
-static void
-atof_integer_part(const char **strp, double *res)
+static
+void atof_integer_part(const char **strp, double *res)
 {
 	char tmp[18];
 	ssize_t sz = str_cspn(*strp, ".");
@@ -25,8 +25,8 @@ atof_integer_part(const char **strp, double *res)
 	*strp += sz;
 }
 
-static void
-atof_decimal_part(const char **strp, double *res)
+static
+void atof_decimal_part(const char **strp, double *res)
 {
 	const char *str = *strp;
 	size_t len = 0;

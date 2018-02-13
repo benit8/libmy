@@ -19,10 +19,12 @@
 
 #define LIST_PUSH_BACK(list, var)	(list_push_back(list, &(var)))
 #define LIST_PUSH_FRONT(list, var)	(list_push_front(list, &(var)))
-#define LIST_INSERT(list, pos, var)	(list_insert(list, pos, &(var)))
+#define LIST_POP_BACK(list, TYPE)	(*((TYPE *)list_pop_back(list)))
+#define LIST_POP_FRONT(list, TYPE)	(*((TYPE *)list_pop_front(list)))
 #define LIST_AT(list, at, TYPE)		(*((TYPE *)list_at(list, at)))
 #define LIST_BACK(list, TYPE)		(*((TYPE *)list_back(list)))
 #define LIST_FRONT(list, TYPE)		(*((TYPE *)list_front(list)))
+#define LIST_INSERT(list, pos, var)	(list_insert(list, pos, &(var)))
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -55,9 +57,9 @@ void *list_back(list_t *list);
 void *list_front(list_t *list);
 
 bool list_push_back(list_t *list, void *data);
-void list_pop_back(list_t *list);
+void *list_pop_back(list_t *list);
 bool list_push_front(list_t *list, void *data);
-void list_pop_front(list_t *list);
+void *list_pop_front(list_t *list);
 bool list_insert(list_t *list, size_t pos, void *data);
 void list_erase(list_t *list, size_t pos);
 void list_clear(list_t *list);

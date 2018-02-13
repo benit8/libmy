@@ -9,7 +9,7 @@
 
 char *str_sep(char **stringp, const char *delim)
 {
-	size_t dLen = str_len(delim);
+	size_t d_len = str_len(delim);
 	char *s = *stringp;
 	char *p = NULL;
 
@@ -24,7 +24,7 @@ char *str_sep(char **stringp, const char *delim)
 		*stringp += str_len(s);
 		return (s);
 	}
-	mem_set(p, 0, dLen);
-	*stringp = p + dLen;
+	mem_set(p, 0, d_len);
+	*stringp = p + d_len;
 	return (s);
 }

@@ -7,7 +7,8 @@
 
 #include "parsing/calc.h"
 
-static double calc_do_operation(char symbol, char *s[2])
+static
+double calc_do_operation(char symbol, char *s[2])
 {
 	double n[2];
 
@@ -31,7 +32,8 @@ static double calc_do_operation(char symbol, char *s[2])
 	}
 }
 
-static bool calc_prepare_operation(stack_t *stack, char *symbol)
+static
+bool calc_prepare_operation(stack_t *stack, char *symbol)
 {
 	double res;
 	char *s[2];
@@ -39,7 +41,7 @@ static bool calc_prepare_operation(stack_t *stack, char *symbol)
 
 	s[1] = stack_pop(stack);
 	s[0] = stack_pop(stack);
-	if (s[0] == NULL || s[1] == NULL){
+	if (s[0] == NULL || s[1] == NULL) {
 		r = false;
 		goto fail;
 	}
@@ -51,6 +53,8 @@ fail:
 	my_free(symbol);
 	return (r);
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 double calc_eval_postfix(queue_t *postfix)
 {

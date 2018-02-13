@@ -14,9 +14,9 @@ bool file_put_contents(const char *filepath, char *contents, bool append)
 	int flags = O_CREAT | O_WRONLY | (append ? O_APPEND : 0);
 	int fd = open(filepath, flags, mode);
 
-	if (fd == -1)
+	if (fd < 0)
 		return (false);
-	r = write(fd, contents, str_len(contents));
+	r = write(fd, contents, str_len(contents) * sizeof(char));
 	close(fd);
 	return (r != -1);
 }

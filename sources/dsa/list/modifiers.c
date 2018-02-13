@@ -7,7 +7,8 @@
 
 #include "dsa/list.h"
 
-static bool list_create_insert_node(void *data, list_node_t *prev, list_node_t *next)
+static
+bool list_create_insert_node(void *data, list_node_t *prev, list_node_t *next)
 {
 	list_node_t *new = NULL;
 
@@ -21,6 +22,8 @@ static bool list_create_insert_node(void *data, list_node_t *prev, list_node_t *
 	next->prev = new;
 	return (true);
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 bool list_insert(list_t *this, size_t pos, void *data)
 {

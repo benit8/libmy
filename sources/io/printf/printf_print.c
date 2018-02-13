@@ -15,26 +15,26 @@ void printf_print_char(char **tmpbuf, va_list ap)
 	(*tmpbuf) = str_napd(*tmpbuf, &c, 1);
 }
 
-void printf_print_str(char **tmpbuf, va_list ap, printfOpt_t opt)
+void printf_print_str(char **tmpbuf, va_list ap, printf_opt_t opt)
 {
 	char *str = va_arg(ap, char *);
 
 	if (!str)
 		str = "(null)";
 	if (opt.prec)
-		(*tmpbuf) = str_napd(*tmpbuf, str, opt.precLen);
+		(*tmpbuf) = str_napd(*tmpbuf, str, opt.prec_len);
 	else
 		(*tmpbuf) = str_apd(*tmpbuf, str);
 }
 
 void printf_print_numeric(const char **fmtp,
-			  char **tmpbuf,
-			  va_list ap,
-			  printfOpt_t *opt)
+			char **tmpbuf,
+			va_list ap,
+			printf_opt_t *opt)
 {
-	size_t u;
-	ssize_t n;
-	char *str;
+	size_t u = 0;
+	ssize_t n = 0;
+	char *str = NULL;
 
 	if (opt->unsign || opt->base != 10) {
 		u = va_arg(ap, size_t);
@@ -55,19 +55,19 @@ void printf_print_numeric(const char **fmtp,
 void printf_print_float(const char **fmtp,
 			char **tmpbuf,
 			va_list ap,
-			printfOpt_t *opt)
+			printf_opt_t *opt)
 {
-	double d;
-	char *str;
+	double d = 0.0;
+	char *str = NULL;
 
 	if (!opt->prec) {
-		if (*(*fmtp) == 'g' || *(*fmtp) == 'G')
-			opt->precLen = 5;
+		if (str_chr("gG", *(*fmtp)))
+			opt->prec_len = 5;
 		else
-			opt->precLen = 6;
+			opt->prec_len = 6;
 	}
 	d = va_arg(ap, double);
-	str = my_ftoa(d, opt->precLen);
+	str = my_ftoa(d, opt->prec_len);
 	if (is_upper(*(*fmtp)))
 		str = str_toupper(str);
 	(*tmpbuf) = str_apd(*tmpbuf, str);

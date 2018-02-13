@@ -2,14 +2,14 @@
 ** EPITECH PROJECT, 2018
 ** libmy
 ** File description:
-** gnl.c
+** get_next_line
 */
 
 #include "io.h"
 
 char *gnl(const int fd)
 {
-	char *line = my_calloc(1, sizeof(char));
+	char *line = my_calloc(BUFFER_SIZE, sizeof(char));
 	char buff[1];
 	int r = 0;
 
@@ -19,8 +19,23 @@ char *gnl(const int fd)
 			break;
 		line = str_napd(line, buff, 1);
 	}
-	if (r == 1 || line[0] != '\0')
+	if (r == 1)
 		return (line);
 	my_free(line);
 	return (NULL);
+}
+
+char *fgnl(FILE *fp)
+{
+	char *line = NULL;
+	size_t len = 0;
+	ssize_t read = get_line(&line, &len, fp);
+
+	if (read == -1) {
+		if (line)
+			my_free(line);
+		return (NULL);
+	}
+	line[str_len(line) - 1] = '\0';
+	return (line);
 }

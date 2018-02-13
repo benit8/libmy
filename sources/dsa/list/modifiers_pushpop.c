@@ -30,19 +30,22 @@ bool list_push_back(list_t *this, void *data)
 	return (true);
 }
 
-void list_pop_back(list_t *this)
+void *list_pop_back(list_t *this)
 {
 	list_node_t *last = NULL;
+	void *data = NULL;
 
 	if (!this || !this->head)
-		return;
+		return (NULL);
 	last = this->rear;
+	data = last->data;
 	if (!this->head->next)
 		this->head = NULL;
 	else
 		this->rear->prev->next = NULL;
 	this->rear = this->rear->prev;
 	my_free(last);
+	return (data);
 }
 
 bool list_push_front(list_t *this, void *data)
@@ -68,17 +71,20 @@ bool list_push_front(list_t *this, void *data)
 	return (true);
 }
 
-void list_pop_front(list_t *this)
+void *list_pop_front(list_t *this)
 {
 	list_node_t *first = NULL;
+	void *data = NULL;
 
 	if (!this || !this->head)
-		return;
+		return (NULL);
 	first = this->head;
+	data = first->data;
 	if (!this->head->next)
 		this->rear = NULL;
 	else
 		this->head->next->prev = NULL;
 	this->head = this->head->next;
 	my_free(first);
+	return (data);
 }

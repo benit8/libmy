@@ -25,7 +25,7 @@ void *my_malloc(size_t size)
 
 void my_free(void *ptr)
 {
-	if (ptr == NULL)
+	if (!ptr)
 		return;
 	free(ptr - sizeof(size_t));
 	ptr = NULL;

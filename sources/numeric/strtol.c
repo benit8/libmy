@@ -7,8 +7,8 @@
 
 #include "numeric.h"
 
-static char *
-strto_get_base(const char *nptr, int *base)
+static
+char *strto_get_base(const char *nptr, int *base)
 {
 	char *n = (char *)nptr;
 

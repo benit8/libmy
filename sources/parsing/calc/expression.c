@@ -7,20 +7,20 @@
 
 #include "parsing/calc.h"
 
-static bool
-s_var_char(char c)
+static
+bool is_var_char(char c)
 {
 	return (is_alnum(c) || c == '_');
 }
 
-static bool
-is_num_char(char c)
+static
+bool is_num_char(char c)
 {
 	return (is_digit(c) || c == '.');
 }
 
-static bool
-parse_identifier(const char *expr, size_t *i, int8_t type, queue_t *infix)
+static
+bool parse_identifier(const char *expr, size_t *i, int8_t type, queue_t *infix)
 {
 	size_t start;
 	bool r;
@@ -41,9 +41,11 @@ parse_identifier(const char *expr, size_t *i, int8_t type, queue_t *infix)
 	return (r);
 }
 
+////////////////////////////////////////////////////////////////////////////////
+
 void calc_parse_expr(const char *expr, queue_t *infix)
 {
-	for (size_t i = 0; expr[i] != '\0'; ++i){
+	for (size_t i = 0; expr[i] != '\0'; ++i) {
 		if (str_chr("+-*/%^()", expr[i]))
 			parse_identifier(expr, &i, 0, infix);
 		else if (is_num_char(expr[i]))

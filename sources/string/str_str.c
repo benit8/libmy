@@ -14,11 +14,11 @@ char *str_str(char *string, const char *search)
 
 	if (*b == '\0')
 		return (string);
-	for (; *string != '\0'; string++){
+	for (; *string != '\0'; string++) {
 		if (*string != *search)
 			continue;
 		a = string;
-		for (;; ++a, ++b){
+		for (;; ++a, ++b) {
 			if (*b == '\0')
 				return (string);
 			if (*a != *b)
@@ -36,13 +36,13 @@ char *str_nstr(char *string, const char *search, size_t n)
 
 	if (*b == '\0')
 		return (string);
-	for (; *string != '\0' && n--; string++){
+	for (; *string != '\0' && n--; string++) {
 		if (*string != *search)
 			continue;
 		if (n < str_len(search))
 			break;
 		a = string;
-		for (;; ++a, ++b){
+		for (;; ++a, ++b) {
 			if (*b == '\0')
 				return (string);
 			if (*a != *b)

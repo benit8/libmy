@@ -12,9 +12,9 @@ char *regex_replace(const char *pattern, const char *replacement, char *subject)
 	regex_t	regex;
 	regmatch_t *matches = my_calloc(1, sizeof(regmatch_t));
 	char *result = my_calloc(1, sizeof(char));
-	int rStatus = regcomp(&regex, pattern, REG_EXTENDED);
+	int ok = regcomp(&regex, pattern, REG_EXTENDED);
 
-	if (rStatus != 0 || matches == NULL || result == NULL)
+	if (ok != 0 || matches == NULL || result == NULL)
 		return (NULL);
 	while (regexec(&regex, subject, 1, matches, 0) != REG_NOMATCH) {
 		result = str_napd(result, subject, matches[0].rm_so);

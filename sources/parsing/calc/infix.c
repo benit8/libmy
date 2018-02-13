@@ -7,7 +7,8 @@
 
 #include "parsing/calc.h"
 
-static int precdnc(char symbol)
+static
+int precedence(char symbol)
 {
 	switch (symbol) {
 		case '^':
@@ -28,22 +29,25 @@ static int precdnc(char symbol)
 	return (0);
 }
 
-static void calc_parse_infix_2(queue_t *postfix, stack_t *stack, char *symbol)
+static
+void calc_parse_infix_2(queue_t *postfix, stack_t *s, char *symbol)
 {
 	if (*symbol == ')') {
-		while (!stack_is_empty(stack) && STACK_PEEK(stack, char) != '(')
-			queue_push(postfix, stack_pop(stack));
-		my_free(stack_pop(stack));
+		while (!stack_is_empty(s) && STACK_PEEK(s, char) != '(')
+			queue_push(postfix, stack_pop(s));
+		my_free(stack_pop(s));
 		my_free(symbol);
 	}
-	else if (precdnc(*symbol) > precdnc(STACK_PEEK(stack, char)))
-		stack_push(stack, symbol);
+	else if (precedence(*symbol) > precedence(STACK_PEEK(s, char)))
+		stack_push(s, symbol);
 	else {
-		while (precdnc(*symbol) <= precdnc(STACK_PEEK(stack, char)))
-			queue_push(postfix, stack_pop(stack));
+		while (precedence(*symbol) <= precedence(STACK_PEEK(s, char)))
+			queue_push(postfix, stack_pop(s));
 		queue_push(postfix, symbol);
 	}
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 void calc_parse_infix(queue_t *infix, queue_t *postfix)
 {

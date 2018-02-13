@@ -9,7 +9,7 @@
 
 char *str_toupper(char *str)
 {
-	for (char *s = str; *s != 0; ++s){
+	for (char *s = str; *s != 0; ++s) {
 		if (is_lower(*s))
 			*s -= 32;
 	}

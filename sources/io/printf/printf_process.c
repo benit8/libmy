@@ -8,12 +8,9 @@
 #include "io.h"
 #include "printf.h"
 
-bool printf_process(
-	const char **fmtp,
-	char **buffp,
-	va_list ap)
+bool printf_process(const char **fmtp, char **buffp, va_list ap)
 {
-	printfOpt_t opt = PRTF_OPT_DFLT;
+	printf_opt_t opt = PRTF_OPT_DFLT;
 	const char *begin = (*fmtp)++;
 	char *tmpbuf = my_calloc(64, sizeof(char));
 
@@ -28,18 +25,17 @@ bool printf_process(
 		printf_print_str(&tmpbuf, ap, opt);
 	else if (!printf_process_numeric(fmtp, &tmpbuf, ap, &opt))
 		*buffp = str_napd(*buffp, begin, (*fmtp) - begin + 1);
-	if (opt.padSize && !str_empty(tmpbuf))
+	if (opt.pad_size && !str_empty(tmpbuf))
 		printf_process_padding(&tmpbuf, opt);
 	*buffp = str_apd(*buffp, tmpbuf);
 	my_free(tmpbuf);
 	return (true);
 }
 
-bool printf_process_numeric(
-	const char **fmtp,
+bool printf_process_numeric(const char **fmtp,
 	char **tmpbuf,
 	va_list ap,
-	printfOpt_t *opt)
+	printf_opt_t *opt)
 {
 	if (*(*fmtp) == 'l') {
 		opt->longlong = true;
@@ -59,20 +55,20 @@ bool printf_process_numeric(
 	return (true);
 }
 
-void printf_process_padding(char **tmpbuf, printfOpt_t opt)
+void printf_process_padding(char **tmpbuf, printf_opt_t opt)
 {
 	switch (opt.align) {
 		case PRTF_RIGHT:
-			(*tmpbuf) = str_padl(*tmpbuf, opt.padSize, " ");
+			(*tmpbuf) = str_padl(*tmpbuf, opt.pad_size, " ");
 		break;
 		case PRTF_RIGHT0:
-			(*tmpbuf) = str_padl(*tmpbuf, opt.padSize, "0");
+			(*tmpbuf) = str_padl(*tmpbuf, opt.pad_size, "0");
 		break;
 		case PRTF_LEFT:
-			(*tmpbuf) = str_padr(*tmpbuf, opt.padSize, " ");
+			(*tmpbuf) = str_padr(*tmpbuf, opt.pad_size, " ");
 		break;
 		case PRTF_CENTER:
-			(*tmpbuf) = str_pad(*tmpbuf, opt.padSize, " ");
+			(*tmpbuf) = str_pad(*tmpbuf, opt.pad_size, " ");
 		break;
 	}
 }

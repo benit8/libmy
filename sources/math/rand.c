@@ -9,7 +9,8 @@
 
 static size_t next = 1;
 
-static void rand_init(void)
+static
+void rand_init(void)
 {
 	static bool init = false;
 
@@ -18,6 +19,8 @@ static void rand_init(void)
 	my_srand(time(NULL));
 	init = true;
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 void my_srand(unsigned int seed)
 {

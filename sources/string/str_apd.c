@@ -18,19 +18,18 @@ char *str_napd(char *dest, const char *src, size_t n)
 {
 	char *d = dest;
 	const char *s = src;
-	size_t dstSiz = my_malloc_size(dest) - 1;
-	size_t dstLen = str_len(dest);
-	size_t srcLen = str_len(src);
+	size_t dest_size = my_malloc_size(dest) - 1;
+	size_t dest_len = str_len(dest);
 
 	if (!n)
 		return (dest);
-	n = MIN(n, srcLen);
+	n = MIN(n, str_len(src));
 	if (dest == NULL)
 		return (str_ndup(src, n));
-	if (dstSiz - dstLen < n)
-		dest = my_realloc(dest, dstLen + n + 1);
-	for (; *d; d++);
-	while (*s && n-- > 0)
+	if (dest_size - dest_len < n)
+		dest = my_realloc(dest, dest_len + n + 1);
+	for (d = dest; *d; d++);
+	while (*s && n--)
 		*d++ = *s++;
 	*d = '\0';
 	return (dest);

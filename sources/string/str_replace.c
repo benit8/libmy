@@ -11,7 +11,6 @@ char *str_replace(const char *search, const char *replace, char *subject)
 {
 	char *output = NULL;
 	ssize_t pos = 0;
-	size_t searchLen = str_len(search);
 
 	if (str_empty(search) || replace == NULL || str_empty(subject))
 		return (NULL);
@@ -22,7 +21,7 @@ char *str_replace(const char *search, const char *replace, char *subject)
 	for (; pos != -1; pos = str_pos(subject, search)){
 		output = str_napd(output, subject, pos);
 		output = str_apd(output, replace);
-		subject += pos + searchLen;
+		subject += pos + str_len(search);
 	}
 	output = str_apd(output, subject);
 	return (output);

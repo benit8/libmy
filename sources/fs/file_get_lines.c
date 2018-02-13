@@ -10,8 +10,11 @@
 char **file_get_lines(const char *filepath)
 {
 	char *content = file_get_contents(filepath);
-	char **array = explode("\n", content);
+	char **array = NULL;
 
-	my_free(content);
+	if (content) {
+		array = explode("\n", content);
+		my_free(content);
+	}
 	return (array);
 }

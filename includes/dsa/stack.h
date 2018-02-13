@@ -19,6 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #define STACK_PUSH(stack, var)	(stack_push(stack, &(var)))
+#define STACK_POP(stack, TYPE)	(*((TYPE *)stack_pop(stack)))
 #define STACK_PEEK(stack, TYPE)	(*((TYPE *)stack_peek(stack)))
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -36,5 +37,5 @@ bool stack_is_empty(stack_t *stack);
 size_t stack_get_size(stack_t *stack);
 
 bool stack_push(stack_t *stack, void *data);
-void stack_pop(stack_t *stack);
+void *stack_pop(stack_t *stack);
 void *stack_peek(stack_t *stack);

@@ -9,7 +9,7 @@
 
 char *str_chr(const char *string, char search)
 {
-	for (; *string; ++string){
+	for (; *string; ++string) {
 		if (*string == search)
 			return ((char *)string);
 	}
@@ -18,7 +18,7 @@ char *str_chr(const char *string, char search)
 
 char *str_nchr(const char *string, char search, size_t n)
 {
-	for (; n--; ++string){
+	for (; n--; ++string) {
 		if (*string == search)
 			return ((char *)string);
 	}
@@ -30,7 +30,7 @@ char *str_rchr(const char *string, char search)
 	const char *s = string;
 
 	for (; *s; ++s);
-	for (; s != string; --s){
+	for (; s != string; --s) {
 		if (*s == search)
 			return ((char *)s);
 	}

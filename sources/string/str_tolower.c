@@ -9,7 +9,7 @@
 
 char *str_tolower(char *str)
 {
-	for (char *s = str; *s != 0; ++s){
+	for (char *s = str; *s != 0; ++s) {
 		if (is_upper(*s))
 			*s += 32;
 	}

@@ -11,9 +11,9 @@ bool str_empty(const char *string)
 {
 	const char *s = string;
 
-	if (s == NULL)
+	if (!s)
 		return (true);
-	for (; *s != '\0'; ++s){
+	for (; *s != '\0'; ++s) {
 		if (!is_blank(*s))
 			return (false);
 	}

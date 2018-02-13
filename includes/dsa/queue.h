@@ -19,6 +19,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #define QUEUE_PUSH(queue, var)	(queue_push(queue, &(var)))
+#define QUEUE_POP(queue, TYPE)	(*((TYPE *)queue_pop(queue)))
 #define QUEUE_PEEK(queue, TYPE)	(*((TYPE *)queue_peek(queue)))
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -36,5 +37,5 @@ bool queue_is_empty(queue_t *queue);
 size_t queue_get_size(queue_t *queue);
 
 bool queue_push(queue_t *queue, void *data);
-void queue_pop(queue_t *queue);
+void *queue_pop(queue_t *queue);
 void *queue_peek(queue_t *queue);

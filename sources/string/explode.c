@@ -17,7 +17,7 @@ char **explode(const char *delim, char *original)
 
 	if (tab == NULL)
 		return (NULL);
-	for (; token != NULL; token = str_sep(&copy, delim)){
+	for (; token != NULL; token = str_sep(&copy, delim)) {
 		tab = my_realloc(tab, sizeof(char *) * (tokens + 2));
 		if (tab == NULL)
 			return (NULL);

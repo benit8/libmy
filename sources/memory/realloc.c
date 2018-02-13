@@ -7,20 +7,20 @@
 
 #include "memory.h"
 
-void *my_realloc(void *ptr, size_t newSize)
+void *my_realloc(void *ptr, size_t new_size)
 {
-	size_t curSize = 0;
-	void *newPtr = NULL;
+	size_t cur_size = 0;
+	void *new = NULL;
 
 	if (ptr == NULL)
-		return (my_calloc(1, newSize));
-	curSize = my_malloc_size(ptr);
-	if (newSize <= curSize)
+		return (my_calloc(1, new_size));
+	cur_size = my_malloc_size(ptr);
+	if (new_size <= cur_size)
 		return (ptr);
-	newPtr = my_calloc(1, newSize);
-	if (newPtr == NULL)
+	new = my_calloc(1, new_size);
+	if (new == NULL)
 		return (NULL);
-	mem_cpy(newPtr, ptr, curSize);
+	mem_cpy(new, ptr, cur_size);
 	my_free(ptr);
-	return (newPtr);
+	return (new);
 }

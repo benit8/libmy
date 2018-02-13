@@ -40,6 +40,11 @@ DSA	=	$(SRC)/dsa/list/access.c		\
 		$(SRC)/dsa/list/modifiers.c		\
 		$(SRC)/dsa/list/modifiers_pushpop.c	\
 		$(SRC)/dsa/list/operations.c		\
+		$(SRC)/dsa/map/access.c			\
+		$(SRC)/dsa/map/capacity.c		\
+		$(SRC)/dsa/map/map.c			\
+		$(SRC)/dsa/map/modifiers.c		\
+		$(SRC)/dsa/map/operations.c		\
 		$(SRC)/dsa/queue/access.c		\
 		$(SRC)/dsa/queue/capacity.c		\
 		$(SRC)/dsa/queue/modifiers.c		\
@@ -48,11 +53,6 @@ DSA	=	$(SRC)/dsa/list/access.c		\
 		$(SRC)/dsa/stack/capacity.c		\
 		$(SRC)/dsa/stack/modifiers.c		\
 		$(SRC)/dsa/stack/stack.c		\
-		$(SRC)/dsa/map/access.c			\
-		$(SRC)/dsa/map/capacity.c		\
-		$(SRC)/dsa/map/map.c			\
-		$(SRC)/dsa/map/modifiers.c		\
-		$(SRC)/dsa/map/operations.c		\
 		$(SRC)/dsa/sort.c
 
 FS	=	$(SRC)/fs/file_get_contents.c		\
@@ -69,6 +69,7 @@ IO	=	$(SRC)/io/printf/asprintf.c		\
 		$(SRC)/io/printf/printf_opt.c		\
 		$(SRC)/io/printf/printf_print.c		\
 		$(SRC)/io/printf/printf_process.c	\
+		$(SRC)/io/getdelim.c			\
 		$(SRC)/io/gnl.c				\
 		$(SRC)/io/putchar.c			\
 		$(SRC)/io/putnbr.c			\
@@ -107,16 +108,7 @@ Numeric	=	$(SRC)/numeric/atof.c			\
 Parsing	=	$(SRC)/parsing/calc/calc.c		\
 		$(SRC)/parsing/calc/expression.c	\
 		$(SRC)/parsing/calc/infix.c		\
-		$(SRC)/parsing/calc/postfix.c		\
-		$(SRC)/parsing/ini/array.c		\
-		$(SRC)/parsing/ini/data.c		\
-		$(SRC)/parsing/ini/get.c		\
-		$(SRC)/parsing/ini/line.c		\
-		$(SRC)/parsing/ini/parse.c		\
-		$(SRC)/parsing/ini/section.c		\
-		$(SRC)/parsing/ini/toolbox.c		\
-		$(SRC)/parsing/ini/var.c		\
-		$(SRC)/parsing/var.c
+		$(SRC)/parsing/calc/postfix.c
 
 Regex	=	$(SRC)/regex/capture.c			\
 		$(SRC)/regex/match.c			\
@@ -136,8 +128,8 @@ String	=	$(SRC)/string/explode.c			\
 		$(SRC)/string/str_empty.c		\
 		$(SRC)/string/str_len.c			\
 		$(SRC)/string/str_match.c		\
-		$(SRC)/string/str_natcmp.c		\
 		$(SRC)/string/str_natcasecmp.c		\
+		$(SRC)/string/str_natcmp.c		\
 		$(SRC)/string/str_pad.c			\
 		$(SRC)/string/str_pos.c			\
 		$(SRC)/string/str_ppd.c			\
@@ -161,7 +153,7 @@ SRCS	+=	$(IO)
 SRCS	+=	$(Math)
 SRCS	+=	$(Memory)
 SRCS	+=	$(Numeric)
-# SRCS	+=	$(Parsing)
+SRCS	+=	$(Parsing)
 SRCS	+=	$(Regex)
 SRCS	+=	$(String)
 
