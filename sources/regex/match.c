@@ -7,12 +7,12 @@
 
 #include "cregex.h"
 
-int regex_match(const char *pattern, char *subject)
+ssize_t regex_match(const char *pattern, char *subject)
 {
 	regex_t regex;
 	regmatch_t *matches = my_calloc(1, sizeof(regmatch_t));
 	int ok = regcomp(&regex, pattern, REG_EXTENDED);
-	int n = 0;
+	ssize_t n = 0;
 
 	if (ok != 0 || matches == NULL)
 		return (-1);

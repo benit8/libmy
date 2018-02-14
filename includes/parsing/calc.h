@@ -17,9 +17,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-int calc(const char *expr);
-double fcalc(const char *expr);
-
 void calc_parse_expr(const char *expr, queue_t *infix);
 void calc_parse_infix(queue_t *infix, queue_t *postfix);
 double calc_eval_postfix(queue_t *postfix);
+
+int calc(const char *expr);
+double fcalc(const char *expr);

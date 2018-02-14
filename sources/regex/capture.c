@@ -36,7 +36,7 @@ char **regex_capture(const char *pattern, char *subject)
 		return (NULL);
 	for (; regexec(&regex, subject, 1, matches, 0) != REG_NOMATCH; ++n) {
 		if (!regex_append(&array, n, subject, matches[0]))
-			return (false);
+			return (NULL);
 		subject += matches[0].rm_eo;
 	}
 	regfree(&regex);

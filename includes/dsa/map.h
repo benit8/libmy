@@ -18,23 +18,31 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#define MAP_SET(map, key, var)	(map_put(map, key, &(var)))
-#define MAP_GET(map, key, TYPE)	(*((TYPE *)map_get(map, key)))
+#define MAP_INSERT(map, key, var)	(map_insert(map, key, &(var)))
+#define MAP_AT(map, key, TYPE)		(*((TYPE *)map_at(map, key)))
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct map_node
+// typedef struct map_node
+// {
+// 	char *key;
+// 	void *data;
+// 	struct map_node *next;
+// } map_node_t;
+
+// typedef struct map
+// {
+// 	map_node_t *head;
+// 	void (*clean_up)(void *data);
+// } map_t;
+
+typedef struct pair
 {
 	char *key;
 	void *data;
-	struct map_node *next;
-} map_node_t;
+} pair_t;
 
-typedef struct map
-{
-	map_node_t *head;
-	void (*clean_up)(void *data);
-} map_t;
+typedef list_t map_t;
 
 ////////////////////////////////////////////////////////////////////////////////
 

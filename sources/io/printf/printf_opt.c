@@ -13,17 +13,12 @@ void printf_get_opt(const char **fmtp, va_list ap, printf_opt_t *opt)
 	for (; *(*fmtp); ++(*fmtp)) {
 		if (!str_chr("-~.+*0123456789", *(*fmtp)))
 			break;
-		else if (*(*fmtp) == '-')
-			opt->align = PRTF_LEFT;
-		else if (*(*fmtp) == '0')
-			opt->align = PRTF_RIGHT0;
-		else if (*(*fmtp) == '~')
-			opt->align = PRTF_CENTER;
-		else if (*(*fmtp) == '.')
-			opt->prec = true;
-		else if (*(*fmtp) == '+')
-			opt->sign = true;
-		else if (*(*fmtp) == '*')
+		opt->align = (*(*fmtp) == '-') ? PRTF_LEFT : opt->align;
+		opt->align = (*(*fmtp) == '0') ? PRTF_RIGHT0 : opt->align;
+		opt->align = (*(*fmtp) == '~') ? PRTF_CENTER : opt->align;
+		opt->prec = (*(*fmtp) == '.') ? true : opt->prec;
+		opt->sign = (*(*fmtp) == '+') ? true : opt->sign;
+		if (*(*fmtp) == '*')
 			printf_get_opt_ap(ap, opt);
 		else if (str_chr("123456789", *(*fmtp)))
 			printf_get_opt_fmt(fmtp, opt);
@@ -56,23 +51,23 @@ void printf_get_opt_fmt(const char **fmtp, printf_opt_t *opt)
 void printf_get_opt_num(const char **fmtp, char **tmpbuf, printf_opt_t *opt)
 {
 	switch (*(*fmtp)) {
-		case 'u':
-			opt->unsign = true;
+	case 'u':
+		opt->unsign = true;
 		break;
-		case 'b':
-			opt->base = 2;
+	case 'b':
+		opt->base = 2;
 		break;
-		case 'o':
-			opt->base = 8;
+	case 'o':
+		opt->base = 8;
 		break;
-		case 'x':
-		case 'X':
-			opt->base = 16;
+	case 'x':
+	case 'X':
+		opt->base = 16;
 		break;
-		case 'p':
-			opt->base = 16;
-			opt->longlong = 1;
-			(*tmpbuf) = str_apd(*tmpbuf, "0x");
+	case 'p':
+		opt->base = 16;
+		opt->longlong = 1;
+		(*tmpbuf) = str_apd(*tmpbuf, "0x");
 		break;
 	}
 }
