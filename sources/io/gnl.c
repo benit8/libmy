@@ -36,6 +36,6 @@ char *fgnl(FILE *fp)
 			my_free(line);
 		return (NULL);
 	}
-	line[str_len(line) - 1] = '\0';
+	line[read - 1] = '\0';
 	return (line);
 }
