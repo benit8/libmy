@@ -12,7 +12,8 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-#include "dsa_types.h"
+#include "dsa/dsa_types.h"
+#include "dsa/list.h"
 #include "memory.h"
 #include "string.h"
 
