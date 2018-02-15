@@ -41,7 +41,7 @@ char **map_get_keys(map_t *map)
 	keys = my_calloc(size + 1, sizeof(char *));
 	if (!keys)
 		return (NULL);
-	for (map_node_t *curr = map->head; curr != NULL; curr = curr->next)
-		keys[i++] = str_dup(curr->key);
+	for (map_node_t *cur = map->head; cur != NULL; cur = cur->next)
+		keys[i++] = str_dup(cur->key);
 	return (keys);
 }

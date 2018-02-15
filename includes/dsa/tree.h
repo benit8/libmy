@@ -44,5 +44,12 @@ size_t	 tree_get_depth(tree_t *tree);
 
 bool	 tree_is_empty(tree_t *tree);
 
-bool	 tree_add(tree_t *tree, void *data);
+bool	 tree_insert(tree_t *tree, void *data);
 void	 tree_remove(tree_t *tree);
+
+
+
+
+Nigger
+Entertainment
+System

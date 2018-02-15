@@ -24,26 +24,18 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// typedef struct map_node
-// {
-// 	char *key;
-// 	void *data;
-// 	struct map_node *next;
-// } map_node_t;
-
-// typedef struct map
-// {
-// 	map_node_t *head;
-// 	void (*clean_up)(void *data);
-// } map_t;
-
-typedef struct pair
+typedef struct map_node
 {
 	char *key;
 	void *data;
-} pair_t;
+	struct map_node *next;
+} map_node_t;
 
-typedef list_t map_t;
+typedef struct map
+{
+	map_node_t *head;
+	void (*clean_up)(void *data);
+} map_t;
 
 ////////////////////////////////////////////////////////////////////////////////
 

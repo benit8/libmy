@@ -9,21 +9,19 @@
 
 map_t *map_create(clean_func_t *clean_up)
 {
-	return ((map_t *)list_create(clean_up));
-	// map_t *map = my_calloc(1, sizeof(map_t));
+	map_t *map = my_calloc(1, sizeof(map_t));
 
-	// if (map) {
-	// 	map->head = NULL;
-	// 	map->clean_up = clean_up;
-	// }
-	// return (map);
+	if (map) {
+		map->head = NULL;
+		map->clean_up = clean_up;
+	}
+	return (map);
 }
 
 void map_destroy(map_t *map)
 {
-	list_destroy((list_t *)map);
-	// if (!map)
-	// 	return;
-	// map_clear(map);
-	// my_free(map);
+	if (!map)
+		return;
+	map_clear(map);
+	my_free(map);
 }

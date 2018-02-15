@@ -45,6 +45,7 @@ DSA	=	$(SRC)/dsa/list/access.c		\
 		$(SRC)/dsa/map/map.c			\
 		$(SRC)/dsa/map/modifiers.c		\
 		$(SRC)/dsa/map/operations.c		\
+		$(SRC)/dsa/pair/pair.c			\
 		$(SRC)/dsa/queue/access.c		\
 		$(SRC)/dsa/queue/capacity.c		\
 		$(SRC)/dsa/queue/modifiers.c		\
