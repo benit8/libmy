@@ -31,6 +31,21 @@ void scan_dir_sort(const dirent_t **names, int n, dir_compar_t *comp)
 	scan_dir_sort(names + i, n - i, comp);
 }
 
+static bool scan_dir_append(dirent_t ***namesp, int *np, dirent_t *entry)
+{
+	dirent_t **nnames;
+
+	nnames = my_realloc(*namesp, sizeof(dirent_t *) * ((*np) + 2));
+	if (!nnames)
+		return (false);
+	nnames[*np] = mem_dup(entry, sizeof(dirent_t));
+	if (!nnames[*np])
+		return (false);
+	*namesp = nnames;
+	(*np)++;
+	return (true);
+}
+
 int scan_dir(const char *dirpath, dirent_t ***namelist, dir_filter_t *filter,
 	dir_compar_t *compar)
 {
@@ -44,10 +59,8 @@ int scan_dir(const char *dirpath, dirent_t ***namelist, dir_filter_t *filter,
 	for (entry = readdir(dir); entry != NULL; entry = readdir(dir)) {
 		if (filter && (*filter)(entry) == 0)
 			continue;
-		names = my_realloc(names, sizeof(dirent_t *) * (n + 2));
-		if (!names)
-			return (-1);
-		names[n++] = mem_dup(entry, sizeof(dirent_t));
+		if (!scan_dir_append(&names, &n, entry))
+			break;
 	}
 	closedir(dir);
 	if (n > 1 && compar)

@@ -28,7 +28,7 @@ char *my_itoa(ssize_t n, uint8_t base);
 char *my_utoa(size_t n, uint8_t base);
 char *my_ftoa(double d, int prec);
 
-long int my_strtol(const char *nptr, char **endptr, int base);
-long long int my_strtoll(const char *nptr, char **endptr, int base);
-unsigned long int my_strtoul(const char *nptr, char **endptr, int base);
-unsigned long long int my_strtoull(const char *nptr, char **endptr, int base);
+long int str_tol(const char *nptr, char **endptr, int base);
+long long int str_toll(const char *nptr, char **endptr, int base);
+unsigned long int str_toul(const char *nptr, char **endptr, int base);
+unsigned long long int str_toull(const char *nptr, char **endptr, int base);

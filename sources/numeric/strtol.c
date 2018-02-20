@@ -8,9 +8,9 @@
 #include "numeric.h"
 
 static
-char *strto_get_base(const char *nptr, int *base)
+char *strto_get_base(const char *str, int *base)
 {
-	char *n = (char *)nptr;
+	char *n = (char *)str;
 
 	if (IN_RANGE(*base, 2, 36))
 		return (n);
@@ -31,84 +31,74 @@ char *strto_get_base(const char *nptr, int *base)
 	return (n);
 }
 
-////////////////////////////////////////////////////////////////////////////////
-
-long int my_strtol(const char *nptr, char **endptr, int base)
+long int str_tol(const char *str, char **endptr, int base)
 {
-	static char digits[36] = "0123456789abcdefghijklmnopqrstuvwxyz";
-	char *n = strto_get_base(nptr, &base);
+	static char digits[] = "0123456789abcdefghijklmnopqrstuvwxyz";
+	char *n = strto_get_base(str, &base);
 	long int res = 0;
-	int index;
+	char *digit = NULL;
 
 	if (!base)
 		return (0);
 	if (*n == '+')
-		return (my_strtol(n + 1, endptr, base));
+		return (str_tol(n + 1, endptr, base));
 	if (*n == '-')
-		return (-my_strtol(n + 1, endptr, base));
-	for (; str_nchr(digits, *n, base); n++) {
-		index = (int)(str_nchr(digits, *n, base) - digits);
-		res = (res * base) + index;
-	}
+		return (-str_tol(n + 1, endptr, base));
+	while ((digit = str_nchr(digits, to_lower(*n++), base)) != NULL)
+		res = (res * base) + (int)(digit - digits);
 	*endptr = (char *)n;
 	return (res);
 }
 
-unsigned long int my_strtoul(const char *nptr, char **endptr, int base)
+unsigned long int str_toul(const char *str, char **endptr, int base)
 {
-	static char digits[36] = "0123456789abcdefghijklmnopqrstuvwxyz";
-	char *n = strto_get_base(nptr, &base);
+	static char digits[] = "0123456789abcdefghijklmnopqrstuvwxyz";
+	char *n = strto_get_base(str, &base);
 	unsigned long int res = 0;
-	int index;
+	char *digit = NULL;
 
 	if (!base)
 		return (0);
 	if (*n == '+')
-		return (my_strtoul(n + 1, endptr, base));
-	for (; str_nchr(digits, *n, base); n++) {
-		index = (int)(str_nchr(digits, *n, base) - digits);
-		res = (res * base) + index;
-	}
+		return (str_toul(n + 1, endptr, base));
+	while ((digit = str_nchr(digits, to_lower(*n++), base)) != NULL)
+		res = (res * base) + (int)(digit - digits);
 	*endptr = (char *)n;
 	return (res);
 }
 
-long long int my_strtoll(const char *nptr, char **endptr, int base)
+long long int str_toll(const char *str, char **endptr, int base)
 {
-	static char digits[36] = "0123456789abcdefghijklmnopqrstuvwxyz";
-	char *n = strto_get_base(nptr, &base);
+	static char digits[] = "0123456789abcdefghijklmnopqrstuvwxyz";
+	char *n = strto_get_base(str, &base);
 	long long int res = 0;
-	int index;
+	char *digit = NULL;
 
 	if (!base)
 		return (0);
 	if (*n == '+')
-		return (my_strtoll(n + 1, endptr, base));
+		return (str_toll(n + 1, endptr, base));
 	if (*n == '-')
-		return (-my_strtoll(n + 1, endptr, base));
-	for (; str_nchr(digits, *n, base); n++) {
-		index = (int)(str_nchr(digits, *n, base) - digits);
-		res = (res * base) + index;
-	}
+		return (-str_toll(n + 1, endptr, base));
+	while ((digit = str_nchr(digits, to_lower(*n++), base)) != NULL)
+		res = (res * base) + (int)(digit - digits);
 	*endptr = (char *)n;
 	return (res);
 }
 
-unsigned long long int my_strtoull(const char *nptr, char **endptr, int base)
+unsigned long long int str_toull(const char *str, char **endptr, int base)
 {
-	static char digits[36] = "0123456789abcdefghijklmnopqrstuvwxyz";
-	char *n = strto_get_base(nptr, &base);
+	static char digits[] = "0123456789abcdefghijklmnopqrstuvwxyz";
+	char *n = strto_get_base(str, &base);
 	unsigned long long int res = 0;
-	int index;
+	char *digit = NULL;
 
 	if (!base)
 		return (0);
 	if (*n == '+')
-		return (my_strtoull(n + 1, endptr, base));
-	for (; str_nchr(digits, *n, base); n++) {
-		index = (int)(str_nchr(digits, *n, base) - digits);
-		res = (res * base) + index;
-	}
+		return (str_toull(n + 1, endptr, base));
+	while ((digit = str_nchr(digits, to_lower(*n++), base)) != NULL)
+		res = (res * base) + (int)(digit - digits);
 	*endptr = (char *)n;
 	return (res);
 }
