@@ -9,9 +9,9 @@
 
 char *str_toupper(char *str)
 {
-	for (char *s = str; *s != 0; ++s) {
-		if (is_lower(*s))
-			*s -= 32;
-	}
+	if (!str)
+		return (str);
+	for (char *s = str; *s; ++s)
+		*s = to_upper(*s);
 	return (str);
 }

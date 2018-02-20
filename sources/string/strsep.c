@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2018
 ** libmy
 ** File description:
-** str_sep.c
+** strsep.c
 */
 
 #include "string.h"

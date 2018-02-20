@@ -11,20 +11,20 @@ static
 int precedence(char symbol)
 {
 	switch (symbol) {
-		case '^':
-			return (4);
-		case '*':
-		case '/':
-		case '%':
-			return (3);
-		case '+':
-		case '-':
-			return (2);
-		case '(':
-		case ')':
-		case '#':
-		default:
-			return (1);
+	case '^':
+		return (4);
+	case '*':
+	case '/':
+	case '%':
+		return (3);
+	case '+':
+	case '-':
+		return (2);
+	case '(':
+	case ')':
+	case '#':
+	default:
+		return (1);
 	}
 	return (0);
 }
@@ -46,8 +46,6 @@ void calc_parse_infix_2(queue_t *postfix, stack_t *s, char *symbol)
 		queue_push(postfix, symbol);
 	}
 }
-
-////////////////////////////////////////////////////////////////////////////////
 
 void calc_parse_infix(queue_t *infix, queue_t *postfix)
 {

@@ -23,8 +23,6 @@ bool list_create_insert_node(void *data, list_node_t *prev, list_node_t *next)
 	return (true);
 }
 
-////////////////////////////////////////////////////////////////////////////////
-
 bool list_insert(list_t *this, size_t pos, void *data)
 {
 	list_node_t *cur = NULL;

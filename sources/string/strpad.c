@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2018
 ** libmy
 ** File description:
-** str_pad.c
+** strpad.c
 */
 
 #include "string.h"
@@ -26,15 +26,15 @@ char *str_padl(const char *string, size_t pad_size, const char *pad)
 {
 	size_t string_len = str_len(string);
 	size_t pad_len = str_len(pad);
-	size_t padSpace = 0;
+	size_t pad_space = 0;
 	char *output = NULL;
 
 	if (pad_size <= string_len)
 		return (str_dup(string));
 	output = my_calloc(pad_size + 1, sizeof(char));
-	padSpace = pad_size - string_len;
-	for (size_t i = 0; i < padSpace; i += pad_len)
-		str_ncat(output, pad, MIN(padSpace - i, pad_len));
+	pad_space = pad_size - string_len;
+	for (size_t i = 0; i < pad_space; i += pad_len)
+		str_ncat(output, pad, MIN(pad_space - i, pad_len));
 	str_cat(output, string);
 	return (output);
 }

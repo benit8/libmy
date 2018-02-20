@@ -14,17 +14,17 @@ bool printf_process(const char **fmtp, char **buffp, va_list ap)
 	const char *begin = (*fmtp)++;
 	char *tmpbuf = my_calloc(64, sizeof(char));
 
-	if (tmpbuf == NULL)
-		return (false);
 	printf_get_opt(fmtp, ap, &opt);
 	if (*(*fmtp) == '%')
 		tmpbuf = str_apd(tmpbuf, "%");
 	else if (*(*fmtp) == 'c')
 		printf_print_char(&tmpbuf, ap);
-	else if (*(*fmtp) == 's')
-		printf_print_str(&tmpbuf, ap, opt);
-	else if (!printf_process_numeric(fmtp, &tmpbuf, ap, &opt))
-		*buffp = str_napd(*buffp, begin, (*fmtp) - begin + 1);
+	else {
+		if (*(*fmtp) == 's')
+			printf_print_str(&tmpbuf, ap, opt);
+		else if (!printf_process_numeric(fmtp, &tmpbuf, ap, &opt))
+			*buffp = str_napd(*buffp, begin, (*fmtp) - begin + 1);
+	}
 	if (opt.pad_size && !str_empty(tmpbuf))
 		printf_process_padding(&tmpbuf, opt);
 	*buffp = str_apd(*buffp, tmpbuf);
@@ -32,9 +32,7 @@ bool printf_process(const char **fmtp, char **buffp, va_list ap)
 	return (true);
 }
 
-bool printf_process_numeric(const char **fmtp,
-	char **tmpbuf,
-	va_list ap,
+bool printf_process_numeric(const char **fmtp, char **tmpbuf, va_list ap,
 	printf_opt_t *opt)
 {
 	if (*(*fmtp) == 'l') {

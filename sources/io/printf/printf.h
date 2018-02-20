@@ -7,8 +7,12 @@
 
 #pragma once
 
+////////////////////////////////////////////////////////////////////////////////
+
 #define PRTF_CHARS	"-+~.*0123456789bcdefghilopsuxX%"
 #define PRTF_OPT_DFLT	(printf_opt_t){PRTF_RIGHT, 0, 0, 0, 10, 0, 0, 0}
+
+////////////////////////////////////////////////////////////////////////////////
 
 typedef enum
 {
@@ -17,6 +21,8 @@ typedef enum
 	PRTF_CENTER,
 	PRTF_RIGHT0
 }	printf_align_t;
+
+////////////////////////////////////////////////////////////////////////////////
 
 typedef struct	printfOpt
 {
@@ -29,6 +35,8 @@ typedef struct	printfOpt
 	bool		unsign;
 	bool		longlong;
 }		printf_opt_t;
+
+////////////////////////////////////////////////////////////////////////////////
 
 bool printf_process(const char **, char **, va_list);
 bool printf_process_numeric(const char **, char **, va_list, printf_opt_t *);

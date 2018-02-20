@@ -29,3 +29,24 @@ bool file_is(const char *filepath, const char *mask)
 	}
 	return (access(filepath, mode) != -1);
 }
+
+bool is_dir(const char *path)
+{
+	struct stat buf;
+
+	return (lstat(path, &buf) != -1 && S_ISDIR(buf.st_mode));
+}
+
+bool is_file(const char *path)
+{
+	struct stat buf;
+
+	return (lstat(path, &buf) != -1 && S_ISREG(buf.st_mode));
+}
+
+bool is_link(const char *path)
+{
+	struct stat buf;
+
+	return (lstat(path, &buf) != -1 && S_ISLNK(buf.st_mode));
+}

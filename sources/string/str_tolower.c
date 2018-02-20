@@ -9,9 +9,9 @@
 
 char *str_tolower(char *str)
 {
-	for (char *s = str; *s != 0; ++s) {
-		if (is_upper(*s))
-			*s += 32;
-	}
+	if (!str)
+		return (str);
+	for (char *s = str; *s; ++s)
+		*s = to_lower(*s);
 	return (str);
 }

@@ -35,8 +35,6 @@ bool get_delim_extend(char **ptrp, char **eptrp, char **buf, size_t *bufsiz)
 	return (true);
 }
 
-////////////////////////////////////////////////////////////////////////////////
-
 ssize_t get_delim(char **buf, size_t *bufsiz, int delimiter, FILE *fp)
 {
 	char *ptr = NULL;

@@ -13,6 +13,7 @@
 #include <fcntl.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <sys/stat.h>
 #include <unistd.h>
 
 #include "memory.h"
@@ -33,6 +34,9 @@ int alphanat_sort(const dirent_t **a, const dirent_t **b);
 int alphanatcase_sort(const dirent_t **a, const dirent_t **b);
 
 bool file_is(const char *filepath, const char *mask);
+bool is_dir(const char *path);
+bool is_file(const char *path);
+bool is_link(const char *path);
 char *file_get_contents(const char *filepath);
 char **file_get_lines(const char *filepath);
 bool file_put_contents(const char *filepath, char *contents, bool append);

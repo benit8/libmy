@@ -45,8 +45,6 @@ void atof_decimal_part(const char **strp, double *res)
 	}
 }
 
-////////////////////////////////////////////////////////////////////////////////
-
 double my_atof(const char *str)
 {
 	double res = 0;

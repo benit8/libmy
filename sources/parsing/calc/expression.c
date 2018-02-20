@@ -41,8 +41,6 @@ bool parse_identifier(const char *expr, size_t *i, int8_t type, queue_t *infix)
 	return (r);
 }
 
-////////////////////////////////////////////////////////////////////////////////
-
 void calc_parse_expr(const char *expr, queue_t *infix)
 {
 	for (size_t i = 0; expr[i] != '\0'; ++i) {

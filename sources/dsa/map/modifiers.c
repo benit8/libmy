@@ -24,8 +24,8 @@ map_insert_new_node(map_t *map, map_node_t *prev, const char *key, void *data)
 	return (true);
 }
 
-static void
-map_remove_node(map_t *map, map_node_t *cur, map_node_t *prev)
+static
+void map_remove_node(map_t *map, map_node_t *cur, map_node_t *prev)
 {
 	if (map->clean_up)
 		(*map->clean_up)(cur->data);
@@ -36,8 +36,6 @@ map_remove_node(map_t *map, map_node_t *cur, map_node_t *prev)
 	my_free(cur->key);
 	my_free(cur);
 }
-
-////////////////////////////////////////////////////////////////////////////////
 
 bool map_insert(map_t *map, const char *key, void *data)
 {

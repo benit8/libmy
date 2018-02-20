@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2018
 ** libmy
 ** File description:
-** str_dup.c
+** strdup.c
 */
 
 #include "string.h"

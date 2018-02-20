@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2018
 ** libmy
 ** File description:
-** str_ppd.c
+** strppd.c
 */
 
 #include "string.h"

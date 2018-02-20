@@ -9,16 +9,16 @@
 
 size_t intlen(ssize_t n)
 {
-	size_t l = (n < 0) ? 2 : 1;
+	size_t len = (n < 0) ? 2 : 1;
 
-	for (; n <= -10 || n >= 10; n /= 10, l++);
-	return (l);
+	for (; n <= -10 || n >= 10; n /= 10, len++);
+	return (len);
 }
 
 size_t uintlen(size_t n)
 {
-	size_t l = 1;
+	size_t len = 1;
 
-	for (; n >= 10; n /= 10, l++);
-	return (l);
+	for (; n >= 10; n /= 10, len++);
+	return (len);
 }

@@ -7,31 +7,33 @@
 
 #include "math.h"
 
-static size_t next = 1;
-
 static
-void rand_init(void)
+size_t *rand_get_next(void)
 {
-	static bool init = false;
+	static size_t next = 1;
 
-	if (init == true)
-		return;
-	my_srand(time(NULL));
-	init = true;
+	return (&next);
 }
-
-////////////////////////////////////////////////////////////////////////////////
 
 void my_srand(unsigned int seed)
 {
-	next = seed;
+	size_t *nextp = rand_get_next();
+
+	*nextp = seed;
 }
 
 int my_rand(void)
 {
-	rand_init();
-	next = next * 1103515245 + 12345;
-	return (next / UINT_MAX) % INT_MAX;
+	static bool init = false;
+	size_t *nextp;
+
+	if (!init) {
+		my_srand(time(NULL));
+		init = true;
+	}
+	nextp = rand_get_next();
+	*nextp = (*nextp) * 1103515245 + 12345;
+	return ((*nextp) / UINT_MAX) % INT_MAX;
 }
 
 int irand(int a, int b)

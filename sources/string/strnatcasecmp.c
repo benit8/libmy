@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2018
 ** libmy
 ** File description:
-** str_natcasecmp.c
+** strnatcasecmp.c
 */
 
 #include "string.h"

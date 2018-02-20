@@ -19,8 +19,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-char **explode(const char *delim, char *string);
-char *implode(const char *glue, char **array);
+char **explode(char *string, const char *delim);
+char *implode(char **array, const char *glue);
 
 char *str_apd(char *dest, const char *src);
 char *str_napd(char *dest, const char *src, size_t n);
@@ -46,7 +46,8 @@ char *str_rchr(const char *string, char search);
 char *str_cpy(char *dest, const char *src);
 char *str_ncpy(char *dest, const char *src, size_t n);
 
-ssize_t str_cspn(const char *str1, const char *str2);
+size_t str_spn(const char *str1, const char *str2);
+size_t str_cspn(const char *str1, const char *str2);
 
 char *str_dup(const char *src);
 char *str_ndup(const char *src, size_t n);

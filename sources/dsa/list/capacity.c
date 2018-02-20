@@ -14,9 +14,11 @@ bool list_is_empty(list_t *list)
 
 size_t list_get_size(list_t *list)
 {
-	size_t l = 0;
+	size_t size = 0;
 
+	if (!list)
+		return (0);
 	for (list_node_t *curr = list->head; curr != NULL; curr = curr->next)
-		++l;
-	return (l);
+		++size;
+	return (size);
 }

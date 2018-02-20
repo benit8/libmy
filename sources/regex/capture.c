@@ -22,8 +22,6 @@ bool regex_append(char ***array, size_t n, char *subject, regmatch_t match)
 	return (true);
 }
 
-////////////////////////////////////////////////////////////////////////////////
-
 char **regex_capture(const char *pattern, char *subject)
 {
 	regex_t regex;
