@@ -10,95 +10,95 @@
 static
 char *strto_get_base(const char *str, int *base)
 {
-	char *n = (char *)str;
+	char *s = (char *)str;
 
 	if (IN_RANGE(*base, 2, 36))
-		return (n);
+		return (s);
 	else if (*base == 0) {
-		if (*n++ != '0'){
+		if (*s++ != '0'){
 			*base = 10;
-			return (n);
+			return (s);
 		}
-		if (to_lower(*n) != 'x')
+		if (to_lower(*s) != 'x')
 			*base = 8;
 		else {
 			*base = 16;
-			n++;
+			s++;
 		}
 	}
 	else
 		*base = 0;
-	return (n);
+	return (s);
 }
 
 long int str_tol(const char *str, char **endptr, int base)
 {
 	static char digits[] = "0123456789abcdefghijklmnopqrstuvwxyz";
-	char *n = strto_get_base(str, &base);
+	char *s = strto_get_base(str, &base);
 	long int res = 0;
 	char *digit = NULL;
 
 	if (!base)
 		return (0);
-	if (*n == '+')
-		return (str_tol(n + 1, endptr, base));
-	if (*n == '-')
-		return (-str_tol(n + 1, endptr, base));
-	while ((digit = str_nchr(digits, to_lower(*n++), base)) != NULL)
+	if (*s == '+')
+		return (str_tol(s + 1, endptr, base));
+	if (*s == '-')
+		return (-str_tol(s + 1, endptr, base));
+	while ((digit = str_nchr(digits, to_lower(*s++), base)) != NULL)
 		res = (res * base) + (int)(digit - digits);
-	*endptr = (char *)n;
+	*endptr = (char *)s;
 	return (res);
 }
 
 unsigned long int str_toul(const char *str, char **endptr, int base)
 {
 	static char digits[] = "0123456789abcdefghijklmnopqrstuvwxyz";
-	char *n = strto_get_base(str, &base);
+	char *s = strto_get_base(str, &base);
 	unsigned long int res = 0;
 	char *digit = NULL;
 
 	if (!base)
 		return (0);
-	if (*n == '+')
-		return (str_toul(n + 1, endptr, base));
-	while ((digit = str_nchr(digits, to_lower(*n++), base)) != NULL)
+	if (*s == '+')
+		return (str_toul(s + 1, endptr, base));
+	while ((digit = str_nchr(digits, to_lower(*s++), base)) != NULL)
 		res = (res * base) + (int)(digit - digits);
-	*endptr = (char *)n;
+	*endptr = (char *)s;
 	return (res);
 }
 
 long long int str_toll(const char *str, char **endptr, int base)
 {
 	static char digits[] = "0123456789abcdefghijklmnopqrstuvwxyz";
-	char *n = strto_get_base(str, &base);
+	char *s = strto_get_base(str, &base);
 	long long int res = 0;
 	char *digit = NULL;
 
 	if (!base)
 		return (0);
-	if (*n == '+')
-		return (str_toll(n + 1, endptr, base));
-	if (*n == '-')
-		return (-str_toll(n + 1, endptr, base));
-	while ((digit = str_nchr(digits, to_lower(*n++), base)) != NULL)
+	if (*s == '+')
+		return (str_toll(s + 1, endptr, base));
+	if (*s == '-')
+		return (-str_toll(s + 1, endptr, base));
+	while ((digit = str_nchr(digits, to_lower(*s++), base)) != NULL)
 		res = (res * base) + (int)(digit - digits);
-	*endptr = (char *)n;
+	*endptr = (char *)s;
 	return (res);
 }
 
 unsigned long long int str_toull(const char *str, char **endptr, int base)
 {
 	static char digits[] = "0123456789abcdefghijklmnopqrstuvwxyz";
-	char *n = strto_get_base(str, &base);
+	char *s = strto_get_base(str, &base);
 	unsigned long long int res = 0;
 	char *digit = NULL;
 
 	if (!base)
 		return (0);
-	if (*n == '+')
-		return (str_toull(n + 1, endptr, base));
-	while ((digit = str_nchr(digits, to_lower(*n++), base)) != NULL)
+	if (*s == '+')
+		return (str_toull(s + 1, endptr, base));
+	while ((digit = str_nchr(digits, to_lower(*s++), base)) != NULL)
 		res = (res * base) + (int)(digit - digits);
-	*endptr = (char *)n;
+	*endptr = (char *)s;
 	return (res);
 }
