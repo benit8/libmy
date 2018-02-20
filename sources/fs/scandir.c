@@ -31,10 +31,8 @@ void scan_dir_sort(const dirent_t **names, int n, dir_compar_t *comp)
 	scan_dir_sort(names + i, n - i, comp);
 }
 
-int scan_dir(const char *dirpath,
-		dirent_t ***namelist,
-		dir_filter_t *filter,
-		dir_compar_t *compar)
+int scan_dir(const char *dirpath, dirent_t ***namelist, dir_filter_t *filter,
+	dir_compar_t *compar)
 {
 	dirent_t **names = NULL;
 	dirent_t *entry = NULL;

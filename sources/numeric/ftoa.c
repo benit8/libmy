@@ -16,17 +16,17 @@ char *my_ftoa(double dble, int precision)
 	size_t mark = 0;
 	size_t i = 0;
 
-	for (; n > 0 || i < 1; ++i, n /= 10)
-		str[i] = (n % 10) + '0';
+	for (; n > 0 || i < 1; n /= 10)
+		str[i++] = (n % 10) + '0';
 	n = (int)my_round((dble - intPart) * pow);
 	str = str_rev(str);
 	if (n == 0 || precision == 0)
 		return (str);
 	str[i++] = '.';
-	for (mark = i; n > 0 && precision--; ++i, n /= 10)
-		str[i] = (n % 10) + '0';
-	for (; precision--; ++i)
-		str[i] = '0';
+	for (mark = i; n > 0 && precision--; n /= 10)
+		str[i++] = (n % 10) + '0';
+	while (precision--)
+		str[i++] = '0';
 	str_rev(str + mark);
 	return (str);
 }
