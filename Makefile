@@ -206,7 +206,7 @@ de: fclean debug
 	  ($(PRINT) "  $(GREEN)[OK]$(CYAN)  %b$(RESET)\n" $<) || \
 	  ($(PRINT) "  $(RED)[XX]$(CYAN)  %b$(RESET)\n" $< ; exit 1)
 
-.PHONY: all $(NAME) prebuild clean fclean re .c.o
+.PHONY: all $(NAME) prebuild clean fclean re de .c.o
 
 
 ## Not up to date

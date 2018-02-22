@@ -9,5 +9,5 @@
 
 bool is_print(int c)
 {
-	return (is_graph(c) || is_space(c));
+	return (c >= ' ' && c <= '~');
 }
