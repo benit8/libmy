@@ -1,11 +1,8 @@
 /*
-** memcmp.c for libmy in /mnt/data/Delivery/Perso/Libmy/sources/memory
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Wed Dec 27 23:36:36 2017 Benoit Lormeau
-** Last update Wed Dec 27 23:36:36 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** memcmp.c
 */
 
 #include "memory.h"
