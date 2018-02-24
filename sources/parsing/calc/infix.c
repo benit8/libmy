@@ -7,8 +7,7 @@
 
 #include "parsing/calc.h"
 
-static
-int precedence(char symbol)
+static int precedence(char symbol)
 {
 	switch (symbol) {
 	case '^':
@@ -29,8 +28,7 @@ int precedence(char symbol)
 	return (0);
 }
 
-static
-void calc_parse_infix_2(queue_t *postfix, stack_t *s, char *symbol)
+static void calc_parse_infix_2(queue_t *postfix, stack_t *s, char *symbol)
 {
 	if (*symbol == ')') {
 		while (!stack_is_empty(s) && STACK_PEEK(s, char) != '(')

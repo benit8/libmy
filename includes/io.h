@@ -35,7 +35,6 @@ void my_putstr(const char *str);
 void my_putnbr(int nb);
 void my_puts(const char *str);
 
-
 int my_printf(const char *format, ...)
 	__attribute__ (( __format__(__printf__, 1, 2) ));
 int my_vprintf(const char *format, va_list ap)

@@ -7,8 +7,7 @@
 
 #include "math.h"
 
-static
-size_t *rand_get_next(void)
+static size_t *rand_get_next(void)
 {
 	static size_t next = 1;
 

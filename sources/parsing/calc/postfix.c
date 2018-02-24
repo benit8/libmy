@@ -7,8 +7,7 @@
 
 #include "parsing/calc.h"
 
-static
-double calc_do_operation(char symbol, char *s[2])
+static double calc_do_operation(char symbol, char *s[2])
 {
 	double n[2];
 
@@ -32,8 +31,7 @@ double calc_do_operation(char symbol, char *s[2])
 	}
 }
 
-static
-bool calc_prepare_operation(stack_t *stack, char *symbol)
+static bool calc_prepare_operation(stack_t *stack, char *symbol)
 {
 	double res;
 	char *s[2];

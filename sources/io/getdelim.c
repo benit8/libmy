@@ -7,8 +7,7 @@
 
 #include "io.h"
 
-static
-bool get_delim_init(char **buf, size_t *bufsiz)
+static bool get_delim_init(char **buf, size_t *bufsiz)
 {
 	if (*buf == NULL || *bufsiz == 0) {
 		*bufsiz = BUFFER_SIZE;
@@ -19,8 +18,8 @@ bool get_delim_init(char **buf, size_t *bufsiz)
 	return (true);
 }
 
-static
-bool get_delim_extend(char **ptrp, char **eptrp, char **buf, size_t *bufsiz)
+static bool get_delim_extend(char **ptrp, char **eptrp, char **buf,
+	size_t *bufsiz)
 {
 	size_t nbufsiz = *bufsiz * 2;
 	ssize_t d = *ptrp - *buf;

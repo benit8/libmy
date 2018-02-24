@@ -35,21 +35,14 @@ typedef struct tree
 
 ////////////////////////////////////////////////////////////////////////////////
 
-tree_t	*tree_create(comp_func_t *comp, clean_func_t *clean_up);
-void	 tree_destroy(tree_t *tree);
-void	 tree_clear(tree_t *tree);
+tree_t *tree_create(comp_func_t *comp, clean_func_t *clean_up);
+void tree_destroy(tree_t *tree);
+void tree_clear(tree_t *tree);
 
-size_t	 tree_get_size(tree_t *tree);
-size_t	 tree_get_depth(tree_t *tree);
+size_t tree_get_size(tree_t *tree);
+size_t tree_get_depth(tree_t *tree);
 
-bool	 tree_is_empty(tree_t *tree);
+bool tree_is_empty(tree_t *tree);
 
-bool	 tree_insert(tree_t *tree, void *data);
-void	 tree_remove(tree_t *tree);
-
-
-
-
-Nigger
-Entertainment
-System
+bool tree_insert(tree_t *tree, void *data);
+void tree_remove(tree_t *tree);

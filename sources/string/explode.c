@@ -7,8 +7,7 @@
 
 #include "string.h"
 
-static
-bool explode_append(char ***tabp, size_t *sizep, char *token)
+static bool explode_append(char ***tabp, size_t *sizep, char *token)
 {
 	char **ntab = my_realloc(*tabp, sizeof(char *) * ((*sizep) + 2));
 

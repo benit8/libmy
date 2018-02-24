@@ -7,8 +7,7 @@
 
 #include "string.h"
 
-static
-size_t implode_get_length(char **array, const char *glue)
+static size_t implode_get_length(char **array, const char *glue)
 {
 	size_t length = 0;
 

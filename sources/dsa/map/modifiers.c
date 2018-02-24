@@ -7,8 +7,8 @@
 
 #include "dsa/map.h"
 
-static bool
-map_insert_new_node(map_t *map, map_node_t *prev, const char *key, void *data)
+static bool map_insert_new_node(map_t *map, map_node_t *prev, const char *key,
+	void *data)
 {
 	map_node_t *node = my_calloc(1, sizeof(map_node_t));
 
@@ -24,8 +24,7 @@ map_insert_new_node(map_t *map, map_node_t *prev, const char *key, void *data)
 	return (true);
 }
 
-static
-void map_remove_node(map_t *map, map_node_t *cur, map_node_t *prev)
+static void map_remove_node(map_t *map, map_node_t *cur, map_node_t *prev)
 {
 	if (map->clean_up)
 		(*map->clean_up)(cur->data);
