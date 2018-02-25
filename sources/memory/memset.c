@@ -7,9 +7,9 @@
 
 #include "memory.h"
 
-void *mem_set(void *dest, uint8_t c, size_t n)
+void *mem_set(void *dest, byte_t c, size_t n)
 {
-	uint8_t *d = dest;
+	byte_t *d = dest;
 
 	if (n > 0 && dest != NULL) {
 		while (n--)

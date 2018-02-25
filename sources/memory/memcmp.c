@@ -9,8 +9,8 @@
 
 int mem_cmp(const void *a, const void *b, size_t n)
 {
-	const char *sa = a;
-	const char *sb = b;
+	const byte_t *sa = a;
+	const byte_t *sb = b;
 
 	while (n--) {
 		if (*sa++ != *sb++)

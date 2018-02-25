@@ -7,12 +7,12 @@
 
 #include "memory.h"
 
-void *mem_cpy(void *dest, const void *src, size_t len)
+void *mem_cpy(void *dest, const void *src, size_t n)
 {
-	uint8_t *d = dest;
-	const uint8_t *s = src;
+	byte_t *d = dest;
+	const byte_t *s = src;
 
-	while (len--)
+	while (n--)
 		*d++ = *s++;
 	return (dest);
 }

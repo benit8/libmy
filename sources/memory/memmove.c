@@ -9,9 +9,9 @@
 
 void *mem_move(void *dest, const void *src, size_t n)
 {
-	uint8_t cpy[n];
-	uint8_t *d = dest;
-	uint8_t *c = cpy;
+	byte_t cpy[n];
+	byte_t *d = dest;
+	byte_t *c = cpy;
 
 	mem_cpy(cpy, src, n);
 	while (n--)
