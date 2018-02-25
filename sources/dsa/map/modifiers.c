@@ -15,6 +15,10 @@ static bool map_insert_new_node(map_t *map, map_node_t *prev, const char *key,
 	if (!node)
 		return (false);
 	node->key = str_dup(key);
+	if (!node->key) {
+		my_free(node);
+		return (false);
+	}
 	node->data = data;
 	node->next = NULL;
 	if (map->head == NULL)

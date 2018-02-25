@@ -9,9 +9,9 @@
 
 void swap(void *va, void *vb, size_t s)
 {
-	char *a = (char*)va;
-	char *b = (char*)vb;
-	char t;
+	byte_t *a = (byte_t *)va;
+	byte_t *b = (byte_t *)vb;
+	byte_t t;
 
 	while (s--) {
 		t = a[s];
@@ -22,8 +22,8 @@ void swap(void *va, void *vb, size_t s)
 
 void sort(void *ptr, size_t n, size_t s, comp_func_t *cmp)
 {
-	char pivot[s];
-	char *p = ptr;
+	byte_t pivot[s];
+	byte_t *p = ptr;
 	size_t i = 0;
 	size_t j = 0;
 
