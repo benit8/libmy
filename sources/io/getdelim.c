@@ -51,10 +51,9 @@ ssize_t get_delim(char **buf, size_t *bufsiz, int delimiter, FILE *fp)
 			*ptr = '\0';
 			return (ptr - *buf);
 		}
-		if (ptr + 2 >= eptr) {
-			if (!get_delim_extend(&ptr, &eptr, buf, bufsiz))
-				return (-1);
-		}
+		if (ptr + 2 >= eptr &&
+			!get_delim_extend(&ptr, &eptr, buf, bufsiz))
+			return (-1);
 	}
 }
 

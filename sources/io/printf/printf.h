@@ -24,17 +24,17 @@ typedef enum
 
 ////////////////////////////////////////////////////////////////////////////////
 
-typedef struct	printfOpt
+typedef struct printfOpt
 {
-	printf_align_t	align;
-	bool		prec;
-	int		prec_len;
-	int		pad_size;
-	int		base;
-	bool		sign;
-	bool		unsign;
-	bool		longlong;
-}		printf_opt_t;
+	printf_align_t align;
+	bool prec;
+	int prec_len;
+	int pad_size;
+	int base;
+	bool sign;
+	bool unsign;
+	bool longlong;
+} printf_opt_t;
 
 ////////////////////////////////////////////////////////////////////////////////
 
