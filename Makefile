@@ -81,6 +81,7 @@ FS	=	fs/file_get_contents.c		\
 
 IO	=	io/printf/asprintf.c		\
 		io/printf/dprintf.c		\
+		io/printf/fprintf.c		\
 		io/printf/printf.c		\
 		io/printf/sprintf.c		\
 		io/printf/printf_opt.c		\
@@ -112,6 +113,14 @@ Memory	=	memory/calloc.c			\
 		memory/memmove.c		\
 		memory/memset.c			\
 		memory/realloc.c
+
+Network	=	network/accept.c		\
+		network/close.c			\
+		network/connect.c		\
+		network/lookup.c		\
+		network/open.c			\
+		network/receive.c		\
+		network/send.c
 
 Numeric	=	numeric/atof.c			\
 		numeric/atoi.c			\
@@ -166,6 +175,7 @@ SRCS	+=	$(addprefix $(SRC_DIR),$(FS))
 SRCS	+=	$(addprefix $(SRC_DIR),$(IO))
 SRCS	+=	$(addprefix $(SRC_DIR),$(Math))
 SRCS	+=	$(addprefix $(SRC_DIR),$(Memory))
+SRCS	+=	$(addprefix $(SRC_DIR),$(Network))
 SRCS	+=	$(addprefix $(SRC_DIR),$(Numeric))
 SRCS	+=	$(addprefix $(SRC_DIR),$(Parsing))
 SRCS	+=	$(addprefix $(SRC_DIR),$(Regex))
@@ -226,9 +236,11 @@ de: fclean debug
 #    +---------+-----------------------------------------------------------+
 # -> | Memory  |                                                           |
 #    +---------+-----------------------------------------------------------+
+# -> | Network | IO / Memory / String                                      |
+#    +---------+-----------------------------------------------------------+
 # -> | Numeric | Char / Math / Memory / String                             |
 #    +---------+-----------------------------------------------------------+
-# -> | Parsing | Char / DSA / FS / IO / Memory / Numeric / String          |
+# -> | Parsing | DSA / Math / Numeric / String                             |
 #    +---------+-----------------------------------------------------------+
 # -> | Regex   | Memory / String                                           |
 #    +---------+-----------------------------------------------------------+

@@ -16,6 +16,7 @@
 #include "io.h"
 #include "math.h"
 #include "memory.h"
+#include "network.h"
 #include "numeric.h"
 #include "parsing.h"
 #include "string.h"
