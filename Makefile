@@ -76,6 +76,7 @@ FS	=	fs/file_get_contents.c		\
 		fs/file_get_lines.c		\
 		fs/file_is.c			\
 		fs/file_put_contents.c		\
+		fs/is_file.c			\
 		fs/scandir.c			\
 		fs/scandir_sort.c
 
@@ -145,6 +146,7 @@ String	=	string/explode.c		\
 		string/implode.c		\
 		string/str_empty.c		\
 		string/str_match.c		\
+		string/str_pad.c		\
 		string/str_repeat.c		\
 		string/str_replace.c		\
 		string/str_tolower.c		\
@@ -160,7 +162,6 @@ String	=	string/explode.c		\
 		string/strlen.c			\
 		string/strnatcasecmp.c		\
 		string/strnatcmp.c		\
-		string/strpad.c			\
 		string/strpos.c			\
 		string/strppd.c			\
 		string/strrev.c			\
@@ -175,7 +176,7 @@ SRCS	+=	$(addprefix $(SRC_DIR),$(FS))
 SRCS	+=	$(addprefix $(SRC_DIR),$(IO))
 SRCS	+=	$(addprefix $(SRC_DIR),$(Math))
 SRCS	+=	$(addprefix $(SRC_DIR),$(Memory))
-SRCS	+=	$(addprefix $(SRC_DIR),$(Network))
+# SRCS	+=	$(addprefix $(SRC_DIR),$(Network))
 SRCS	+=	$(addprefix $(SRC_DIR),$(Numeric))
 SRCS	+=	$(addprefix $(SRC_DIR),$(Parsing))
 SRCS	+=	$(addprefix $(SRC_DIR),$(Regex))

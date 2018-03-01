@@ -20,7 +20,7 @@ char *str_sep(char **stringp, const char *delim)
 			s++;
 		p = str_str(s, delim);
 	} while (p == s);
-	if (p == NULL){
+	if (p == NULL) {
 		*stringp += str_len(s);
 		return (s);
 	}

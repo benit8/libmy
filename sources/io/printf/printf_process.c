@@ -56,17 +56,17 @@ bool printf_process_numeric(const char **fmtp, char **tmpbuf, va_list ap,
 void printf_process_padding(char **tmpbuf, printf_opt_t opt)
 {
 	switch (opt.align) {
-		case PRTF_RIGHT:
-			(*tmpbuf) = str_padl(*tmpbuf, opt.pad_size, " ");
+	case PRTF_RIGHT:
+		(*tmpbuf) = str_padl(*tmpbuf, " ", opt.pad_size);
 		break;
-		case PRTF_RIGHT0:
-			(*tmpbuf) = str_padl(*tmpbuf, opt.pad_size, "0");
+	case PRTF_RIGHT0:
+		(*tmpbuf) = str_padl(*tmpbuf, "0", opt.pad_size);
 		break;
-		case PRTF_LEFT:
-			(*tmpbuf) = str_padr(*tmpbuf, opt.pad_size, " ");
+	case PRTF_LEFT:
+		(*tmpbuf) = str_padr(*tmpbuf, " ", opt.pad_size);
 		break;
-		case PRTF_CENTER:
-			(*tmpbuf) = str_pad(*tmpbuf, opt.pad_size, " ");
+	case PRTF_CENTER:
+		(*tmpbuf) = str_pad(*tmpbuf, " ", opt.pad_size);
 		break;
 	}
 }

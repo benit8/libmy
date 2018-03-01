@@ -7,7 +7,7 @@
 
 #include "string.h"
 
-char *str_padr(const char *string, size_t pad_size, const char *pad)
+char *str_padr(const char *string, const char *pad, size_t pad_size)
 {
 	size_t string_len = str_len(string);
 	size_t pad_len = str_len(pad);
@@ -22,7 +22,7 @@ char *str_padr(const char *string, size_t pad_size, const char *pad)
 	return (output);
 }
 
-char *str_padl(const char *string, size_t pad_size, const char *pad)
+char *str_padl(const char *string, const char *pad, size_t pad_size)
 {
 	size_t string_len = str_len(string);
 	size_t pad_len = str_len(pad);
@@ -39,12 +39,12 @@ char *str_padl(const char *string, size_t pad_size, const char *pad)
 	return (output);
 }
 
-char *str_pad(const char *string, size_t pad_size, const char *pad)
+char *str_pad(const char *string, const char *pad, size_t pad_size)
 {
 	size_t string_len = str_len(string);
 	size_t pad_left = (pad_size - string_len) / 2;
-	char *output1 = str_padl(string, pad_left + string_len, pad);
-	char *output2 = str_padr(output1, pad_size, pad);
+	char *output1 = str_padl(string, pad, pad_left + string_len);
+	char *output2 = str_padr(output1, pad, pad_size);
 
 	my_free(output1);
 	return (output2);

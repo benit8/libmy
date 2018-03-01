@@ -7,7 +7,7 @@
 
 #include "fs.h"
 
-bool file_is(const char *filepath, const char *mask)
+bool file_is(const char *path, const char *mask)
 {
 	int mode = 0;
 
@@ -27,26 +27,5 @@ bool file_is(const char *filepath, const char *mask)
 			break;
 		}
 	}
-	return (access(filepath, mode) != -1);
-}
-
-bool is_dir(const char *path)
-{
-	struct stat buf;
-
-	return (lstat(path, &buf) != -1 && S_ISDIR(buf.st_mode));
-}
-
-bool is_file(const char *path)
-{
-	struct stat buf;
-
-	return (lstat(path, &buf) != -1 && S_ISREG(buf.st_mode));
-}
-
-bool is_link(const char *path)
-{
-	struct stat buf;
-
-	return (lstat(path, &buf) != -1 && S_ISLNK(buf.st_mode));
+	return (access(path, mode) != -1);
 }

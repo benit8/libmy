@@ -27,7 +27,7 @@ char *str_ncat(char *dest, const char *src, size_t n)
 	if (!n)
 		return (dest);
 	for (; *d != '\0'; d++);
-	while (*s != '\0' && n-- > 0)
+	while (*s != '\0' && n--)
 		*d++ = *s++;
 	*d = '\0';
 	return (dest);

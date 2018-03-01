@@ -7,16 +7,16 @@
 
 #include "string.h"
 
-bool str_match(const char *s1, const char *s2)
+bool str_match(const char *str, const char *pat)
 {
-	if (*s1 != '\0' && *s2 == '*')
-		return (str_match(s1 + 1, s2) || str_match(s1, s2 + 1));
-	else if (*s1 == '\0' && *s2 == '*')
-		return (str_match(s1, s2 + 1));
+	if (*str && *pat == '*')
+		return (str_match(str + 1, pat) || str_match(str, pat + 1));
+	else if (!*str && *pat == '*')
+		return (str_match(str, pat + 1));
 	else {
-		if (*s1 != '\0' && *s1 == *s2)
-			return (str_match(s1 + 1, s2 + 1));
-		else if (*s1 == '\0' && *s1 == *s2)
+		if (*str && *str == *pat)
+			return (str_match(str + 1, pat + 1));
+		else if (!*str && *str == *pat)
 			return (true);
 	}
 	return (false);
