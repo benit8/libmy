@@ -24,14 +24,14 @@ static bool parse_identifier(const char *expr, size_t *i, int8_t type,
 	bool r;
 
 	switch (type) {
-		case 0:
-			start = (*i)++;
+	case 0:
+		start = (*i)++;
 		break;
-		case 1:
-			for (start = *i; is_num_char(expr[*i]); (*i)++);
+	case 1:
+		for (start = *i; is_num_char(expr[*i]); (*i)++);
 		break;
-		case 2:
-			for (start = *i; is_var_char(expr[*i]); (*i)++);
+	case 2:
+		for (start = *i; is_var_char(expr[*i]); (*i)++);
 		break;
 	}
 	r = queue_push(infix, str_ndup(expr + start, (*i) - start));
@@ -42,9 +42,11 @@ static bool parse_identifier(const char *expr, size_t *i, int8_t type,
 void calc_parse_expr(const char *expr, queue_t *infix)
 {
 	for (size_t i = 0; expr[i] != '\0'; ++i) {
-		if (str_chr("+-*/%^()", expr[i]))
+		if (str_chr("+-*/%^()", expr[i])) {
 			parse_identifier(expr, &i, 0, infix);
-		else if (is_num_char(expr[i]))
+			continue;
+		}
+		if (is_num_char(expr[i]))
 			parse_identifier(expr, &i, 1, infix);
 		else if (is_alpha(expr[i]))
 			parse_identifier(expr, &i, 2, infix);
