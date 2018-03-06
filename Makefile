@@ -76,6 +76,7 @@ FS	=	fs/file_get_contents.c		\
 		fs/file_get_lines.c		\
 		fs/file_is.c			\
 		fs/file_put_contents.c		\
+		fs/filesize.c			\
 		fs/is_file.c			\
 		fs/scandir.c			\
 		fs/scandir_sort.c
