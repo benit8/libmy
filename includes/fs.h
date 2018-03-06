@@ -34,9 +34,11 @@ int alphanat_sort(const dirent_t **a, const dirent_t **b);
 int alphanatcase_sort(const dirent_t **a, const dirent_t **b);
 
 bool file_is(const char *filepath, const char *mask);
-bool is_dir(const char *path);
-bool is_file(const char *path);
-bool is_link(const char *path);
+bool is_file(const char *filepath);
+bool is_dir(const char *filepath);
+bool is_link(const char *filepath);
+bool is_chr(const char *filepath);
+bool is_blk(const char *filepath);
 char *file_get_contents(const char *filepath);
 char **file_get_lines(const char *filepath);
 bool file_put_contents(const char *filepath, char *contents, bool append);

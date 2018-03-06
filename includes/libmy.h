@@ -14,6 +14,7 @@
 #include "dsa.h"
 #include "fs.h"
 #include "io.h"
+#include "io/log.h"
 #include "math.h"
 #include "memory.h"
 #include "network.h"
