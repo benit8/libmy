@@ -55,6 +55,8 @@ bool printf_process_numeric(const char **fmtp, char **tmpbuf, va_list ap,
 
 void printf_process_padding(char **tmpbuf, printf_opt_t opt)
 {
+	char *orig = *tmpbuf;
+
 	switch (opt.align) {
 	case PRTF_RIGHT:
 		(*tmpbuf) = str_padl(*tmpbuf, " ", opt.pad_size);
@@ -69,4 +71,6 @@ void printf_process_padding(char **tmpbuf, printf_opt_t opt)
 		(*tmpbuf) = str_pad(*tmpbuf, " ", opt.pad_size);
 		break;
 	}
+	if (*tmpbuf != orig)
+		my_free(orig);
 }

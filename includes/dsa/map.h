@@ -34,12 +34,12 @@ typedef struct map_node
 typedef struct map
 {
 	map_node_t *head;
-	void (*clean_up)(void *data);
+	clean_func_t *clean_up;
 } map_t;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-map_t *map_create(void (*clean_up)(void *data));
+map_t *map_create(clean_func_t *clean_up);
 void map_destroy(map_t *map);
 
 bool map_is_empty(map_t *map);

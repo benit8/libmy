@@ -46,9 +46,9 @@ int my_vsnprintf(char *buff, size_t max, const char *format, va_list ap)
 	if (buffer == NULL)
 		return (-1);
 	for (; *format; ++format) {
-		if (*format == '%' && str_chr(PRTF_CHARS, *(format + 1)))
+		if (!(*format == '%' && str_chr(PRTF_CHARS, *(format + 1))))
 			buffer = str_napd(buffer, format, 1);
-		else if (printf_process(&format, &buffer, ap) == false) {
+		else if (!printf_process(&format, &buffer, ap)) {
 			my_free(buffer);
 			return (-1);
 		}

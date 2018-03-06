@@ -14,4 +14,5 @@ CFLAGS	+=	-W -Wall -Wextra
 LDFLAGS	+=	-L../ -lmy
 
 .c:
+	$(RM) $@
 	$(CC) -o $@ $< $(CFLAGS) $(LDFLAGS)

@@ -80,7 +80,13 @@ FS	=	fs/file_get_contents.c		\
 		fs/scandir.c			\
 		fs/scandir_sort.c
 
-IO	=	io/printf/asprintf.c		\
+IO	=	io/log/data.c			\
+		io/log/file.c			\
+		io/log/level.c			\
+		io/log/loggers.c		\
+		io/log/program_name.c		\
+		io/log/write.c			\
+		io/printf/asprintf.c		\
 		io/printf/dprintf.c		\
 		io/printf/fprintf.c		\
 		io/printf/printf.c		\

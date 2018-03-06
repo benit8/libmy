@@ -29,7 +29,7 @@ typedef list_t stack_t;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-stack_t *stack_create(void (*clean_up)(void *data));
+stack_t *stack_create(clean_func_t *clean_up;);
 void stack_destroy(stack_t *stack);
 void stack_clear(stack_t *stack);
 

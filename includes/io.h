@@ -36,31 +36,31 @@ void my_putnbr(int nb);
 void my_puts(const char *str);
 
 int my_printf(const char *format, ...)
-	__attribute__ (( __format__(__printf__, 1, 2) ));
+	__attribute__((__format__(__printf__, 1, 2)));
 int my_vprintf(const char *format, va_list ap)
-	__attribute__ ((__format__ (__printf__, 1, 0)));
+	__attribute__((__format__(__printf__, 1, 0)));
 
 int my_dprintf(int fd, const char *format, ...)
-	__attribute__ ((__format__ (__printf__, 2, 3)));
+	__attribute__((__format__(__printf__, 2, 3)));
 int my_vdprintf(int fd, const char *format, va_list ap)
-	__attribute__ ((__format__ (__printf__, 2, 0)));
+	__attribute__((__format__(__printf__, 2, 0)));
 
 int my_fprintf(FILE *fp, const char *format, ...)
-	__attribute__ ((__format__ (__printf__, 2, 3)));
+	__attribute__((__format__(__printf__, 2, 3)));
 int my_vfprintf(FILE *fp, const char *format, va_list ap)
-	__attribute__ ((__format__ (__printf__, 2, 0)));
+	__attribute__((__format__(__printf__, 2, 0)));
 
 int my_sprintf(char *buff, const char *format, ...)
-	__attribute__ ((__format__ (__printf__, 2, 3)));
+	__attribute__((__format__(__printf__, 2, 3)));
 int my_snprintf(char *buff, size_t max, const char *format, ...)
-	__attribute__ ((__format__ (__printf__, 3, 4)));
+	__attribute__((__format__(__printf__, 3, 4)));
 
 int my_vsprintf(char *buff, const char *format, va_list ap)
-	__attribute__ ((__format__ (__printf__, 2, 0)));
+	__attribute__((__format__(__printf__, 2, 0)));
 int my_vsnprintf(char *buff, size_t max, const char *format, va_list ap)
-	__attribute__ ((__format__ (__printf__, 3, 0)));
+	__attribute__((__format__(__printf__, 3, 0)));
 
 int my_asprintf(char **strp, const char *format, ...)
-	__attribute__ ((__format__ (__printf__, 2, 3)));
+	__attribute__((__format__(__printf__, 2, 3)));
 int my_vasprintf(char **strp, const char *format, va_list ap)
-	__attribute__ ((__format__ (__printf__, 2, 0)));
+	__attribute__((__format__(__printf__, 2, 0)));
