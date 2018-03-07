@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <Libmy.h>
+#include "libmy.h"
 
 int buffer_calc_lines(char *buffer)
 {
