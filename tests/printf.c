@@ -10,7 +10,7 @@
 
 #include <limits.h>
 #include <stdio.h>
-#include "Libmy.h"
+#include "libmy.h"
 
 void test(const char *format, ...)
 {
