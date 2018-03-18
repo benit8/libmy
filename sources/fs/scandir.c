@@ -55,7 +55,7 @@ int scan_dir(const char *dirpath, dirent_t ***namelist, dir_filter_t *filter,
 
 	if (!dir)
 		return (-1);
-	for (entry = readdir(dir); entry != NULL; entry = readdir(dir)) {
+	while ((entry = readdir(dir)) != NULL) {
 		if (filter && (*filter)(entry) == 0)
 			continue;
 		if (!scan_dir_append(&names, &n, entry))
