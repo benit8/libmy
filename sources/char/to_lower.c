@@ -5,7 +5,7 @@
 ** to_lower.c
 */
 
-#include "char.h"
+#include "my/char.h"
 
 int to_lower(int c)
 {

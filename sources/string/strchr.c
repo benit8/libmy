@@ -5,7 +5,7 @@
 ** strchr.c
 */
 
-#include "string.h"
+#include "my/string.h"
 
 char *str_chr(const char *string, char search)
 {

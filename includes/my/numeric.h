@@ -11,10 +11,10 @@
 
 #include <stdlib.h>
 
-#include "char.h"
-#include "math.h"
-#include "memory.h"
-#include "string.h"
+#include "my/char.h"
+#include "my/math.h"
+#include "my/memory.h"
+#include "my/string.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

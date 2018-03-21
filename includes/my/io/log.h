@@ -15,8 +15,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include "io.h"
-#include "term_colors.h"
+#include "my/io.h"
+#include "my/term_colors.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

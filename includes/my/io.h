@@ -15,8 +15,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#include "numeric.h"
-#include "string.h"
+#include "my/numeric.h"
+#include "my/string.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

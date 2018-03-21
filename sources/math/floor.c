@@ -5,7 +5,7 @@
 ** floor.c
 */
 
-#include "math.h"
+#include "my/math.h"
 
 double my_floor(double dbl)
 {

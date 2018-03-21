@@ -5,7 +5,7 @@
 ** is_print.c
 */
 
-#include "char.h"
+#include "my/char.h"
 
 bool is_print(int c)
 {

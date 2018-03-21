@@ -5,7 +5,7 @@
 ** close.c
 */
 
-#include "network.h"
+#include "my/network.h"
 
 /*
 ** net_close (TCP / UDP)

@@ -5,7 +5,7 @@
 ** memset.c
 */
 
-#include "memory.h"
+#include "my/memory.h"
 
 void *mem_set(void *dest, byte_t c, size_t n)
 {

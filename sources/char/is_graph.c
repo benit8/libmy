@@ -5,7 +5,7 @@
 ** is_graph.c
 */
 
-#include "char.h"
+#include "my/char.h"
 
 bool is_graph(int c)
 {

@@ -5,7 +5,7 @@
 ** postfix.c
 */
 
-#include "parsing/calc.h"
+#include "my/parsing/calc.h"
 
 static double calc_do_operation(char symbol, char *s[2])
 {

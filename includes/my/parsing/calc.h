@@ -9,11 +9,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#include "dsa/queue.h"
-#include "dsa/stack.h"
-#include "math.h"
-#include "numeric.h"
-#include "string.h"
+#include "my/dsa/queue.h"
+#include "my/dsa/stack.h"
+#include "my/math.h"
+#include "my/numeric.h"
+#include "my/string.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

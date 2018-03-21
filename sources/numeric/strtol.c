@@ -5,7 +5,7 @@
 ** strtol.c
 */
 
-#include "numeric.h"
+#include "my/numeric.h"
 
 static char *strto_get_base(const char *str, int *base)
 {

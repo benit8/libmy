@@ -5,7 +5,7 @@
 ** asprintf.c
 */
 
-#include "io.h"
+#include "my/io.h"
 #include "printf.h"
 
 int my_asprintf(char **strp, const char *format, ...)

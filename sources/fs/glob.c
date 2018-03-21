@@ -5,7 +5,7 @@
 ** fs / glob.c
 */
 
-#include "fs.h"
+#include "my/fs.h"
 
 const void *g_pattern_addr;
 

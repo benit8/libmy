@@ -5,7 +5,7 @@
 ## Makefile
 ##
 
-PROJECT	=	libmy
+PROJECT	=	LibMy
 NAME	=	libmy.a
 
 SRC_DIR	=	sources/

@@ -5,7 +5,7 @@
 ** putchar.c
 */
 
-#include "io.h"
+#include "my/io.h"
 
 void my_putchar(char c)
 {

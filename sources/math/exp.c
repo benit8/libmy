@@ -5,7 +5,7 @@
 ** exp.c
 */
 
-#include "math.h"
+#include "my/math.h"
 
 double my_exp(double x)
 {

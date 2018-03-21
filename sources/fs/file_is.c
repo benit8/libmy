@@ -5,7 +5,7 @@
 ** file_is.c
 */
 
-#include "fs.h"
+#include "my/fs.h"
 
 bool file_is(const char *path, const char *mask)
 {

@@ -5,7 +5,7 @@
 ** str_tolower.c
 */
 
-#include "string.h"
+#include "my/string.h"
 
 char *str_tolower(char *str)
 {

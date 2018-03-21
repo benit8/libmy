@@ -5,7 +5,7 @@
 ** str_replace.c
 */
 
-#include "string.h"
+#include "my/string.h"
 
 char *str_replace(char *subject, const char *search, const char *replace)
 {

@@ -5,7 +5,7 @@
 ** str_toupper.c
 */
 
-#include "string.h"
+#include "my/string.h"
 
 char *str_toupper(char *str)
 {

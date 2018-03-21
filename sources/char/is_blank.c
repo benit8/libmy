@@ -5,7 +5,7 @@
 ** is_blank.c
 */
 
-#include "char.h"
+#include "my/char.h"
 
 bool is_blank(int c)
 {

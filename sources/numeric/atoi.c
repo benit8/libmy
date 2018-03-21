@@ -5,7 +5,7 @@
 ** atoi.c
 */
 
-#include "numeric.h"
+#include "my/numeric.h"
 
 ssize_t my_atoi(const char *str)
 {

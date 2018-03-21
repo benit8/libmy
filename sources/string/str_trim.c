@@ -5,7 +5,7 @@
 ** str_trim.c
 */
 
-#include "string.h"
+#include "my/string.h"
 
 char *str_trim(char *str)
 {

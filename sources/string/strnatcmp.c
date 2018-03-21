@@ -5,7 +5,7 @@
 ** strnatcmp.c
 */
 
-#include "string.h"
+#include "my/string.h"
 
 int str_natcmp(const char *s1, const char *s2)
 {

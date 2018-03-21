@@ -5,7 +5,7 @@
 ** is_punct.c
 */
 
-#include "char.h"
+#include "my/char.h"
 
 bool is_punct(int c)
 {

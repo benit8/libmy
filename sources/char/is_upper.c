@@ -5,7 +5,7 @@
 ** is_upper.c
 */
 
-#include "char.h"
+#include "my/char.h"
 
 bool is_upper(int c)
 {

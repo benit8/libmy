@@ -5,7 +5,7 @@
 ** atou.c
 */
 
-#include "numeric.h"
+#include "my/numeric.h"
 
 size_t my_atou(const char *str)
 {

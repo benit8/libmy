@@ -5,7 +5,7 @@
 ** printf.c
 */
 
-#include "io.h"
+#include "my/io.h"
 #include "printf.h"
 
 int my_printf(const char *format, ...)

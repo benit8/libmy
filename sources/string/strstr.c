@@ -5,7 +5,7 @@
 ** strstr.c
 */
 
-#include "string.h"
+#include "my/string.h"
 
 char *str_str(char *string, const char *search)
 {

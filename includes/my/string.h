@@ -12,10 +12,10 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-#include "char.h"
-#include "math.h"
-#include "memory.h"
-#include "numeric.h"
+#include "my/char.h"
+#include "my/math.h"
+#include "my/memory.h"
+#include "my/numeric.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

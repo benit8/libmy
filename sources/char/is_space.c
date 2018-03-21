@@ -5,7 +5,7 @@
 ** is_space.c
 */
 
-#include "char.h"
+#include "my/char.h"
 
 bool is_space(int c)
 {

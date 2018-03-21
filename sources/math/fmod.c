@@ -5,7 +5,7 @@
 ** fmod.c
 */
 
-#include "math.h"
+#include "my/math.h"
 
 double my_fmod(double a, double b)
 {

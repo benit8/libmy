@@ -5,7 +5,7 @@
 ** receive.c
 */
 
-#include "network.h"
+#include "my/network.h"
 
 static int receive_tcp(net_host_t *remote, void *data, int len, int timeout)
 {

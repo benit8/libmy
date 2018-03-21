@@ -5,7 +5,7 @@
 ** implode.c
 */
 
-#include "string.h"
+#include "my/string.h"
 
 static size_t implode_get_length(char **array, const char *glue)
 {

@@ -5,7 +5,7 @@
 ** to_upper.c
 */
 
-#include "char.h"
+#include "my/char.h"
 
 int to_upper(int c)
 {

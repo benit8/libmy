@@ -5,7 +5,7 @@
 ** str_match.c
 */
 
-#include "string.h"
+#include "my/string.h"
 
 bool str_match(const char *str, const char *pat)
 {

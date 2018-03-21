@@ -5,7 +5,7 @@
 ** str_empty.c
 */
 
-#include "string.h"
+#include "my/string.h"
 
 bool str_empty(const char *string)
 {

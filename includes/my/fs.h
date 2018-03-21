@@ -16,8 +16,8 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
-#include "memory.h"
-#include "string.h"
+#include "my/memory.h"
+#include "my/string.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

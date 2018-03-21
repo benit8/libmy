@@ -5,7 +5,7 @@
 ** log.c
 */
 
-#include "math.h"
+#include "my/math.h"
 
 double my_log(double x)
 {

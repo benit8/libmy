@@ -5,7 +5,7 @@
 ** utoa.c
 */
 
-#include "numeric.h"
+#include "my/numeric.h"
 
 char *my_utoa(size_t n, uint8_t base)
 {

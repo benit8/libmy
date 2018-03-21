@@ -5,7 +5,7 @@
 ** putstr.c
 */
 
-#include "io.h"
+#include "my/io.h"
 
 void my_putstr(const char *str)
 {

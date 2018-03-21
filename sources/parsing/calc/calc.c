@@ -5,7 +5,7 @@
 ** calc.c
 */
 
-#include "parsing/calc.h"
+#include "my/parsing/calc.h"
 
 double fcalc(const char *expr)
 {

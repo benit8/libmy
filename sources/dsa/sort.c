@@ -5,13 +5,13 @@
 ** sort.c
 */
 
-#include "dsa.h"
+#include "my/dsa.h"
 
 void swap(void *va, void *vb, size_t s)
 {
 	byte_t *a = (byte_t *)va;
 	byte_t *b = (byte_t *)vb;
-	byte_t t;
+	byte_t t = 0;
 
 	while (s--) {
 		t = a[s];

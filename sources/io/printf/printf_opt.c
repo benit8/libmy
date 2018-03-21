@@ -5,7 +5,7 @@
 ** printf_opt.c
 */
 
-#include "io.h"
+#include "my/io.h"
 #include "printf.h"
 
 void printf_get_opt(const char **fmtp, va_list ap, printf_opt_t *opt)

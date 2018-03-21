@@ -5,7 +5,7 @@
 ** strpad.c
 */
 
-#include "string.h"
+#include "my/string.h"
 
 char *str_padr(const char *string, const char *pad, size_t pad_size)
 {

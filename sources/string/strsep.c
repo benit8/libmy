@@ -5,7 +5,7 @@
 ** strsep.c
 */
 
-#include "string.h"
+#include "my/string.h"
 
 char *str_sep(char **stringp, const char *delim)
 {

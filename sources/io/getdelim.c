@@ -5,7 +5,7 @@
 ** getdelim.c
 */
 
-#include "io.h"
+#include "my/io.h"
 
 static bool get_delim_init(char **buf, size_t *bufsiz)
 {

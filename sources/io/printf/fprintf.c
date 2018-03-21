@@ -5,7 +5,7 @@
 ** dprintf.c
 */
 
-#include "io.h"
+#include "my/io.h"
 #include "printf.h"
 
 int my_fprintf(FILE *fp, const char *format, ...)

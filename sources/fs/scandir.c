@@ -5,7 +5,7 @@
 ** scandir.c
 */
 
-#include "fs.h"
+#include "my/fs.h"
 
 static void scan_dir_sort(const dirent_t **names, int n, dir_compar_t *comp)
 {

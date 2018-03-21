@@ -5,7 +5,7 @@
 ** pow.c
 */
 
-#include "math.h"
+#include "my/math.h"
 
 double my_pow(double x, double y)
 {

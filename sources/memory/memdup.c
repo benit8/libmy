@@ -5,7 +5,7 @@
 ** memdup.c
 */
 
-#include "memory.h"
+#include "my/memory.h"
 
 void *mem_dup(const void *src, size_t n)
 {

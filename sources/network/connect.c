@@ -5,7 +5,7 @@
 ** connect.c
 */
 
-#include "network.h"
+#include "my/network.h"
 
 /*
 ** net_connect (TCP:client)

@@ -5,7 +5,7 @@
 ** infix.c
 */
 
-#include "parsing/calc.h"
+#include "my/parsing/calc.h"
 
 static int precedence(char symbol)
 {

@@ -5,7 +5,7 @@
 ** realloc.c
 */
 
-#include "memory.h"
+#include "my/memory.h"
 
 void *my_realloc(void *ptr, size_t new_size)
 {

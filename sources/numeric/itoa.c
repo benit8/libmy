@@ -5,7 +5,7 @@
 ** itoa.c
 */
 
-#include "numeric.h"
+#include "my/numeric.h"
 
 char *my_itoa(ssize_t n, uint8_t base)
 {

@@ -5,7 +5,7 @@
 ** angle.c
 */
 
-#include "math.h"
+#include "my/math.h"
 
 double radians(double degrees)
 {

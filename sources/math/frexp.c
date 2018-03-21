@@ -5,7 +5,7 @@
 ** frexp.c
 */
 
-#include "math.h"
+#include "my/math.h"
 
 double my_frexp(double value, int *eptr)
 {

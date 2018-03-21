@@ -17,9 +17,9 @@
 #include <sys/time.h>
 #include <sys/types.h>
 
-#include "io.h"
-#include "memory.h"
-#include "string.h"
+#include "my/io.h"
+#include "my/memory.h"
+#include "my/string.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

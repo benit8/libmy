@@ -5,7 +5,7 @@
 ** memmove.c
 */
 
-#include "memory.h"
+#include "my/memory.h"
 
 void *mem_move(void *dest, const void *src, size_t n)
 {

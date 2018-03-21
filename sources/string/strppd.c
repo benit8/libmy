@@ -5,7 +5,7 @@
 ** strppd.c
 */
 
-#include "string.h"
+#include "my/string.h"
 
 char *str_ppd(char *string, const char *span)
 {

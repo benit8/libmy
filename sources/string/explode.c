@@ -5,7 +5,7 @@
 ** explode.c
 */
 
-#include "string.h"
+#include "my/string.h"
 
 static bool explode_append(char ***tabp, size_t *sizep, char *token)
 {

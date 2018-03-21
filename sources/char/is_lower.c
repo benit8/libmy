@@ -5,7 +5,7 @@
 ** is_lower.c
 */
 
-#include "char.h"
+#include "my/char.h"
 
 bool is_lower(int c)
 {

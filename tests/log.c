@@ -5,7 +5,7 @@
 ** tests / log.c
 */
 
-#include "io/log.h"
+#include "my/io/log.h"
 
 int main(int ac, const char **av)
 {

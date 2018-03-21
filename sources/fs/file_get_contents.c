@@ -5,7 +5,7 @@
 ** file_get_contents.c
 */
 
-#include "fs.h"
+#include "my/fs.h"
 
 char *file_get_contents(const char *file)
 {

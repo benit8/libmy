@@ -5,7 +5,7 @@
 ** rand.c
 */
 
-#include "math.h"
+#include "my/math.h"
 
 static size_t *rand_get_next(void)
 {

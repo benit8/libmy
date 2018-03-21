@@ -5,7 +5,7 @@
 ** fs / filesize.c
 */
 
-#include "fs.h"
+#include "my/fs.h"
 
 size_t filesize(const char *filepath)
 {

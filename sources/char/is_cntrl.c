@@ -5,7 +5,7 @@
 ** is_cntrl.c
 */
 
-#include "char.h"
+#include "my/char.h"
 
 bool is_cntrl(int c)
 {

@@ -5,7 +5,7 @@
 ** putnbr.c
 */
 
-#include "io.h"
+#include "my/io.h"
 
 void my_putnbr(int nb)
 {

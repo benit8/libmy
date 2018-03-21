@@ -5,7 +5,7 @@
 ** strspn.c
 */
 
-#include "string.h"
+#include "my/string.h"
 
 size_t str_spn(const char *str1, const char *str2)
 {

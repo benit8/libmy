@@ -5,7 +5,7 @@
 ** accept.c
 */
 
-#include "network.h"
+#include "my/network.h"
 
 /*
 ** net_accept (TCP:server)

@@ -5,7 +5,7 @@
 ** send.c
 */
 
-#include "network.h"
+#include "my/network.h"
 
 /*
 ** net_send (TCP / UDP)

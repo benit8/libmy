@@ -5,7 +5,7 @@
 ** malloc.c
 */
 
-#include "memory.h"
+#include "my/memory.h"
 
 void *my_malloc(size_t size)
 {

@@ -12,9 +12,9 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-#include "dsa/dsa_types.h"
-#include "dsa/list.h"
-#include "memory.h"
+#include "my/dsa/dsa_types.h"
+#include "my/dsa/list.h"
+#include "my/memory.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

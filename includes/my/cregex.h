@@ -12,8 +12,8 @@
 #include <regex.h>
 #include <stdlib.h>
 
-#include "memory.h"
-#include "string.h"
+#include "my/memory.h"
+#include "my/string.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 

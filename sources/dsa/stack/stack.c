@@ -5,7 +5,7 @@
 ** stack.c
 */
 
-#include "dsa/stack.h"
+#include "my/dsa/stack.h"
 
 stack_t *stack_create(clean_func_t *clean_up)
 {

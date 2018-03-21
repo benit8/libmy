@@ -5,7 +5,7 @@
 ** ftoa.c
 */
 
-#include "numeric.h"
+#include "my/numeric.h"
 
 char *my_ftoa(double dble, int precision)
 {

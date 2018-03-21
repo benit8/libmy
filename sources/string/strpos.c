@@ -5,7 +5,7 @@
 ** strpos.c
 */
 
-#include "string.h"
+#include "my/string.h"
 
 ssize_t str_pos(char *string, const char *search)
 {

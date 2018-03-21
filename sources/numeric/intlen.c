@@ -5,7 +5,7 @@
 ** intlen.c
 */
 
-#include "numeric.h"
+#include "my/numeric.h"
 
 size_t intlen(ssize_t n)
 {

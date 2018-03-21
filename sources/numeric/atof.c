@@ -5,7 +5,7 @@
 ** atof.c
 */
 
-#include "numeric.h"
+#include "my/numeric.h"
 
 static void atof_integer_part(const char **strp, double *res)
 {

@@ -5,7 +5,7 @@
 ** open.c
 */
 
-#include "network.h"
+#include "my/network.h"
 
 /*
 ** net_setup (TCP:client / UDP:client)

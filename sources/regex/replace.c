@@ -5,7 +5,7 @@
 ** replace.c
 */
 
-#include "cregex.h"
+#include "my/cregex.h"
 
 char *regex_replace(const char *pattern, const char *replacement, char *subject)
 {

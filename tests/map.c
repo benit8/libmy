@@ -5,7 +5,7 @@
 ** ordered_map.c
 */
 
-#include "libmy.h"
+#include "my.h"
 
 void display(const char *key, void *value)
 {

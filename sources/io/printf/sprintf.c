@@ -5,7 +5,7 @@
 ** sprintf.c
 */
 
-#include "io.h"
+#include "my/io.h"
 #include "printf.h"
 
 int my_sprintf(char *buff, const char *format, ...)

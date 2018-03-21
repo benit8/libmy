@@ -5,7 +5,7 @@
 ** strcasecmp.c
 */
 
-#include "string.h"
+#include "my/string.h"
 
 int str_casecmp(const char *s1, const char *s2)
 {

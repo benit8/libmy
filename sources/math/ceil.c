@@ -5,7 +5,7 @@
 ** ceil.c
 */
 
-#include "math.h"
+#include "my/math.h"
 
 double my_ceil(double dbl)
 {

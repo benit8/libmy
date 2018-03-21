@@ -5,7 +5,7 @@
 ** memcmp.c
 */
 
-#include "memory.h"
+#include "my/memory.h"
 
 int mem_cmp(const void *a, const void *b, size_t n)
 {

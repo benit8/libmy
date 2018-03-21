@@ -5,7 +5,7 @@
 ** strnatcasecmp.c
 */
 
-#include "string.h"
+#include "my/string.h"
 
 int str_natcasecmp(const char *s1, const char *s2)
 {

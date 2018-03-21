@@ -5,7 +5,7 @@
 ** is_alnum.c
 */
 
-#include "char.h"
+#include "my/char.h"
 
 bool is_alnum(int c)
 {

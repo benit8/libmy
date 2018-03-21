@@ -5,7 +5,7 @@
 ** split.c
 */
 
-#include "cregex.h"
+#include "my/cregex.h"
 
 char **regex_split(char *pattern, char *subject)
 {
