@@ -11,6 +11,7 @@ ssize_t my_atoi(const char *str)
 {
 	ssize_t res = 0;
 
+	for (; is_blank(*str); str++);
 	if (*str == '+')
 		return (my_atoi(str + 1));
 	if (*str == '-')

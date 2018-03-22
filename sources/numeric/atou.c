@@ -11,6 +11,7 @@ size_t my_atou(const char *str)
 {
 	size_t res = 0;
 
+	for (; is_blank(*str); str++);
 	for (; is_digit(*str); str++)
 		res = (res * 10) + (*str - '0');
 	return (res);

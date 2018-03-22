@@ -47,6 +47,7 @@ double my_atof(const char *str)
 {
 	double res = 0;
 
+	for (; is_blank(*str); str++);
 	if (*str == '+')
 		return (my_atof(str + 1));
 	if (*str == '-')
