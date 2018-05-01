@@ -7,7 +7,7 @@
 
 #include "my/string.h"
 
-size_t str_spn(const char *str1, const char *str2)
+size_t my_strspn(const char *str1, const char *str2)
 {
 	const char *s1 = NULL;
 	const char *s2 = NULL;
@@ -23,7 +23,7 @@ size_t str_spn(const char *str1, const char *str2)
 	return (s1 - str1);
 }
 
-size_t str_cspn(const char *str1, const char *str2)
+size_t my_strcspn(const char *str1, const char *str2)
 {
 	const char *s1 = NULL;
 	const char *s2 = NULL;

@@ -7,7 +7,7 @@
 
 #include "my/string.h"
 
-char *str_chr(const char *string, char search)
+char *my_strchr(const char *string, char search)
 {
 	for (; *string; ++string) {
 		if (*string == search)
@@ -16,7 +16,7 @@ char *str_chr(const char *string, char search)
 	return (NULL);
 }
 
-char *str_nchr(const char *string, char search, size_t n)
+char *my_strnchr(const char *string, char search, size_t n)
 {
 	for (; n--; ++string) {
 		if (*string == search)
@@ -25,7 +25,7 @@ char *str_nchr(const char *string, char search, size_t n)
 	return (NULL);
 }
 
-char *str_rchr(const char *string, char search)
+char *my_strrchr(const char *string, char search)
 {
 	const char *s = string;
 

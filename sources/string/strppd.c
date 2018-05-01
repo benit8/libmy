@@ -7,18 +7,18 @@
 
 #include "my/string.h"
 
-char *str_ppd(char *string, const char *span)
+char *my_strppd(char *string, const char *span)
 {
-	size_t n = str_len(span);
+	size_t n = my_strlen(span);
 
-	string = str_rev(string);
-	string = str_napd(string, span, n);
-	return (str_rev(string));
+	string = my_strrev(string);
+	string = my_strnapd(string, span, n);
+	return (my_strrev(string));
 }
 
-char *str_nppd(char *string, const char *span, size_t n)
+char *my_strnppd(char *string, const char *span, size_t n)
 {
-	string = str_rev(string);
-	string = str_napd(string, span, n);
-	return (str_rev(string));
+	string = my_strrev(string);
+	string = my_strnapd(string, span, n);
+	return (my_strrev(string));
 }

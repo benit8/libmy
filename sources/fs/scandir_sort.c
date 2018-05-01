@@ -7,22 +7,22 @@
 
 #include "my/fs.h"
 
-int alpha_sort(const dirent_t **a, const dirent_t **b)
+int my_alphasort(const dirent_t **a, const dirent_t **b)
 {
-	return (str_cmp((*a)->d_name, (*b)->d_name));
+	return (my_strcmp((*a)->d_name, (*b)->d_name));
 }
 
-int alphacase_sort(const dirent_t **a, const dirent_t **b)
+int my_alphacasesort(const dirent_t **a, const dirent_t **b)
 {
-	return (str_casecmp((*a)->d_name, (*b)->d_name));
+	return (my_strcasecmp((*a)->d_name, (*b)->d_name));
 }
 
-int alphanat_sort(const dirent_t **a, const dirent_t **b)
+int my_alphanatsort(const dirent_t **a, const dirent_t **b)
 {
-	return (str_natcmp((*a)->d_name, (*b)->d_name));
+	return (my_strnatcmp((*a)->d_name, (*b)->d_name));
 }
 
-int alphanatcase_sort(const dirent_t **a, const dirent_t **b)
+int my_alphanatcasesort(const dirent_t **a, const dirent_t **b)
 {
-	return (str_natcasecmp((*a)->d_name, (*b)->d_name));
+	return (my_strnatcasecmp((*a)->d_name, (*b)->d_name));
 }

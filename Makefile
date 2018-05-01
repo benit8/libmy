@@ -143,14 +143,6 @@ Regex	=	regex/capture.c			\
 
 String	=	string/explode.c		\
 		string/implode.c		\
-		string/str_empty.c		\
-		string/str_match.c		\
-		string/str_pad.c		\
-		string/str_repeat.c		\
-		string/str_replace.c		\
-		string/str_tolower.c		\
-		string/str_toupper.c		\
-		string/str_trim.c		\
 		string/strapd.c			\
 		string/strcasecmp.c		\
 		string/strcat.c			\
@@ -158,15 +150,23 @@ String	=	string/explode.c		\
 		string/strcmp.c			\
 		string/strcpy.c			\
 		string/strdup.c			\
+		string/strempty.c		\
 		string/strlen.c			\
+		string/strmatch.c		\
 		string/strnatcasecmp.c		\
 		string/strnatcmp.c		\
+		string/strpad.c			\
 		string/strpos.c			\
 		string/strppd.c			\
+		string/strrepeat.c		\
+		string/strreplace.c		\
 		string/strrev.c			\
 		string/strsep.c			\
 		string/strspn.c			\
-		string/strstr.c
+		string/strstr.c			\
+		string/strtolower.c		\
+		string/strtoupper.c		\
+		string/strtrim.c
 
 
 SRCS	+=	$(addprefix $(SRC_DIR),$(Char))

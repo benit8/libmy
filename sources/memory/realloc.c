@@ -20,7 +20,7 @@ void *my_realloc(void *ptr, size_t new_size)
 	new = my_calloc(1, new_size);
 	if (new == NULL)
 		return (NULL);
-	mem_cpy(new, ptr, cur_size);
+	my_memcpy(new, ptr, cur_size);
 	my_free(ptr);
 	return (new);
 }

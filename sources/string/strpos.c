@@ -7,16 +7,16 @@
 
 #include "my/string.h"
 
-ssize_t str_pos(char *string, const char *search)
+ssize_t my_strpos(char *string, const char *search)
 {
-	char *p = str_str(string, search);
+	char *p = my_strstr(string, search);
 
 	return (p ? p - string : -1);
 }
 
-ssize_t str_npos(char *string, const char *search, size_t n)
+ssize_t my_strnpos(char *string, const char *search, size_t n)
 {
-	char *p = str_nstr(string, search, n);
+	char *p = my_strnstr(string, search, n);
 
 	return (p ? p - string : -1);
 }

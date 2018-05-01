@@ -19,7 +19,7 @@ char *my_ftoa(double dble, int precision)
 	for (; n > 0 || i < 1; n /= 10)
 		str[i++] = (n % 10) + '0';
 	n = (int)my_round((dble - int_part) * pow);
-	str = str_rev(str);
+	str = my_strrev(str);
 	if (n == 0 || precision == 0)
 		return (str);
 	str[i++] = '.';
@@ -27,6 +27,6 @@ char *my_ftoa(double dble, int precision)
 		str[i++] = (n % 10) + '0';
 	while (precision--)
 		str[i++] = '0';
-	str_rev(str + mark);
+	my_strrev(str + mark);
 	return (str);
 }

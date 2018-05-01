@@ -46,16 +46,16 @@ int my_vsnprintf(char *buff, size_t max, const char *format, va_list ap)
 	if (buffer == NULL)
 		return (-1);
 	for (; *format; ++format) {
-		if (!(*format == '%' && str_chr(PRTF_CHARS, *(format + 1))))
-			buffer = str_napd(buffer, format, 1);
+		if (!(*format == '%' && my_strchr(PRTF_CHARS, *(format + 1))))
+			buffer = my_strnapd(buffer, format, 1);
 		else if (!printf_process(&format, &buffer, ap)) {
 			my_free(buffer);
 			return (-1);
 		}
 	}
-	chars = str_len(buffer);
+	chars = my_strlen(buffer);
 	if (buff != NULL)
-		str_ncpy(buff, buffer, max < chars ? max : chars);
+		my_strncpy(buff, buffer, max < chars ? max : chars);
 	my_free(buffer);
 	return ((int)chars);
 }

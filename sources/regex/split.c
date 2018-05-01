@@ -5,7 +5,7 @@
 ** split.c
 */
 
-#include "my/cregex.h"
+#include "my/regex.h"
 
 char **regex_split(char *pattern, char *subject)
 {
@@ -21,10 +21,10 @@ char **regex_split(char *pattern, char *subject)
 		array = my_realloc(array, sizeof(char *) * (n + 3));
 		if (array == NULL)
 			return (NULL);
-		array[n] = str_ndup(subject, matches[0].rm_so);
+		array[n] = my_strndup(subject, matches[0].rm_so);
 		subject += matches[0].rm_eo;
 	}
-	array[n++] = str_dup(subject);
+	array[n++] = my_strdup(subject);
 	regfree(&regex);
 	my_free(matches);
 	return (array);

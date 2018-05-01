@@ -7,22 +7,22 @@
 
 #include "my/string.h"
 
-char *str_dup(const char *src)
+char *my_strdup(const char *src)
 {
-	size_t len = str_len(src);
+	size_t len = my_strlen(src);
 	char *dest = my_calloc(len + 1, sizeof(char));
 
 	if (dest != NULL)
-		dest = str_ncpy(dest, src, len);
+		dest = my_strncpy(dest, src, len);
 	return (dest);
 }
 
-char *str_ndup(const char *src, size_t n)
+char *my_strndup(const char *src, size_t n)
 {
-	size_t len = str_nlen(src, n);
+	size_t len = my_strnlen(src, n);
 	char *dest = my_calloc(len + 1, sizeof(char));
 
 	if (dest != NULL)
-		dest = str_ncpy(dest, src, len);
+		dest = my_strncpy(dest, src, len);
 	return (dest);
 }

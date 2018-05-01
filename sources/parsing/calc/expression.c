@@ -34,7 +34,7 @@ static bool parse_identifier(const char *expr, size_t *i, int8_t type,
 		for (start = *i; is_var_char(expr[*i]); (*i)++);
 		break;
 	}
-	r = queue_push(infix, str_ndup(expr + start, (*i) - start));
+	r = queue_push(infix, my_strndup(expr + start, (*i) - start));
 	(*i)--;
 	return (r);
 }
@@ -42,7 +42,7 @@ static bool parse_identifier(const char *expr, size_t *i, int8_t type,
 void calc_parse_expr(const char *expr, queue_t *infix)
 {
 	for (size_t i = 0; expr[i] != '\0'; ++i) {
-		if (str_chr("+-*/%^()", expr[i])) {
+		if (my_strchr("+-*/%^()", expr[i])) {
 			parse_identifier(expr, &i, 0, infix);
 			continue;
 		}

@@ -22,60 +22,60 @@
 char **explode(char *string, const char *delim);
 char *implode(char **array, const char *glue);
 
-char *str_apd(char *dest, const char *src);
-char *str_napd(char *dest, const char *src, size_t n);
-char *str_ppd(char *dest, const char *src);
-char *str_nppd(char *dest, const char *src, size_t n);
+char *my_strapd(char *dest, const char *src);
+char *my_strnapd(char *dest, const char *src, size_t n);
+char *my_strppd(char *dest, const char *src);
+char *my_strnppd(char *dest, const char *src, size_t n);
 
-int str_cmp(const char *s1, const char *s2);
-int str_ncmp(const char *s1, const char *s2, size_t n);
-int str_casecmp(const char *s1, const char *s2);
-int str_ncasecmp(const char *s1, const char *s2, size_t n);
-int str_natcasecmp(const char *s1, const char *s2);
-int str_nnatcasecmp(const char *s1, const char *s2, size_t n);
-int str_natcmp(const char *s1, const char *s2);
-int str_nnatcmp(const char *s1, const char *s2, size_t n);
+int my_strcmp(const char *s1, const char *s2);
+int my_strncmp(const char *s1, const char *s2, size_t n);
+int my_strcasecmp(const char *s1, const char *s2);
+int my_strncasecmp(const char *s1, const char *s2, size_t n);
+int my_strnatcasecmp(const char *s1, const char *s2);
+int my_strnnatcasecmp(const char *s1, const char *s2, size_t n);
+int my_strnatcmp(const char *s1, const char *s2);
+int my_strnnatcmp(const char *s1, const char *s2, size_t n);
 
-char *str_cat(char *dest, const char *src);
-char *str_ncat(char *dest, const char *src, size_t n);
+char *my_strcat(char *dest, const char *src);
+char *my_strncat(char *dest, const char *src, size_t n);
 
-char *str_chr(const char *string, char search);
-char *str_nchr(const char *string, char search, size_t n);
-char *str_rchr(const char *string, char search);
+char *my_strchr(const char *string, char search);
+char *my_strnchr(const char *string, char search, size_t n);
+char *my_strrchr(const char *string, char search);
 
-char *str_cpy(char *dest, const char *src);
-char *str_ncpy(char *dest, const char *src, size_t n);
+char *my_strcpy(char *dest, const char *src);
+char *my_strncpy(char *dest, const char *src, size_t n);
 
-size_t str_spn(const char *str1, const char *str2);
-size_t str_cspn(const char *str1, const char *str2);
+size_t my_strspn(const char *str1, const char *str2);
+size_t my_strcspn(const char *str1, const char *str2);
 
-char *str_dup(const char *src);
-char *str_ndup(const char *src, size_t n);
+char *my_strdup(const char *src);
+char *my_strndup(const char *src, size_t n);
 
-bool str_empty(const char *string);
+bool my_strempty(const char *string);
 
-size_t str_len(const char *string);
-size_t str_nlen(const char *string, size_t max);
+size_t my_strlen(const char *string);
+size_t my_strnlen(const char *string, size_t max);
 
-bool str_match(const char *s1, const char *s2);
+bool my_strmatch(const char *s1, const char *s2);
 
-ssize_t str_pos(char *string, const char *search);
-ssize_t str_npos(char *string, const char *search, size_t n);
+ssize_t my_strpos(char *string, const char *search);
+ssize_t my_strnpos(char *string, const char *search, size_t n);
 
-char *str_pad(const char *string, const char *pad, size_t padLen);
-char *str_padl(const char *string, const char *pad, size_t padLen);
-char *str_padr(const char *string, const char *pad, size_t padLen);
+char *my_strpad(const char *string, const char *pad, size_t padLen);
+char *my_strpadl(const char *string, const char *pad, size_t padLen);
+char *my_strpadr(const char *string, const char *pad, size_t padLen);
 
-char *str_repeat(char *string, size_t times);
-char *str_replace(char *subject, const char *search, const char *replace);
-char *str_rev(char *string);
+char *my_strrepeat(char *string, size_t times);
+char *my_strreplace(char *subject, const char *search, const char *replace);
+char *my_strrev(char *string);
 
-char *str_sep(char **stringp, const char *delim);
+char *my_strsep(char **stringp, const char *delim);
 
-char *str_str(char *string, const char *search);
-char *str_nstr(char *string, const char *search, size_t n);
+char *my_strstr(char *string, const char *search);
+char *my_strnstr(char *string, const char *search, size_t n);
 
-char *str_tolower(char *string);
-char *str_toupper(char *string);
+char *my_strtolower(char *string);
+char *my_strtoupper(char *string);
 
-char *str_trim(char *str);
+char *my_strtrim(char *str);

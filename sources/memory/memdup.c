@@ -7,11 +7,11 @@
 
 #include "my/memory.h"
 
-void *mem_dup(const void *src, size_t n)
+void *my_memdup(const void *src, size_t n)
 {
 	void *mem = my_calloc(n, 1);
 
 	if (mem != NULL)
-		mem_cpy(mem, src, n);
+		my_memcpy(mem, src, n);
 	return (mem);
 }

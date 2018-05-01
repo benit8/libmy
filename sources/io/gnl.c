@@ -17,7 +17,7 @@ char *gnl(const int fd)
 		r = read(fd, buff, 1);
 		if (r != 1 || buff[0] == '\n')
 			break;
-		line = str_napd(line, buff, 1);
+		line = my_strnapd(line, buff, 1);
 	}
 	if (r == 1)
 		return (line);
@@ -29,7 +29,7 @@ char *fgnl(FILE *fp)
 {
 	char *line = NULL;
 	size_t len = 0;
-	ssize_t read = get_line(&line, &len, fp);
+	ssize_t read = my_getline(&line, &len, fp);
 
 	if (read == -1) {
 		if (line)

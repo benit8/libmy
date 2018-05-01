@@ -13,8 +13,8 @@ static size_t implode_get_length(char **array, const char *glue)
 
 	for (size_t i = 0; array[i] != NULL; ++i) {
 		if (i > 0)
-			length += str_len(glue);
-		length += str_len(array[i]);
+			length += my_strlen(glue);
+		length += my_strlen(array[i]);
 	}
 	return (length);
 }
@@ -32,8 +32,8 @@ char *implode(char **array, const char *glue)
 		return (NULL);
 	for (size_t i = 0; array[i] != NULL; ++i) {
 		if (i > 0)
-			output = str_apd(output, glue);
-		output = str_apd(output, array[i]);
+			output = my_strapd(output, glue);
+		output = my_strapd(output, array[i]);
 	}
 	return (output);
 }

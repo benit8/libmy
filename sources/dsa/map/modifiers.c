@@ -14,7 +14,7 @@ static bool map_insert_new_node(map_t *map, map_node_t *prev, const char *key,
 
 	if (!node)
 		return (false);
-	node->key = str_dup(key);
+	node->key = my_strdup(key);
 	if (!node->key) {
 		my_free(node);
 		return (false);
@@ -47,7 +47,7 @@ bool map_insert(map_t *map, const char *key, void *data)
 	if (!map)
 		return (false);
 	for (map_node_t *cur = map->head; cur != NULL; cur = cur->next) {
-		if (str_cmp(cur->key, key) == 0) {
+		if (my_strcmp(cur->key, key) == 0) {
 			if (map->clean_up)
 				(*map->clean_up)(cur->data);
 			cur->data = data;
@@ -65,7 +65,7 @@ void map_remove(map_t *map, const char *key)
 	if (!map)
 		return;
 	for (map_node_t *cur = map->head; cur != NULL; cur = cur->next) {
-		if (str_cmp(cur->key, key) == 0) {
+		if (my_strcmp(cur->key, key) == 0) {
 			map_remove_node(map, cur, prev);
 			return;
 		}

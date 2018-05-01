@@ -5,18 +5,18 @@
 ** capture.c
 */
 
-#include "my/cregex.h"
+#include "my/regex.h"
 
 static
 bool regex_append(char ***array, size_t n, char *subject, regmatch_t match)
 {
-	size_t substr_len = 0;
+	size_t submy_strlen = 0;
 
 	*array = my_realloc(*array, sizeof(char *) * (n + 2));
 	if (*array == NULL)
 		return (false);
-	substr_len = match.rm_eo - match.rm_so;
-	(*array)[n] = str_ndup(subject + match.rm_so, substr_len);
+	submy_strlen = match.rm_eo - match.rm_so;
+	(*array)[n] = my_strndup(subject + match.rm_so, submy_strlen);
 	if ((*array)[n] == NULL)
 		return (false);
 	return (true);

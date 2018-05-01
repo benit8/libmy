@@ -2,12 +2,12 @@
 ** EPITECH PROJECT, 2018
 ** libmy
 ** File description:
-** str_tolower.c
+** my_strtolower.c
 */
 
 #include "my/string.h"
 
-char *str_tolower(char *str)
+char *my_strtolower(char *str)
 {
 	if (!str)
 		return (str);

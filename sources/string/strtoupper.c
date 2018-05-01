@@ -2,12 +2,12 @@
 ** EPITECH PROJECT, 2018
 ** libmy
 ** File description:
-** str_toupper.c
+** my_strtoupper.c
 */
 
 #include "my/string.h"
 
-char *str_toupper(char *str)
+char *my_strtoupper(char *str)
 {
 	if (!str)
 		return (str);

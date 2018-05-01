@@ -30,7 +30,7 @@ static char *strto_get_base(const char *str, int *base)
 	return (s);
 }
 
-long int str_tol(const char *str, char **endptr, int base)
+long int my_strtol(const char *str, char **endptr, int base)
 {
 	static char digits[] = "0123456789abcdefghijklmnopqrstuvwxyz";
 	char *s = strto_get_base(str, &base);
@@ -40,16 +40,16 @@ long int str_tol(const char *str, char **endptr, int base)
 	if (!base)
 		return (0);
 	if (*s == '+')
-		return (str_tol(s + 1, endptr, base));
+		return (my_strtol(s + 1, endptr, base));
 	if (*s == '-')
-		return (-str_tol(s + 1, endptr, base));
-	while ((digit = str_nchr(digits, to_lower(*s++), base)) != NULL)
+		return (-my_strtol(s + 1, endptr, base));
+	while ((digit = my_strnchr(digits, to_lower(*s++), base)) != NULL)
 		res = (res * base) + (int)(digit - digits);
 	*endptr = (char *)s;
 	return (res);
 }
 
-unsigned long int str_toul(const char *str, char **endptr, int base)
+unsigned long int my_strtoul(const char *str, char **endptr, int base)
 {
 	static char digits[] = "0123456789abcdefghijklmnopqrstuvwxyz";
 	char *s = strto_get_base(str, &base);
@@ -59,14 +59,14 @@ unsigned long int str_toul(const char *str, char **endptr, int base)
 	if (!base)
 		return (0);
 	if (*s == '+')
-		return (str_toul(s + 1, endptr, base));
-	while ((digit = str_nchr(digits, to_lower(*s++), base)) != NULL)
+		return (my_strtoul(s + 1, endptr, base));
+	while ((digit = my_strnchr(digits, to_lower(*s++), base)) != NULL)
 		res = (res * base) + (int)(digit - digits);
 	*endptr = (char *)s;
 	return (res);
 }
 
-long long int str_toll(const char *str, char **endptr, int base)
+long long int my_strtoll(const char *str, char **endptr, int base)
 {
 	static char digits[] = "0123456789abcdefghijklmnopqrstuvwxyz";
 	char *s = strto_get_base(str, &base);
@@ -76,16 +76,16 @@ long long int str_toll(const char *str, char **endptr, int base)
 	if (!base)
 		return (0);
 	if (*s == '+')
-		return (str_toll(s + 1, endptr, base));
+		return (my_strtoll(s + 1, endptr, base));
 	if (*s == '-')
-		return (-str_toll(s + 1, endptr, base));
-	while ((digit = str_nchr(digits, to_lower(*s++), base)) != NULL)
+		return (-my_strtoll(s + 1, endptr, base));
+	while ((digit = my_strnchr(digits, to_lower(*s++), base)) != NULL)
 		res = (res * base) + (int)(digit - digits);
 	*endptr = (char *)s;
 	return (res);
 }
 
-unsigned long long int str_toull(const char *str, char **endptr, int base)
+unsigned long long int my_strtoull(const char *str, char **endptr, int base)
 {
 	static char digits[] = "0123456789abcdefghijklmnopqrstuvwxyz";
 	char *s = strto_get_base(str, &base);
@@ -95,8 +95,8 @@ unsigned long long int str_toull(const char *str, char **endptr, int base)
 	if (!base)
 		return (0);
 	if (*s == '+')
-		return (str_toull(s + 1, endptr, base));
-	while ((digit = str_nchr(digits, to_lower(*s++), base)) != NULL)
+		return (my_strtoull(s + 1, endptr, base));
+	while ((digit = my_strnchr(digits, to_lower(*s++), base)) != NULL)
 		res = (res * base) + (int)(digit - digits);
 	*endptr = (char *)s;
 	return (res);

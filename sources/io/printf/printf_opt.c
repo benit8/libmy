@@ -11,7 +11,7 @@
 void printf_get_opt(const char **fmtp, va_list ap, printf_opt_t *opt)
 {
 	for (; *(*fmtp); ++(*fmtp)) {
-		if (!str_chr("-~.+*0123456789", *(*fmtp)))
+		if (!my_strchr("-~.+*0123456789", *(*fmtp)))
 			break;
 		opt->align = (*(*fmtp) == '-') ? PRTF_LEFT : opt->align;
 		opt->align = (*(*fmtp) == '0') ? PRTF_RIGHT0 : opt->align;
@@ -20,7 +20,7 @@ void printf_get_opt(const char **fmtp, va_list ap, printf_opt_t *opt)
 		opt->sign = (*(*fmtp) == '+') ? true : opt->sign;
 		if (*(*fmtp) == '*')
 			printf_get_opt_ap(ap, opt);
-		else if (str_chr("123456789", *(*fmtp)))
+		else if (my_strchr("123456789", *(*fmtp)))
 			printf_get_opt_fmt(fmtp, opt);
 	}
 }
@@ -39,7 +39,7 @@ void printf_get_opt_fmt(const char **fmtp, printf_opt_t *opt)
 	char *str = NULL;
 
 	for (t = (*fmtp); is_digit(*(*fmtp)); ++(*fmtp));
-	str = str_ndup(t, (*fmtp) - t);
+	str = my_strndup(t, (*fmtp) - t);
 	if (opt->prec)
 		opt->prec_len = my_atoi(str);
 	else
@@ -67,7 +67,7 @@ void printf_get_opt_num(const char **fmtp, char **tmpbuf, printf_opt_t *opt)
 	case 'p':
 		opt->base = 16;
 		opt->longlong = 1;
-		(*tmpbuf) = str_apd(*tmpbuf, "0x");
+		(*tmpbuf) = my_strapd(*tmpbuf, "0x");
 		break;
 	}
 }

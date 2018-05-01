@@ -2,23 +2,23 @@
 ** EPITECH PROJECT, 2018
 ** libmy
 ** File description:
-** str_repeat.c
+** my_strrepeat.c
 */
 
 #include "my/string.h"
 
-char *str_repeat(char *str, size_t times)
+char *my_strrepeat(char *str, size_t times)
 {
 	char *output = NULL;
 	size_t len = 0;
 
 	if (str == NULL)
 		return (NULL);
-	len = str_len(str);
+	len = my_strlen(str);
 	if (!len || !times)
-		return (str_dup(""));
+		return (my_strdup(""));
 	output = my_calloc(len * times + 1, sizeof(char));
 	for (size_t i = 0; i < times; ++i)
-		output = str_apd(output, str);
+		output = my_strapd(output, str);
 	return (output);
 }

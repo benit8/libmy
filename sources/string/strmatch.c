@@ -2,20 +2,20 @@
 ** EPITECH PROJECT, 2018
 ** libmy
 ** File description:
-** str_match.c
+** my_strmatch.c
 */
 
 #include "my/string.h"
 
-bool str_match(const char *str, const char *pat)
+bool my_strmatch(const char *str, const char *pat)
 {
 	if (*str && *pat == '*')
-		return (str_match(str + 1, pat) || str_match(str, pat + 1));
+		return (my_strmatch(str + 1, pat) || my_strmatch(str, pat + 1));
 	else if (!*str && *pat == '*')
-		return (str_match(str, pat + 1));
+		return (my_strmatch(str, pat + 1));
 	else {
 		if (*str && *str == *pat)
-			return (str_match(str + 1, pat + 1));
+			return (my_strmatch(str + 1, pat + 1));
 		else if (!*str && *str == *pat)
 			return (true);
 	}

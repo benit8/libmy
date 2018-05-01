@@ -7,7 +7,7 @@
 
 #include "my/io.h"
 
-static bool get_delim_init(char **buf, size_t *bufsiz)
+static bool my_getdelim_init(char **buf, size_t *bufsiz)
 {
 	if (*buf == NULL || *bufsiz == 0) {
 		*bufsiz = BUFFER_SIZE;
@@ -18,7 +18,7 @@ static bool get_delim_init(char **buf, size_t *bufsiz)
 	return (true);
 }
 
-static bool get_delim_extend(char **ptrp, char **eptrp, char **buf,
+static bool my_getdelim_extend(char **ptrp, char **eptrp, char **buf,
 	size_t *bufsiz)
 {
 	size_t nbufsiz = *bufsiz * 2;
@@ -34,13 +34,13 @@ static bool get_delim_extend(char **ptrp, char **eptrp, char **buf,
 	return (true);
 }
 
-ssize_t get_delim(char **buf, size_t *bufsiz, int delimiter, FILE *fp)
+ssize_t my_getdelim(char **buf, size_t *bufsiz, int delimiter, FILE *fp)
 {
 	char *ptr = NULL;
 	char *eptr = NULL;
 	int c = 0;
 
-	if (!get_delim_init(buf, bufsiz))
+	if (!my_getdelim_init(buf, bufsiz))
 		return (-1);
 	for (ptr = *buf, eptr = *buf + *bufsiz;;) {
 		c = fgetc(fp);
@@ -52,12 +52,12 @@ ssize_t get_delim(char **buf, size_t *bufsiz, int delimiter, FILE *fp)
 			return (ptr - *buf);
 		}
 		if (ptr + 2 >= eptr &&
-			!get_delim_extend(&ptr, &eptr, buf, bufsiz))
+			!my_getdelim_extend(&ptr, &eptr, buf, bufsiz))
 			return (-1);
 	}
 }
 
-ssize_t get_line(char **buf, size_t *bufsiz, FILE *fp)
+ssize_t my_getline(char **buf, size_t *bufsiz, FILE *fp)
 {
-	return (get_delim(buf, bufsiz, '\n', fp));
+	return (my_getdelim(buf, bufsiz, '\n', fp));
 }

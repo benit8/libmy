@@ -16,7 +16,7 @@ bool file_put_contents(const char *filepath, char *contents, bool append)
 
 	if (fd < 0)
 		return (false);
-	r = write(fd, contents, str_len(contents) * sizeof(char));
+	r = write(fd, contents, my_strlen(contents) * sizeof(char));
 	close(fd);
 	return (r != -1);
 }

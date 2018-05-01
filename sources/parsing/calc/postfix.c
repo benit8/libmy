@@ -62,7 +62,7 @@ double calc_eval_postfix(queue_t *postfix)
 
 	for (char *symbol; !queue_is_empty(postfix); ) {
 		symbol = queue_pop(postfix);
-		if (!str_chr("+-*/%^", *symbol))
+		if (!my_strchr("+-*/%^", *symbol))
 			stack_push(stack, symbol);
 		else if (!calc_prepare_operation(stack, symbol)) {
 			stack_destroy(stack);

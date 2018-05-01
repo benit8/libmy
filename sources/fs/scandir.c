@@ -7,7 +7,7 @@
 
 #include "my/fs.h"
 
-static void scan_dir_sort(const dirent_t **names, int n, dir_compar_t *comp)
+static void my_scandir_sort(const dirent_t **names, int n, dir_compar_t *comp)
 {
 	const dirent_t *p = NULL;
 	const dirent_t *t = NULL;
@@ -26,18 +26,18 @@ static void scan_dir_sort(const dirent_t **names, int n, dir_compar_t *comp)
 		names[i] = names[j];
 		names[j] = t;
 	}
-	scan_dir_sort(names, i, comp);
-	scan_dir_sort(names + i, n - i, comp);
+	my_scandir_sort(names, i, comp);
+	my_scandir_sort(names + i, n - i, comp);
 }
 
-static bool scan_dir_append(dirent_t ***namesp, int *np, dirent_t *entry)
+static bool my_scandir_append(dirent_t ***namesp, int *np, dirent_t *entry)
 {
 	dirent_t **nnames;
 
 	nnames = my_realloc(*namesp, sizeof(dirent_t *) * ((*np) + 2));
 	if (!nnames)
 		return (false);
-	nnames[*np] = mem_dup(entry, sizeof(dirent_t));
+	nnames[*np] = my_memdup(entry, sizeof(dirent_t));
 	if (!nnames[*np])
 		return (false);
 	*namesp = nnames;
@@ -45,7 +45,7 @@ static bool scan_dir_append(dirent_t ***namesp, int *np, dirent_t *entry)
 	return (true);
 }
 
-int scan_dir(const char *dirpath, dirent_t ***namelist, dir_filter_t *filter,
+int my_scandir(const char *dirpath, dirent_t ***namelist, dir_filter_t *filter,
 	dir_compar_t *compar)
 {
 	dirent_t **names = NULL;
@@ -58,12 +58,12 @@ int scan_dir(const char *dirpath, dirent_t ***namelist, dir_filter_t *filter,
 	while ((entry = readdir(dir)) != NULL) {
 		if (filter && (*filter)(entry) == 0)
 			continue;
-		if (!scan_dir_append(&names, &n, entry))
+		if (!my_scandir_append(&names, &n, entry))
 			break;
 	}
 	closedir(dir);
 	if (n > 1 && compar)
-		scan_dir_sort((const dirent_t **)names, n, compar);
+		my_scandir_sort((const dirent_t **)names, n, compar);
 	*namelist = names;
 	return (n);
 }

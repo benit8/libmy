@@ -24,8 +24,8 @@ void my_free(void *ptr);
 
 size_t my_malloc_size(const void *ptr);
 
-int mem_cmp(const void *a, const void *b, size_t n);
-void *mem_cpy(void *dest, const void *src, size_t n);
-void *mem_dup(const void *src, size_t n);
-void *mem_move(void *dest, const void *src, size_t n);
-void *mem_set(void *dest, byte_t c, size_t n);
+int my_memcmp(const void *a, const void *b, size_t n);
+void *my_memcpy(void *dest, const void *src, size_t n);
+void *my_memdup(const void *src, size_t n);
+void *my_memmove(void *dest, const void *src, size_t n);
+void *my_memset(void *dest, byte_t c, size_t n);

@@ -21,5 +21,5 @@ char *my_itoa(ssize_t n, uint8_t base)
 		res[i] = digits[ABS(n % base)];
 	if (neg)
 		res[i] = '-';
-	return (str_rev(res));
+	return (my_strrev(res));
 }

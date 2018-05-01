@@ -24,8 +24,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-ssize_t get_delim(char **buf, size_t *bufsiz, int delimiter, FILE *fp);
-ssize_t get_line(char **buf, size_t *bufsiz, FILE *fp);
+ssize_t my_getdelim(char **buf, size_t *bufsiz, int delimiter, FILE *fp);
+ssize_t my_getline(char **buf, size_t *bufsiz, FILE *fp);
 
 char *gnl(const int fd);
 char *fgnl(FILE *fp);

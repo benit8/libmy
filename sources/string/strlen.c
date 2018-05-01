@@ -7,7 +7,7 @@
 
 #include "my/string.h"
 
-size_t str_len(const char *str)
+size_t my_strlen(const char *str)
 {
 	const char *s = str;
 
@@ -17,7 +17,7 @@ size_t str_len(const char *str)
 	return (s - str);
 }
 
-size_t str_nlen(const char *str, size_t max)
+size_t my_strnlen(const char *str, size_t max)
 {
 	const char *s = str;
 

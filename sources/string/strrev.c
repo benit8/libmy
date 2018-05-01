@@ -7,9 +7,9 @@
 
 #include "my/string.h"
 
-char *str_rev(char *str)
+char *my_strrev(char *str)
 {
-	size_t len = str_len(str);
+	size_t len = my_strlen(str);
 	char t = 0;
 
 	for (size_t i = 0; i < len / 2; ++i) {

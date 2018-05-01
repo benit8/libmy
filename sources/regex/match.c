@@ -5,7 +5,7 @@
 ** match.c
 */
 
-#include "my/cregex.h"
+#include "my/regex.h"
 
 ssize_t regex_match(const char *pattern, char *subject)
 {

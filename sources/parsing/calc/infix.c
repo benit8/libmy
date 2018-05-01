@@ -50,10 +50,10 @@ void calc_parse_infix(queue_t *infix, queue_t *postfix)
 	stack_t *stack = stack_create(&my_free);
 	char *symbol;
 
-	stack_push(stack, str_dup("#"));
+	stack_push(stack, my_strdup("#"));
 	while (!queue_is_empty(infix)) {
 		symbol = queue_pop(infix);
-		if (!str_chr("+-*/%^()", *symbol))
+		if (!my_strchr("+-*/%^()", *symbol))
 			queue_push(postfix, symbol);
 		else if (*symbol == '(')
 			stack_push(stack, symbol);

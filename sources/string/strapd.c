@@ -7,25 +7,25 @@
 
 #include "my/string.h"
 
-char *str_apd(char *dest, const char *src)
+char *my_strapd(char *dest, const char *src)
 {
-	size_t n = str_len(src);
+	size_t n = my_strlen(src);
 
-	return (str_napd(dest, src, n));
+	return (my_strnapd(dest, src, n));
 }
 
-char *str_napd(char *dest, const char *src, size_t n)
+char *my_strnapd(char *dest, const char *src, size_t n)
 {
 	char *d = dest;
 	const char *s = src;
 	size_t dest_size = my_malloc_size(dest) - 1;
-	size_t dest_len = str_len(dest);
+	size_t dest_len = my_strlen(dest);
 
 	if (!n)
 		return (dest);
-	n = MIN(n, str_len(src));
+	n = MIN(n, my_strlen(src));
 	if (dest == NULL)
-		return (str_ndup(src, n));
+		return (my_strndup(src, n));
 	if (dest_size - dest_len < n)
 		dest = my_realloc(dest, dest_len + n + 1);
 	for (d = dest; *d; d++);

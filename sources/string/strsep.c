@@ -7,9 +7,9 @@
 
 #include "my/string.h"
 
-char *str_sep(char **stringp, const char *delim)
+char *my_strsep(char **stringp, const char *delim)
 {
-	size_t d_len = str_len(delim);
+	size_t d_len = my_strlen(delim);
 	char *s = *stringp;
 	char *p = NULL;
 
@@ -18,13 +18,13 @@ char *str_sep(char **stringp, const char *delim)
 	do {
 		if (p != NULL)
 			s++;
-		p = str_str(s, delim);
+		p = my_strstr(s, delim);
 	} while (p == s);
 	if (p == NULL) {
-		*stringp += str_len(s);
+		*stringp += my_strlen(s);
 		return (s);
 	}
-	mem_set(p, 0, d_len);
+	my_memset(p, 0, d_len);
 	*stringp = p + d_len;
 	return (s);
 }

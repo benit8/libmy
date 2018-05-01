@@ -7,7 +7,7 @@
 
 #include "my/string.h"
 
-char *str_str(char *string, const char *search)
+char *my_strstr(char *string, const char *search)
 {
 	char *a = NULL;
 	const char *b = search;
@@ -29,7 +29,7 @@ char *str_str(char *string, const char *search)
 	return (NULL);
 }
 
-char *str_nstr(char *string, const char *search, size_t n)
+char *my_strnstr(char *string, const char *search, size_t n)
 {
 	char *a = NULL;
 	const char *b = search;
@@ -39,7 +39,7 @@ char *str_nstr(char *string, const char *search, size_t n)
 	for (; *string != '\0' && n--; string++) {
 		if (*string != *search)
 			continue;
-		if (n < str_len(search))
+		if (n < my_strlen(search))
 			break;
 		a = string;
 		for (;; ++a, ++b) {

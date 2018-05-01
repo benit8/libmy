@@ -10,11 +10,11 @@
 static void atof_integer_part(const char **strp, double *res)
 {
 	char tmp[18];
-	ssize_t sz = str_cspn(*strp, ".");
+	ssize_t sz = my_strcspn(*strp, ".");
 	int val = 0;
 
 	if (sz > 0) {
-		str_ncpy(tmp, *strp, sz);
+		my_strncpy(tmp, *strp, sz);
 		tmp[sz] = '\0';
 		val = my_atoi(tmp);
 	}
@@ -34,7 +34,7 @@ static void atof_decimal_part(const char **strp, double *res)
 	if (*str)
 		str++;
 	if (*str) {
-		len = str_len(str);
+		len = my_strlen(str);
 		val = my_atoi(str);
 		div = 1;
 		for (; len > 0; len--)

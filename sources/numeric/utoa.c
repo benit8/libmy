@@ -18,5 +18,5 @@ char *my_utoa(size_t n, uint8_t base)
 	res = my_calloc(65, sizeof(char));
 	for (i = 0; n > 0 || i < 1; ++i, n /= base)
 		res[i] = digits[n % base];
-	return (str_rev(res));
+	return (my_strrev(res));
 }

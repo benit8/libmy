@@ -7,7 +7,7 @@
 
 #include "my/string.h"
 
-char *str_cat(char *dest, const char *src)
+char *my_strcat(char *dest, const char *src)
 {
 	char *d = dest;
 	const char *s = src;
@@ -19,7 +19,7 @@ char *str_cat(char *dest, const char *src)
 	return (dest);
 }
 
-char *str_ncat(char *dest, const char *src, size_t n)
+char *my_strncat(char *dest, const char *src, size_t n)
 {
 	char *d = dest;
 	const char *s = src;

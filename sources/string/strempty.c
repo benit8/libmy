@@ -2,12 +2,12 @@
 ** EPITECH PROJECT, 2018
 ** libmy
 ** File description:
-** str_empty.c
+** my_strempty.c
 */
 
 #include "my/string.h"
 
-bool str_empty(const char *string)
+bool my_strempty(const char *string)
 {
 	const char *s = string;
 

@@ -2,10 +2,10 @@
 ** EPITECH PROJECT, 2018
 ** libmy / tests
 ** File description:
-** str_match.c
+** my_strmatch.c
 */
 
-bool str_match(const char *str, const char *pat)
+bool my_strmatch(const char *str, const char *pat)
 {
 	/*
 	 * Backtrack to previous * on mismatch and retry starting one

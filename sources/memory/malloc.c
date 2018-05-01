@@ -18,7 +18,7 @@ void *my_malloc(size_t size)
 #else
 		return (NULL);
 #endif
-	mem_cpy(ptr, &size, sizeof(size_t));
+	my_memcpy(ptr, &size, sizeof(size_t));
 	ptr += sizeof(size_t);
 	return (ptr);
 }

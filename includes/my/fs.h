@@ -28,11 +28,11 @@ typedef int (dir_compar_t)(const dirent_t **, const dirent_t **);
 
 ////////////////////////////////////////////////////////////////////////////////
 
-int scan_dir(const char *, dirent_t ***, dir_filter_t *, dir_compar_t *);
-int alpha_sort(const dirent_t **a, const dirent_t **b);
-int alphacase_sort(const dirent_t **a, const dirent_t **b);
-int alphanat_sort(const dirent_t **a, const dirent_t **b);
-int alphanatcase_sort(const dirent_t **a, const dirent_t **b);
+int my_scandir(const char *, dirent_t ***, dir_filter_t *, dir_compar_t *);
+int my_alphasort(const dirent_t **a, const dirent_t **b);
+int my_alphacasesort(const dirent_t **a, const dirent_t **b);
+int my_alphanatsort(const dirent_t **a, const dirent_t **b);
+int my_alphanatcasesort(const dirent_t **a, const dirent_t **b);
 
 bool file_is(const char *filepath, const char *mask);
 bool is_file(const char *filepath);

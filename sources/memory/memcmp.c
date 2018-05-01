@@ -7,7 +7,7 @@
 
 #include "my/memory.h"
 
-int mem_cmp(const void *a, const void *b, size_t n)
+int my_memcmp(const void *a, const void *b, size_t n)
 {
 	const byte_t *sa = a;
 	const byte_t *sb = b;

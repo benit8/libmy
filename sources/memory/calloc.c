@@ -13,6 +13,6 @@ void *my_calloc(size_t n, size_t s)
 	void *p = my_malloc(size);
 
 	if (p != NULL)
-		mem_set(p, 0, size);
+		my_memset(p, 0, size);
 	return (p);
 }

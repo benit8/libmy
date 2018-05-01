@@ -12,7 +12,7 @@ void printf_print_char(char **tmpbuf, va_list ap)
 {
 	char c = va_arg(ap, int);
 
-	(*tmpbuf) = str_napd(*tmpbuf, &c, 1);
+	(*tmpbuf) = my_strnapd(*tmpbuf, &c, 1);
 }
 
 void printf_print_str(char **tmpbuf, va_list ap, printf_opt_t opt)
@@ -22,9 +22,9 @@ void printf_print_str(char **tmpbuf, va_list ap, printf_opt_t opt)
 	if (!str)
 		str = "(null)";
 	if (opt.prec)
-		(*tmpbuf) = str_napd(*tmpbuf, str, opt.prec_len);
+		(*tmpbuf) = my_strnapd(*tmpbuf, str, opt.prec_len);
 	else
-		(*tmpbuf) = str_apd(*tmpbuf, str);
+		(*tmpbuf) = my_strapd(*tmpbuf, str);
 }
 
 void printf_print_numeric(const char **fmtp,
@@ -45,10 +45,10 @@ void printf_print_numeric(const char **fmtp,
 		str = my_itoa(n, opt->base);
 	}
 	if (opt->sign && opt->base == 10 && str[0] != '-')
-		(*tmpbuf) = str_apd(*tmpbuf, "+");
+		(*tmpbuf) = my_strapd(*tmpbuf, "+");
 	if (is_upper(*(*fmtp)))
-		str = str_toupper(str);
-	(*tmpbuf) = str_apd(*tmpbuf, str);
+		str = my_strtoupper(str);
+	(*tmpbuf) = my_strapd(*tmpbuf, str);
 	my_free(str);
 }
 
@@ -61,7 +61,7 @@ void printf_print_float(const char **fmtp,
 	char *str = NULL;
 
 	if (!opt->prec) {
-		if (str_chr("gG", *(*fmtp)))
+		if (my_strchr("gG", *(*fmtp)))
 			opt->prec_len = 5;
 		else
 			opt->prec_len = 6;
@@ -69,7 +69,7 @@ void printf_print_float(const char **fmtp,
 	d = va_arg(ap, double);
 	str = my_ftoa(d, opt->prec_len);
 	if (is_upper(*(*fmtp)))
-		str = str_toupper(str);
-	(*tmpbuf) = str_apd(*tmpbuf, str);
+		str = my_strtoupper(str);
+	(*tmpbuf) = my_strapd(*tmpbuf, str);
 	my_free(str);
 }

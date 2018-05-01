@@ -2,15 +2,15 @@
 ** EPITECH PROJECT, 2018
 ** libmy
 ** File description:
-** str_trim.c
+** my_strtrim.c
 */
 
 #include "my/string.h"
 
-char *str_trim(char *str)
+char *my_strtrim(char *str)
 {
 	char *dest = str;
-	char *end = str + str_len(str);
+	char *end = str + my_strlen(str);
 
 	for (; *str && is_space(*str); str++);
 	while (end > str) {
@@ -19,6 +19,6 @@ char *str_trim(char *str)
 		end--;
 	}
 	*end = '\0';
-	mem_move(dest, str, end - str + 1);
+	my_memmove(dest, str, end - str + 1);
 	return (dest);
 }

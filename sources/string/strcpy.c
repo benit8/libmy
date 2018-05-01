@@ -7,12 +7,12 @@
 
 #include "my/string.h"
 
-char *str_cpy(char *dest, const char *src)
+char *my_strcpy(char *dest, const char *src)
 {
-	return (str_ncpy(dest, src, str_len(src)));
+	return (my_strncpy(dest, src, my_strlen(src)));
 }
 
-char *str_ncpy(char *dest, const char *src, size_t n)
+char *my_strncpy(char *dest, const char *src, size_t n)
 {
 	char *d = dest;
 
