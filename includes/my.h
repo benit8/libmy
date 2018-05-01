@@ -17,7 +17,6 @@
 #include "my/io/log.h"
 #include "my/math.h"
 #include "my/memory.h"
-#include "my/network.h"
 #include "my/numeric.h"
 #include "my/parsing.h"
 #include "my/string.h"

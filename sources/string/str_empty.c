@@ -11,7 +11,7 @@ bool str_empty(const char *string)
 {
 	const char *s = string;
 
-	if (!s)
+	if (!s || *s == '\0')
 		return (true);
 	for (; *s != '\0'; ++s) {
 		if (!is_blank(*s))

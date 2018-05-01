@@ -132,7 +132,7 @@ double radians(double degrees);
 double degrees(double radians);
 
 void my_srand(unsigned int seed);
-int rand(void);
+int my_rand(void);
 int irand(int a, int b);
 double frand(double a, double b);
 

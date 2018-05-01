@@ -122,14 +122,6 @@ Memory	=	memory/calloc.c			\
 		memory/memset.c			\
 		memory/realloc.c
 
-Network	=	network/accept.c		\
-		network/close.c			\
-		network/connect.c		\
-		network/lookup.c		\
-		network/open.c			\
-		network/receive.c		\
-		network/send.c
-
 Numeric	=	numeric/atof.c			\
 		numeric/atoi.c			\
 		numeric/atou.c			\
@@ -183,7 +175,6 @@ SRCS	+=	$(addprefix $(SRC_DIR),$(FS))
 SRCS	+=	$(addprefix $(SRC_DIR),$(IO))
 SRCS	+=	$(addprefix $(SRC_DIR),$(Math))
 SRCS	+=	$(addprefix $(SRC_DIR),$(Memory))
-# SRCS	+=	$(addprefix $(SRC_DIR),$(Network))
 SRCS	+=	$(addprefix $(SRC_DIR),$(Numeric))
 SRCS	+=	$(addprefix $(SRC_DIR),$(Parsing))
 SRCS	+=	$(addprefix $(SRC_DIR),$(Regex))
