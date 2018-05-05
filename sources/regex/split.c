@@ -7,25 +7,40 @@
 
 #include "my/regex.h"
 
+static bool append(char ***arr, size_t *n, const char *data, size_t len)
+{
+	char **narr = my_realloc(*arr, sizeof(char *) * (*n + 3));
+
+	if (!narr)
+		return (false);
+	narr[*n] = my_strndup(data, len);
+	if (!narr[*n])
+		return (false);
+	(*n)++;
+	*arr = narr;
+	return (true);
+}
+
 char **regex_split(char *pattern, char *subject)
 {
-	char **array = my_calloc(1, sizeof(char *));
-	regmatch_t *matches = my_calloc(1, sizeof(regmatch_t));
 	regex_t regex;
+	regmatch_t match;
 	size_t n = 0;
-	int ok = regcomp(&regex, pattern, REG_EXTENDED);
+	char **array = my_calloc(1, sizeof(char *));
 
-	if (ok != 0 || (matches == NULL || array == NULL))
+	if (array == NULL)
 		return (NULL);
-	for (; regexec(&regex, subject, 1, matches, 0) != REG_NOMATCH; ++n) {
-		array = my_realloc(array, sizeof(char *) * (n + 3));
-		if (array == NULL)
-			return (NULL);
-		array[n] = my_strndup(subject, matches[0].rm_so);
-		subject += matches[0].rm_eo;
+	if (regcomp(&regex, pattern, REG_EXTENDED) != 0) {
+		free(array);
+		return (NULL);
 	}
-	array[n++] = my_strdup(subject);
+	while (regexec(&regex, subject, 1, &match, 0) != REG_NOMATCH) {
+		if (!append(&array, &n, subject, match.rm_so))
+			return (array);
+		subject += match.rm_eo;
+	}
 	regfree(&regex);
-	my_free(matches);
+	if (!append(&array, &n, subject, match.rm_so))
+		return (array);
 	return (array);
 }

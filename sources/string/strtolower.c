@@ -10,7 +10,7 @@
 char *my_strtolower(char *str)
 {
 	if (!str)
-		return (str);
+		return (NULL);
 	for (char *s = str; *s; ++s)
 		*s = to_lower(*s);
 	return (str);

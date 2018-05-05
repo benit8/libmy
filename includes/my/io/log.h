@@ -59,13 +59,8 @@ bool log_set_file_fd(int fd);
 void log_close_file(void);
 
 void log_write(const char *format, va_list *ap, log_level_t lvl);
-void log_fatal(const char *format, ...)
-	__attribute__((__format__(__printf__, 1, 2)));
-void log_error(const char *format, ...)
-	__attribute__((__format__(__printf__, 1, 2)));
-void log_warn(const char *format, ...)
-	__attribute__((__format__(__printf__, 1, 2)));
-void log_info(const char *format, ...)
-	__attribute__((__format__(__printf__, 1, 2)));
-void log_debug(const char *format, ...)
-	__attribute__((__format__(__printf__, 1, 2)));
+void log_fatal(const char *format, ...) PRINTF_ATTR(1, 2);
+void log_error(const char *format, ...) PRINTF_ATTR(1, 2);
+void log_warn(const char *format, ...) PRINTF_ATTR(1, 2);
+void log_info(const char *format, ...) PRINTF_ATTR(1, 2);
+void log_debug(const char *format, ...) PRINTF_ATTR(1, 2);

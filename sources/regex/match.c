@@ -10,15 +10,13 @@
 ssize_t regex_match(const char *pattern, char *subject)
 {
 	regex_t regex;
-	regmatch_t *matches = my_calloc(1, sizeof(regmatch_t));
-	int ok = regcomp(&regex, pattern, REG_EXTENDED);
+	regmatch_t match;
 	ssize_t n = 0;
 
-	if (ok != 0 || matches == NULL)
+	if (regcomp(&regex, pattern, REG_EXTENDED) != 0)
 		return (-1);
-	for (n = 0; regexec(&regex, subject, 1, matches, 0) != REG_NOMATCH; ++n)
-		subject += matches[0].rm_eo;
+	for (n = 0; regexec(&regex, subject, 1, &match, 0) != REG_NOMATCH; ++n)
+		subject += match.rm_eo;
 	regfree(&regex);
-	my_free(matches);
 	return (n);
 }

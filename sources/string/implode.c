@@ -32,8 +32,8 @@ char *implode(char **array, const char *glue)
 		return (NULL);
 	for (size_t i = 0; array[i] != NULL; ++i) {
 		if (i > 0)
-			output = my_strapd(output, glue);
-		output = my_strapd(output, array[i]);
+			output = my_strcat(output, glue);
+		output = my_strcat(output, array[i]);
 	}
 	return (output);
 }

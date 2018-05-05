@@ -10,19 +10,21 @@
 char *regex_replace(const char *pattern, const char *replacement, char *subject)
 {
 	regex_t	regex;
-	regmatch_t *matches = my_calloc(1, sizeof(regmatch_t));
+	regmatch_t match;
 	char *result = my_calloc(1, sizeof(char));
-	int ok = regcomp(&regex, pattern, REG_EXTENDED);
 
-	if (ok != 0 || matches == NULL || result == NULL)
+	if (result == NULL)
 		return (NULL);
-	while (regexec(&regex, subject, 1, matches, 0) != REG_NOMATCH) {
-		result = my_strnapd(result, subject, matches[0].rm_so);
+	if (regcomp(&regex, pattern, REG_EXTENDED) != 0) {
+		my_free(result);
+		return (NULL);
+	}
+	while (regexec(&regex, subject, 1, &match, 0) != REG_NOMATCH) {
+		result = my_strnapd(result, subject, match.rm_so);
 		result = my_strapd(result, replacement);
-		subject += matches[0].rm_eo;
+		subject += match.rm_eo;
 	}
 	result = my_strapd(result, subject);
 	regfree(&regex);
-	my_free(matches);
 	return (result);
 }
