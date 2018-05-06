@@ -46,7 +46,7 @@ typedef struct list
 
 ////////////////////////////////////////////////////////////////////////////////
 
-list_t *list_create(clean_func_t *clean_up;);
+list_t *list_create(clean_func_t *clean_up);
 void list_destroy(list_t *list);
 
 bool list_is_empty(list_t *list);

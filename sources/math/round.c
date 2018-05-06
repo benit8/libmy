@@ -7,20 +7,20 @@
 
 #include "my/math.h"
 
-double my_round(double dbl)
+double my_round(double x)
 {
-	double n = (int)dbl;
-	double dec = dbl - n;
-	double firstDec = dec * 10;
+	double n = (int)x;
+	double d = (x - n) * 10;
 
-	return (n + (firstDec >= 5));
+	return (n + (d >= 5));
 }
 
-double my_roundp(double dbl, int p)
+double my_roundp(double x, int p)
 {
-	int pwr = my_pow(10, p);
+	int pwr;
 
 	if (p <= 0)
-		return (my_round(dbl));
-	return (my_round(dbl * pwr) / pwr);
+		return (my_round(x));
+	pwr = my_pow(10, p);
+	return (my_round(x * pwr) / pwr);
 }

@@ -1,11 +1,8 @@
 /*
-** printf.c for libmy in /mnt/data/Delivery/Perso/libmy/Tests
-**
-** Made by Benoit Lormeau
-** Login   <benoit.lormeau@epitech.eu>
-**
-** Started on  Wed Nov 8 10:00:35 2017 Benoit Lormeau
-** Last update Tue Nov 14 10:24:01 2017 Benoit Lormeau
+** EPITECH PROJECT, 2018
+** libmy
+** File description:
+** tests / io / printf.c
 */
 
 #include <limits.h>

@@ -5,6 +5,10 @@
 ** my_strmatch.c
 */
 
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 bool my_strmatch(const char *str, const char *pat)
 {
 	/*
@@ -88,4 +92,9 @@ backtrack:
 			break;
 		}
 	}
+}
+
+int main(void)
+{
+	return 0;
 }

@@ -11,13 +11,11 @@ void *my_malloc(size_t size)
 {
 	void *ptr = NULL;
 
-	ptr = malloc(sizeof(size_t) + size);
-	if (ptr == NULL)
-#ifdef ASSERT_MALLOC
-		exit(1);
-#else
+	if (size == 0)
 		return (NULL);
-#endif
+	ptr = malloc(sizeof(size_t) + size);
+	if (!ptr)
+		return (NULL);
 	my_memcpy(ptr, &size, sizeof(size_t));
 	ptr += sizeof(size_t);
 	return (ptr);

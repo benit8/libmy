@@ -9,9 +9,13 @@
 
 void *my_memdup(const void *src, size_t n)
 {
-	void *mem = my_calloc(n, 1);
+	void *mem = NULL;
 
-	if (mem != NULL)
-		my_memcpy(mem, src, n);
+	if (!src || n == 0)
+		return (NULL);
+	mem = my_calloc(n, 1);
+	if (!mem)
+		return (NULL);
+	my_memcpy(mem, src, n);
 	return (mem);
 }

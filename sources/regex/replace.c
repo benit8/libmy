@@ -11,11 +11,11 @@ char *regex_replace(const char *pattern, const char *replacement, char *subject)
 {
 	regex_t	regex;
 	regmatch_t match;
-	char *result = my_calloc(1, sizeof(char));
+	char *result = my_calloc(my_strlen(subject) + 1, sizeof(char));
 
-	if (result == NULL)
+	if (!result)
 		return (NULL);
-	if (regcomp(&regex, pattern, REG_EXTENDED) != 0) {
+	if (!regex_create(&regex, pattern)) {
 		my_free(result);
 		return (NULL);
 	}

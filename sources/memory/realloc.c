@@ -12,8 +12,8 @@ void *my_realloc(void *ptr, size_t new_size)
 	size_t cur_size = 0;
 	void *new = NULL;
 
-	if (ptr == NULL)
-		return (my_calloc(1, new_size));
+	if (!ptr)
+		return (my_calloc(new_size, 1));
 	cur_size = my_malloc_size(ptr);
 	if (new_size <= cur_size)
 		return (ptr);

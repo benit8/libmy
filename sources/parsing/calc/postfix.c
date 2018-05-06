@@ -26,9 +26,8 @@ static double calc_do_operation(char symbol, char *s[2])
 		return (my_fmod(n[0], n[1]));
 	case '^':
 		return (my_pow(n[0], n[1]));
-	default:
-		return (0.0);
 	}
+	return (0.0);
 }
 
 static bool calc_prepare_operation(stack_t *stack, char *symbol)
@@ -40,14 +39,13 @@ static bool calc_prepare_operation(stack_t *stack, char *symbol)
 	s[1] = stack_pop(stack);
 	s[0] = stack_pop(stack);
 	if (s[0] == NULL || s[1] == NULL) {
-		r = false;
 		my_free(s[0]);
 		my_free(s[1]);
 		my_free(symbol);
-		return (r);
+		return (false);
 	}
 	res = calc_do_operation(*symbol, s);
-	stack_push(stack, my_ftoa(res, 6));
+	r = stack_push(stack, my_ftoa(res, 6));
 	my_free(s[0]);
 	my_free(s[1]);
 	my_free(symbol);
@@ -62,14 +60,14 @@ double calc_eval_postfix(queue_t *postfix)
 
 	for (char *symbol; !queue_is_empty(postfix); ) {
 		symbol = queue_pop(postfix);
-		if (!my_strchr("+-*/%^", *symbol))
+		if (!(my_strchr("+-*/%^", *symbol) && symbol[1] == '\0'))
 			stack_push(stack, symbol);
 		else if (!calc_prepare_operation(stack, symbol)) {
 			stack_destroy(stack);
 			return (res);
 		}
 	}
-	str = (char *)stack_pop(stack);
+	str = stack_pop(stack);
 	if (str) {
 		res = my_atof(str);
 		my_free(str);

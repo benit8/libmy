@@ -14,14 +14,12 @@ double my_exp(double x)
 
 double my_exp2(double x)
 {
-	double ipart;
-	double fpart;
+	double ipart = my_floor(x + 0.5);
+	double fpart = x - ipart;
 	double px;
 	double qx;
 	udi_t epart;
 
-	ipart = my_floor(x + 0.5);
-	fpart = x - ipart;
 	epart.s.i0 = 0;
 	epart.s.i1 = (((int)ipart) + DOUBLE_BIAS) << 20;
 	x = fpart * fpart;

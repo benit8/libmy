@@ -18,6 +18,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 #define PI			(3.14159265358979323846)
+#define EPSILON			(1e-8)
 
 #define FLOAT_BIAS		127
 #define FLOAT_EMASK		2139095040
@@ -145,6 +146,7 @@ double my_roundp(double n, int prec);
 double my_ceil(double n);
 double my_ceilp(double n, int prec);
 
+double my_sqrt(double x);
 double my_pow(double n, double exp);
 double my_log(double x);
 double my_exp(double x);
@@ -153,3 +155,4 @@ double my_exp10(double x);
 
 double my_fmod(double a, double b);
 double my_frexp(double value, int *eptr);
+double my_ldexp(double x, int exp);

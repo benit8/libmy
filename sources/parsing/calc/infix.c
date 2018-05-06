@@ -53,7 +53,7 @@ void calc_parse_infix(queue_t *infix, queue_t *postfix)
 	stack_push(stack, my_strdup("#"));
 	while (!queue_is_empty(infix)) {
 		symbol = queue_pop(infix);
-		if (!my_strchr("+-*/%^()", *symbol))
+		if (!(my_strchr("+-*/%^()", *symbol) && symbol[1] == '\0'))
 			queue_push(postfix, symbol);
 		else if (*symbol == '(')
 			stack_push(stack, symbol);

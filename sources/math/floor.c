@@ -7,16 +7,17 @@
 
 #include "my/math.h"
 
-double my_floor(double dbl)
+double my_floor(double x)
 {
-	return ((int)dbl);
+	return ((int)x - (x < 0.0f));
 }
 
-double my_floorp(double dbl, int p)
+double my_floorp(double x, int p)
 {
-	int pwr = my_pow(10, p);
+	int pwr;
 
 	if (p <= 0)
-		return (my_floor(dbl));
-	return (my_floor(dbl * pwr) / pwr);
+		return (my_floor(x));
+	pwr = my_pow(10, p);
+	return (my_floor(x * pwr) / pwr);
 }

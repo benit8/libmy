@@ -17,7 +17,7 @@ int main(int argc, char const *argv[])
 {
 	const char *path = (argc > 1) ? argv[1] : ".";
 	dirent_t **files = NULL;
-	int fileCount = scan_dir(path, &files, filter, alphanatcase_sort);
+	int fileCount = my_scandir(path, &files, filter, my_alphanatcasesort);
 
 	if (fileCount == -1) {
 		my_fprintf(stderr, "scandir failed.\n");

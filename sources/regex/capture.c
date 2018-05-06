@@ -5,37 +5,42 @@
 ** capture.c
 */
 
+#include <stdio.h>
 #include "my/regex.h"
 
-static bool regex_append(char ***array, size_t n, char *subject,
-	regmatch_t *match)
+static bool append(char ***oldp, size_t *n, char **sp, regmatch_t *match)
 {
-	size_t substrlen = 0;
+	size_t spanlen = 0;
+	char **new = my_realloc(*oldp, sizeof(char *) * ((*n) + 2));
 
-	*array = my_realloc(*array, sizeof(char *) * (n + 2));
-	if (*array == NULL)
+	if (!new)
 		return (false);
-	substrlen = match->rm_eo - match->rm_so;
-	(*array)[n] = my_strndup(subject + match->rm_so, substrlen);
-	if ((*array)[n] == NULL)
+	spanlen = match->rm_eo - match->rm_so;
+	new[*n] = my_strndup(*sp + match->rm_so, spanlen);
+	if (new[*n] == NULL)
 		return (false);
+	*oldp = new;
+	(*n)++;
+	*sp += match->rm_eo;
 	return (true);
 }
 
 char **regex_capture(const char *pattern, char *subject)
 {
 	regex_t regex;
-	int ok = regcomp(&regex, pattern, REG_EXTENDED);
-	char **array = my_calloc(1, sizeof(char *));
 	regmatch_t match;
 	size_t n = 0;
+	char **array = NULL;
 
-	if (ok != 0 || array == NULL)
+	if (!pattern || !subject)
 		return (NULL);
-	for (; regexec(&regex, subject, 1, &match, 0) != REG_NOMATCH; ++n) {
-		if (!regex_append(&array, n, subject, &match))
-			return (NULL);
-		subject += match.rm_eo;
+	if (!regex_create(&regex, pattern))
+		return (NULL);
+	while (regexec(&regex, subject, 1, &match, 0) != REG_NOMATCH) {
+		if (!append(&array, &n, &subject, &match)) {
+			regfree(&regex);
+			return (array);
+		}
 	}
 	regfree(&regex);
 	return (array);

@@ -108,10 +108,12 @@ Math	=	math/angle.c			\
 		math/floor.c			\
 		math/fmod.c			\
 		math/frexp.c			\
+		math/ldexp.c			\
 		math/log.c			\
 		math/pow.c			\
 		math/rand.c			\
-		math/round.c
+		math/round.c			\
+		math/sqrt.c
 
 Memory	=	memory/calloc.c			\
 		memory/malloc.c			\
@@ -137,6 +139,7 @@ Parsing	=	parsing/calc/calc.c		\
 		parsing/calc/postfix.c
 
 Regex	=	regex/capture.c			\
+		regex/create.c			\
 		regex/match.c			\
 		regex/replace.c			\
 		regex/split.c
@@ -212,10 +215,10 @@ de: fclean debug
 
 .c.o:
 	@ $(CC) -c $< -o $@ $(CFLAGS) && \
-	  ($(PRINT) "  $(GREEN)[OK]$(CYAN)  %b$(RESET)\n" $<) || \
-	  ($(PRINT) "  $(RED)[XX]$(CYAN)  %b$(RESET)\n" $< ; exit 1)
+	  ($(PRINT) "  $(GREEN)[OK]$(RESET)  $(CYAN)%b$(RESET)\n" $<) || \
+	  ($(PRINT) "  $(RED)[XX]$(RESET)  $(CYAN)%b$(RESET)\n" $< ; exit 1)
 
-.PHONY: all $(NAME) prebuild clean fclean re de .c.o
+.PHONY: all debug $(NAME) prebuild clean fclean re de .c.o
 
 
 ## Not up to date
@@ -234,8 +237,6 @@ de: fclean debug
 # -> | Math    |                                                           |
 #    +---------+-----------------------------------------------------------+
 # -> | Memory  |                                                           |
-#    +---------+-----------------------------------------------------------+
-# -> | Network | IO / Memory / String                                      |
 #    +---------+-----------------------------------------------------------+
 # -> | Numeric | Char / Math / Memory / String                             |
 #    +---------+-----------------------------------------------------------+
