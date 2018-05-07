@@ -29,7 +29,7 @@ typedef list_t queue_t;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-queue_t *queue_create(clean_func_t *clean_up;);
+queue_t *queue_create(clean_func_t *clean_up);
 void queue_destroy(queue_t *queue);
 void queue_clear(queue_t *queue);
 

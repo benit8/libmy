@@ -5,7 +5,6 @@
 ** capture.c
 */
 
-#include <stdio.h>
 #include "my/regex.h"
 
 static bool append(char ***oldp, size_t *n, char **sp, regmatch_t *match)

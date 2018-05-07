@@ -62,9 +62,9 @@ bool my_strmatch(const char *s1, const char *s2);
 ssize_t my_strpos(char *string, const char *search);
 ssize_t my_strnpos(char *string, const char *search, size_t n);
 
-char *my_strpad(const char *string, const char *pad, size_t padLen);
-char *my_strpadl(const char *string, const char *pad, size_t padLen);
-char *my_strpadr(const char *string, const char *pad, size_t padLen);
+char *my_strpad(const char *string, const char *pad, size_t padlen);
+char *my_strpadl(const char *string, const char *pad, size_t padlen);
+char *my_strpadr(const char *string, const char *pad, size_t padlen);
 
 char *my_strrepeat(char *string, size_t times);
 char *my_strreplace(char *subject, const char *search, const char *replace);
